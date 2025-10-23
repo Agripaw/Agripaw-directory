@@ -57,7 +57,7 @@ nav li {
 nav a {
   display: inline-block;
   padding: 10px 20px;
-  background-color: #e53935; /* red button */
+  background-color: #d4af37; /* gold button */
   color: white;
   text-decoration: none;
   border-radius: 5px;
@@ -66,5 +66,5 @@ nav a {
 }
 
 nav a:hover {
-  background-color: #b71c1c; /* darker red on hover */
+  background-color: #b89410; /* darker gold on hover */
 }
