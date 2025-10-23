@@ -29,7 +29,7 @@ li {
     display: inline-block;
     padding: 0.75em 1.5em;
     background-color: #cc3300;
-    color: black;
+    color: white;
     text-decoration: none;
     border-radius: 5px;
     font-weight: bold;
@@ -58,7 +58,7 @@ nav a {
   display: inline-block;
   padding: 10px 20px;
   background-color: #d4af37; /* gold button */
-  color: white;
+  color: black;
   text-decoration: none;
   border-radius: 5px;
   transition: background-color 0.3s ease;
