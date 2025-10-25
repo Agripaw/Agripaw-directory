@@ -1,113 +1,173 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Add Your Business | AgriPaw Directory</title>
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f9f5eb;
+      margin: 0;
+      color: #222;
+    }
+
+    header {
+      background-color: #fff8e6;
+      border-bottom: 2px solid #bfa24a;
+      text-align: center;
+      padding: 20px 10px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    header img {
+      max-height: 80px;
+    }
+
+    h1 {
+      text-align: center;
+      color: #333;
+      margin-top: 25px;
+    }
+
+    .form-container {
+      max-width: 700px;
+      margin: 30px auto;
+      background: #fff;
+      padding: 25px 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(191,162,74,0.4);
+    }
+
+    label {
+      display: block;
+      margin-top: 15px;
+      font-weight: bold;
+      color: #444;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    select,
+    textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 6px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 1em;
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+
+    .submit-btn {
+      display: block;
+      background-color: #b30000;
+      color: #fff;
+      text-align: center;
+      padding: 12px 25px;
+      margin: 25px auto 10px;
+      border-radius: 8px;
+      font-size: 1.1em;
+      font-weight: bold;
+      box-shadow: 0 0 15px 3px gold;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+    }
+
+    .submit-btn:hover {
+      background-color: #800000;
+      box-shadow: 0 0 25px 5px #d4af37;
+      transform: scale(1.03);
+    }
+
+    .footer {
+      text-align: center;
+      padding: 15px;
+      background: #2c1a00;
+      color: #d4af37;
+      margin-top: 40px;
+    }
+
+    .footer a {
+      color: #d4af37;
+      text-decoration: none;
+      margin: 0 8px;
+      font-weight: bold;
+    }
+
+    .footer a:hover {
+      text-decoration: underline;
+    }
+  </style>
 </head>
-
 <body>
-  <!-- HEADER -->
-  <header class="sticky-header" id="header">
-    <div class="header-container">
-      <img src="color-logo.png" alt="AgriPaw Logo" class="logo" />
-      <a href="add-listing.html" class="premier-badge">
-        <img src="premier-badge.png" alt="Premier Badge" />
-      </a>
-    </div>
 
-    <nav class="button-bar">
-      <a href="index.html" class="nav-btn primary-btn">🏠 Home</a>
-      <a href="#" class="group-btn">🐴 Stable</a>
-      <a href="#" class="group-btn">🐇 Hutch</a>
-      <a href="#" class="group-btn">🐶 Kennel</a>
-      <a href="#" class="group-btn">🐱 Cattery</a>
-      <a href="#" class="group-btn">🐦 Aviary</a>
-      <a href="#" class="group-btn">🦎 Terrarium</a>
-    </nav>
+  <header>
+    <img src="logo.png" alt="AgriPaw Logo">
   </header>
 
-  <!-- MAIN FORM SECTION -->
-  <main>
-    <section class="form-section">
-      <h1>Add Your Business</h1>
-      <p class="intro">
-        Create your free listing to join the AgriPaw Directory network of breeders,
-        service providers, and animal care specialists.
-      </p>
+  <h1>List Your Business on AgriPaw</h1>
+  <p style="text-align:center;">Fill out the form below to get your breeder, rescue, or service listed in the AgriPaw Directory.</p>
 
-      <form class="listing-form">
-        <div class="form-group">
-          <label for="businessName">Business Name</label>
-          <input type="text" id="businessName" name="businessName" placeholder="e.g., Fowler House of Labs" required />
-        </div>
+  <div class="form-container">
+    <form action="#" method="post">
+      <label for="business-name">Business Name</label>
+      <input type="text" id="business-name" name="business-name" placeholder="Enter your business name" required>
 
-        <div class="form-group">
-          <label for="contactName">Contact Name</label>
-          <input type="text" id="contactName" name="contactName" placeholder="Your Name" required />
-        </div>
+      <label for="contact-name">Contact Name</label>
+      <input type="text" id="contact-name" name="contact-name" placeholder="Enter your name" required>
 
-        <div class="form-group">
-          <label for="email">Email</label>
-          <input type="email" id="email" name="email" placeholder="you@example.com" required />
-        </div>
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" placeholder="you@example.com" required>
 
-        <div class="form-group">
-          <label for="phone">Phone</label>
-          <input type="tel" id="phone" name="phone" placeholder="(555) 123-4567" />
-        </div>
+      <label for="phone">Phone</label>
+      <input type="text" id="phone" name="phone" placeholder="(555) 123-4567">
 
-        <div class="form-group">
-          <label for="category">Listing Type</label>
-          <select id="category" name="category" required>
-            <option value="">Select a category</option>
-            <option value="breeder">Breeder</option>
-            <option value="service">Service Provider</option>
-            <option value="network">Network or Club</option>
-          </select>
-        </div>
+      <label for="location">City & State</label>
+      <input type="text" id="location" name="location" placeholder="e.g. Phoenix, AZ">
 
-        <div class="form-group">
-          <label for="location">City & State</label>
-          <input type="text" id="location" name="location" placeholder="e.g., Chandler, AZ" required />
-        </div>
+      <label for="type">Listing Type</label>
+      <select id="type" name="type" required>
+        <option value="">Select one...</option>
+        <option value="breeder">Breeder</option>
+        <option value="service">Service Provider</option>
+        <option value="network">Network or Club</option>
+      </select>
 
-        <div class="form-group">
-          <label for="website">Website (optional)</label>
-          <input type="url" id="website" name="website" placeholder="https://yourwebsite.com" />
-        </div>
+      <label for="animal">Animal Type</label>
+      <select id="animal" name="animal">
+        <option value="">Select one...</option>
+        <option value="dog">Dog</option>
+        <option value="cat">Cat</option>
+        <option value="horse">Horse</option>
+        <option value="bird">Bird</option>
+        <option value="rabbit">Rabbit</option>
+        <option value="reptile">Reptile</option>
+        <option value="livestock">Livestock</option>
+        <option value="other">Other</option>
+      </select>
 
-        <div class="form-group">
-          <label for="description">Business Description</label>
-          <textarea id="description" name="description" rows="4" placeholder="Tell visitors about your business..." required></textarea>
-        </div>
+      <label for="description">About Your Business</label>
+      <textarea id="description" name="description" placeholder="Tell us a bit about your business..."></textarea>
 
-        <button type="submit" class="submit-btn">Submit Listing</button>
-      </form>
-    </section>
-  </main>
+      <button type="submit" class="submit-btn">✨ Submit Listing</button>
+    </form>
+  </div>
 
-  <!-- FOOTER -->
-  <footer class="footer">
-    <p class="footer-links">
-      <a href="add-listing.html" class="footer-link">Add Your Business</a>
-      <span class="divider">|</span>
-      <a href="contact.html" class="footer-link">Contact Us</a>
-    </p>
-    <p class="copyright">© 2025 AgriPaw Directory. All rights reserved.</p>
-  </footer>
+  <div class="footer">
+    <a href="index.html">🏠 Home</a> |
+    <a href="contact.html">📞 Contact Us</a>
+    <p style="margin-top:8px;">© 2025 AgriPaw Directory. All rights reserved.</p>
+  </div>
 
-  <!-- SHRINK HEADER ON SCROLL -->
-  <script>
-    window.addEventListener("scroll", function () {
-      const header = document.getElementById("header");
-      if (window.scrollY > 50) {
-        header.classList.add("shrink");
-      } else {
-        header.classList.remove("shrink");
-      }
-    });
-  </script>
 </body>
 </html>
