@@ -1,1 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stable Directory | Horse & Livestock Breeders | AgriPaw</title>
+  <link rel="stylesheet" href="../../styles.css">
+  <script src="../../scripts/listings.js" defer></script>
+</head>
+<body>
+  <!-- Header -->
+  <header class="sticky-header">
+    <div class="header-container">
+      <img src="../../assets/logo/color-logo.png" alt="AgriPaw Logo" class="logo">
+      <nav class="nav-buttons">
+        <a href="../../index.html" class="nav-btn">Home</a>
+        <a href="../../add-listing.html" class="nav-btn">Add Listing</a>
+        <a href="../../contact.html" class="nav-btn">Contact</a>
+      </nav>
+    </div>
+  </header>
 
+  <!-- Main Content -->
+  <main class="directory-page">
+    <h1>Horse & Livestock Breeder Directory</h1>
+    <p>Find trusted equine breeders, boarding facilities, and livestock specialists on AgriPaw.</p>
+
+    <!-- Filter Section -->
+    <section class="filters">
+      <h2>Filter Listings</h2>
+      <form id="filter-form">
+        <div class="filter-group">
+          <label>Animal Type:</label>
+          <select name="animal">
+            <option value="all">All</option>
+            <option value="horse">Horse</option>
+            <option value="cow">Cattle</option>
+            <option value="goat">Goat</option>
+            <option value="sheep">Sheep</option>
+            <option value="pig">Pig</option>
+          </select>
+        </div>
+
+        <div class="filter-group">
+          <label>Listing Type:</label>
+          <select name="listing-type">
+            <option value="all">All</option>
+            <option value="breeder">Breeder</option>
+            <option value="service">Service</option>
+            <option value="network">Network</option>
+          </select>
+        </div>
+
+        <div class="filter-group">
+          <label>Location:</label>
+          <input type="text" name="location" placeholder="Enter city or state">
+        </div>
+
+        <button type="submit" class="filter-btn">Apply Filters</button>
+      </form>
+    </section>
+
+    <!-- Listings Section -->
+    <section id="listings-container" class="listings">
+      <h2>Current Listings</h2>
+
+      <!-- Example Listing -->
+      <div class="listing-card">
+        <img src="../../assets/photos/sample-stable.jpg" alt="Silver Ridge Stables" class="listing-photo">
+        <div class="listing-info">
+          <h3>Silver Ridge Stables</h3>
+          <p><strong>Location:</strong> Lexington, KY</p>
+          <p><strong>Specialty:</strong> Quarter Horses & Boarding</p>
+          <p><strong>Type:</strong> Breeder & Service</p>
+          <a href="../../premier/silverridgestables/index.html" class="listing-link">View Profile</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 AgriPaw | All Rights Reserved</p>
+  </footer>
+</body>
+</html>
