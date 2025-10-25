@@ -5,169 +5,164 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Add Your Business | AgriPaw Directory</title>
   <link rel="stylesheet" href="styles.css">
-  <style>
-    body {
-      font-family: 'Arial', sans-serif;
-      background-color: #f9f5eb;
-      margin: 0;
-      color: #222;
-    }
-
-    header {
-      background-color: #fff8e6;
-      border-bottom: 2px solid #bfa24a;
-      text-align: center;
-      padding: 20px 10px;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
-
-    header img {
-      max-height: 80px;
-    }
-
-    h1 {
-      text-align: center;
-      color: #333;
-      margin-top: 25px;
-    }
-
-    .form-container {
-      max-width: 700px;
-      margin: 30px auto;
-      background: #fff;
-      padding: 25px 30px;
-      border-radius: 10px;
-      box-shadow: 0 0 15px rgba(191,162,74,0.4);
-    }
-
-    label {
-      display: block;
-      margin-top: 15px;
-      font-weight: bold;
-      color: #444;
-    }
-
-    input[type="text"],
-    input[type="email"],
-    select,
-    textarea {
-      width: 100%;
-      padding: 10px;
-      margin-top: 6px;
-      border: 1px solid #ccc;
-      border-radius: 6px;
-      font-size: 1em;
-    }
-
-    textarea {
-      resize: vertical;
-      min-height: 100px;
-    }
-
-    .submit-btn {
-      display: block;
-      background-color: #b30000;
-      color: #fff;
-      text-align: center;
-      padding: 12px 25px;
-      margin: 25px auto 10px;
-      border-radius: 8px;
-      font-size: 1.1em;
-      font-weight: bold;
-      box-shadow: 0 0 15px 3px gold;
-      transition: all 0.3s ease;
-      text-decoration: none;
-      border: none;
-      cursor: pointer;
-    }
-
-    .submit-btn:hover {
-      background-color: #800000;
-      box-shadow: 0 0 25px 5px #d4af37;
-      transform: scale(1.03);
-    }
-
-    .footer {
-      text-align: center;
-      padding: 15px;
-      background: #2c1a00;
-      color: #d4af37;
-      margin-top: 40px;
-    }
-
-    .footer a {
-      color: #d4af37;
-      text-decoration: none;
-      margin: 0 8px;
-      font-weight: bold;
-    }
-
-    .footer a:hover {
-      text-decoration: underline;
-    }
-  </style>
 </head>
 <body>
 
-  <header>
-    <img src="logo.png" alt="AgriPaw Logo">
-  </header>
+<header>
+  <img src="assets/logo.png" alt="AgriPaw Logo" class="logo">
+</header>
 
-  <h1>List Your Business on AgriPaw</h1>
-  <p style="text-align:center;">Fill out the form below to get your breeder, rescue, or service listed in the AgriPaw Directory.</p>
+<h1>List Your Business on AgriPaw</h1>
+<p style="text-align:center;">Fill out the form below to submit your Breeder, Service, or Network listing.</p>
 
-  <div class="form-container">
-    <form action="#" method="post">
-      <label for="business-name">Business Name</label>
-      <input type="text" id="business-name" name="business-name" placeholder="Enter your business name" required>
+<form id="listing-form" class="form-container">
 
-      <label for="contact-name">Contact Name</label>
-      <input type="text" id="contact-name" name="contact-name" placeholder="Enter your name" required>
+  <!-- BASIC INFO -->
+  <label>Business Name ✳️</label>
+  <input type="text" id="business-name" required>
 
-      <label for="email">Email</label>
-      <input type="email" id="email" name="email" placeholder="you@example.com" required>
+  <label>Contact Name ✳️</label>
+  <input type="text" id="contact-name" required>
 
-      <label for="phone">Phone</label>
-      <input type="text" id="phone" name="phone" placeholder="(555) 123-4567">
+  <label>Email ✳️</label>
+  <input type="email" id="email" required>
 
-      <label for="location">City & State</label>
-      <input type="text" id="location" name="location" placeholder="e.g. Phoenix, AZ">
+  <!-- PRIVACY OPTIONS -->
+  <div class="privacy-preferences">
+    <label><input type="checkbox" id="hide-contact" value="yes"> Hide contact name on public listing</label><br>
+    <label><input type="checkbox" id="hide-email" value="yes"> Hide email address on public listing</label>
+  </div>
+  <p class="note">Your contact name and email are required for verification but can be hidden from public view if you prefer.</p>
 
-      <label for="type">Listing Type</label>
-      <select id="type" name="type" required>
-        <option value="">Select one...</option>
-        <option value="breeder">Breeder</option>
-        <option value="service">Service Provider</option>
-        <option value="network">Network or Club</option>
-      </select>
+  <label>Phone (optional)</label>
+  <input type="text" id="phone" placeholder="(555) 123-4567">
 
-      <label for="animal">Animal Type</label>
-      <select id="animal" name="animal">
-        <option value="">Select one...</option>
-        <option value="dog">Dog</option>
-        <option value="cat">Cat</option>
-        <option value="horse">Horse</option>
-        <option value="bird">Bird</option>
-        <option value="rabbit">Rabbit</option>
-        <option value="reptile">Reptile</option>
-        <option value="livestock">Livestock</option>
-        <option value="other">Other</option>
-      </select>
+  <p class="note">Phone number and social links are optional. Provide them only if you want them visible on your public profile.</p>
 
-      <label for="description">About Your Business</label>
-      <textarea id="description" name="description" placeholder="Tell us a bit about your business..."></textarea>
+  <!-- SOCIAL LINKS -->
+  <label>Website (optional)</label>
+  <input type="url" id="website" placeholder="https://example.com">
 
-      <button type="submit" class="submit-btn">✨ Submit Listing</button>
-    </form>
+  <label>YouTube (optional)</label>
+  <input type="url" id="youtube" placeholder="https://youtube.com/...">
+
+  <label>Facebook (optional)</label>
+  <input type="url" id="facebook" placeholder="https://facebook.com/...">
+
+  <label>Instagram (optional)</label>
+  <input type="url" id="instagram" placeholder="https://instagram.com/...">
+
+  <label>TikTok (optional)</label>
+  <input type="url" id="tiktok" placeholder="https://tiktok.com/...">
+
+  <label>City ✳️</label>
+  <input type="text" id="city" required>
+
+  <label>State ✳️</label>
+  <input type="text" id="state" required>
+
+  <!-- BADGES -->
+  <label>Badges (optional)</label>
+  <div class="checkbox-group">
+    <label><input type="checkbox" class="badge-option" value="Registered Purebred"> Registered Purebred</label>
+    <label><input type="checkbox" class="badge-option" value="Designer"> Designer</label>
   </div>
 
-  <div class="footer">
-    <a href="index.html">🏠 Home</a> |
-    <a href="contact.html">📞 Contact Us</a>
-    <p style="margin-top:8px;">© 2025 AgriPaw Directory. All rights reserved.</p>
+  <!-- ANIMAL TYPE -->
+  <label>Animal Type ✳️</label>
+  <div class="dropdown">
+    <button type="button" class="dropbtn">Select Animal Types ▼</button>
+    <div class="dropdown-content">
+      <label><input type="checkbox" class="animal-option" value="Dog"> Dog</label>
+      <label><input type="checkbox" class="animal-option" value="Cat"> Cat</label>
+      <label><input type="checkbox" class="animal-option" value="Horse"> Horse</label>
+      <label><input type="checkbox" class="animal-option" value="Bird"> Bird</label>
+      <label><input type="checkbox" class="animal-option" value="Rabbit"> Rabbit</label>
+      <label><input type="checkbox" class="animal-option" value="Reptile"> Reptile</label>
+      <label><input type="checkbox" class="animal-option" value="Livestock"> Livestock</label>
+      <label><input type="checkbox" class="animal-option" value="All Animals"> All Animals</label>
+    </div>
   </div>
+
+  <!-- BREED -->
+  <label>Breed ✳️</label>
+  <div class="dropdown">
+    <button type="button" class="dropbtn">Select Breeds ▼</button>
+    <div class="dropdown-content">
+      <label><input type="checkbox" class="breed-option" value="Labrador Retriever"> Labrador Retriever</label>
+      <label><input type="checkbox" class="breed-option" value="Golden Retriever"> Golden Retriever</label>
+      <label><input type="checkbox" class="breed-option" value="French Bulldog"> French Bulldog</label>
+      <label><input type="checkbox" class="breed-option" value="Beagle"> Beagle</label>
+      <label><input type="checkbox" class="breed-option" value="All Breeds"> All Breeds</label>
+      <label><input type="checkbox" class="breed-option" value="Other"> Other</label>
+    </div>
+  </div>
+  <input type="text" id="other-breed" placeholder="If Other, type here">
+
+  <!-- LISTING TYPE -->
+  <label>Listing Type ✳️</label>
+  <div class="dropdown">
+    <button type="button" class="dropbtn">Select Listing Type ▼</button>
+    <div class="dropdown-content">
+      <label><input type="checkbox" class="type-option" value="Breeder"> Breeder</label>
+      <label><input type="checkbox" class="type-option" value="Service Provider"> Service Provider</label>
+      <label><input type="checkbox" class="type-option" value="Network/Club"> Network / Club</label>
+    </div>
+  </div>
+
+  <!-- SERVICES -->
+  <div id="service-section" class="hidden">
+    <label>Service Type</label>
+    <div class="checkbox-group">
+      <label><input type="checkbox" class="service-option" value="Reproductive"> Reproductive</label>
+      <label><input type="checkbox" class="service-option" value="Veterinary"> Veterinary</label>
+      <label><input type="checkbox" class="service-option" value="Grooming"> Grooming</label>
+      <label><input type="checkbox" class="service-option" value="Training"> Training</label>
+      <label><input type="checkbox" class="service-option" value="Photography"> Photography</label>
+      <label><input type="checkbox" class="service-option" value="Graphics / Branding"> Graphics / Branding</label>
+      <label><input type="checkbox" class="service-option" value="Holistic Remedies"> Holistic Remedies</label>
+      <label><input type="checkbox" class="service-option" value="Natural Treats & Nutrition"> Natural Treats & Nutrition</label>
+      <label><input type="checkbox" class="service-option" value="Pet Sitting / Boarding"> Pet Sitting / Boarding</label>
+      <label><input type="checkbox" class="service-option" value="Pet Walking / Exercise"> Pet Walking / Exercise</label>
+      <label><input type="checkbox" class="service-option" value="Yard Clean-Up / Waste Removal"> Yard Clean-Up / Waste Removal</label>
+      <label><input type="checkbox" class="service-option" value="Transport"> Transport</label>
+      <label><input type="checkbox" class="service-option" value="Pet Supplies / Equipment"> Pet Supplies / Equipment</label>
+      <label><input type="checkbox" class="service-option" value="Other"> Other</label>
+    </div>
+    <input type="text" id="other-service" placeholder="If Other, type here">
+  </div>
+
+  <!-- NETWORK -->
+  <div id="network-section" class="hidden">
+    <label>Network Type</label>
+    <div class="checkbox-group">
+      <label><input type="checkbox" class="network-option" value="Meetup Groups"> Meetup Groups</label>
+      <label><input type="checkbox" class="network-option" value="Clubs / Associations"> Clubs / Associations</label>
+      <label><input type="checkbox" class="network-option" value="Social Media / Online Groups"> Social Media / Online Groups</label>
+      <label><input type="checkbox" class="network-option" value="Rescue / Charity Network"> Rescue / Charity Network</label>
+      <label><input type="checkbox" class="network-option" value="Workshops / Educational Programs"> Workshops / Educational Programs</label>
+      <label><input type="checkbox" class="network-option" value="Other"> Other</label>
+    </div>
+    <input type="text" id="other-network" placeholder="If Other, type here">
+  </div>
+
+  <!-- REVIEW NOTICE -->
+  <p id="review-message" class="hidden review-msg">
+    ⚠️ This listing will be reviewed by the Agripaw team before publishing due to multi-category, “All,” or custom selections.
+  </p>
+
+  <!-- SUBMIT -->
+  <button type="submit" class="submit-btn">✨ Submit Listing</button>
+</form>
+
+<footer class="footer">
+  <p>© 2025 AgriPaw Directory</p>
+</footer>
+
+<!-- EmailJS SDK -->
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<!-- Logic -->
+<script src="form.js"></script>
 
 </body>
 </html>
