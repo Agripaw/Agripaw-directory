@@ -1,1 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Terrarium Directory | Reptile, Amphibian, Insect & Arachnid Breeders | AgriPaw</title>
+  <link rel="stylesheet" href="../../styles.css">
+  <script src="../../scripts/listings.js" defer></script>
+</head>
+<body>
+  <!-- Header -->
+  <header class="sticky-header">
+    <div class="header-container">
+      <img src="../../assets/logo/color-logo.png" alt="AgriPaw Logo" class="logo">
+      <nav class="nav-buttons">
+        <a href="../../index.html" class="nav-btn">Home</a>
+        <a href="../../add-listing.html" class="nav-btn">Add Listing</a>
+        <a href="../../contact.html" class="nav-btn">Contact</a>
+      </nav>
+    </div>
+  </header>
 
+  <!-- Main Content -->
+  <main class="directory-page">
+    <h1>Reptile, Amphibian, Insect & Arachnid Breeder Directory</h1>
+    <p>Discover reputable breeders, rescues, and specialists for reptiles, amphibians, insects, and arachnids on AgriPaw.</p>
+
+    <!-- Filter Section -->
+    <section class="filters">
+      <h2>Filter Listings</h2>
+      <form id="filter-form">
+        <div class="filter-group">
+          <label>Species:</label>
+          <select name="species">
+            <option value="all">All</option>
+            <option value="snake">Snakes</option>
+            <option value="lizard">Lizards</option>
+            <option value="frog">Frogs & Amphibians</option>
+            <option value="turtle">Turtles & Tortoises</option>
+            <option value="gecko">Geckos</option>
+            <option value="insect">Insects (Beetles, Mantises, Stick Bugs)</option>
+            <option value="arachnid">Arachnids (Tarantulas, Scorpions)</option>
+            <option value="other">Other Exotic Species</option>
+          </select>
+        </div>
+
+        <div class="filter-group">
+          <label>Listing Type:</label>
+          <select name="listing-type">
+            <option value="all">All</option>
+            <option value="breeder">Breeder</option>
+            <option value="rescue">Rescue</option>
+            <option value="service">Service</option>
+            <option value="network">Network</option>
+          </select>
+        </div>
+
+        <div class="filter-group">
+          <label>Location:</label>
+          <input type="text" name="location" placeholder="Enter city or state">
+        </div>
+
+        <button type="submit" class="filter-btn">Apply Filters</button>
+      </form>
+    </section>
+
+    <!-- Listings Section -->
+    <section id="listings-container" class="listings">
+      <h2>Current Listings</h2>
+
+      <!-- Example Listing -->
+      <div class="listing-card">
+        <img src="../../assets/photos/sample-terrarium.jpg" alt="Scales & Tails Exotics" class="listing-photo">
+        <div class="listing-info">
+          <h3>Scales & Tails Exotics</h3>
+          <p><strong>Location:</strong> Phoenix, AZ</p>
+          <p><strong>Species:</strong> Ball Pythons, Bearded Dragons, Tarantulas & Mantises</p>
+          <p><strong>Type:</strong> Breeder & Rescue</p>
+          <a href="../../premier/scalesandtails/index.html" class="listing-link">View Profile</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 AgriPaw | All Rights Reserved</p>
+  </footer>
+</body>
+</html>
