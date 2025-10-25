@@ -7,16 +7,14 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <header>
-    <!-- Premier badge linked to Add Listing page -->
-    <a href="add-listing.html" class="premier-badge">
-      <img src="A666B4D5-0463-4897-A4D1-83AB93C09768.jpeg" alt="Premier Badge" />
-    </a>
+  <header class="sticky-header" id="header">
+    <div class="header-left">
+      <a href="add-listing.html" class="premier-badge">
+        <img src="A666B4D5-0463-4897-A4D1-83AB93C09768.jpeg" alt="Premier Badge" />
+      </a>
+      <img src="color-logo.png" alt="AgriPaw.com Logo" class="logo" />
+    </div>
 
-    <img src="color-logo.png" alt="AgriPaw.com Logo" class="logo" />
-  </header>
-
-  <main>
     <nav class="button-bar">
       <a href="#" class="nav-btn primary-btn">🏠 Home</a>
       <a href="#" class="group-btn">🐴 Stable</a>
@@ -26,6 +24,12 @@
       <a href="#" class="group-btn">🐦 Aviary</a>
       <a href="#" class="group-btn">🦎 Terrarium</a>
     </nav>
+  </header>
+
+  <main>
+    <section style="padding-top: 240px;">
+      <p><!-- placeholder content --></p>
+    </section>
   </main>
 
   <footer>
@@ -33,5 +37,17 @@
     <a href="add-listing.html" class="footer-link">Add Your Business</a>
     <a href="contact.html" class="footer-link">Contact Us</a>
   </footer>
+
+  <script>
+    // Shrink header on scroll
+    window.addEventListener("scroll", function() {
+      const header = document.getElementById("header");
+      if (window.scrollY > 50) {
+        header.classList.add("shrink");
+      } else {
+        header.classList.remove("shrink");
+      }
+    });
+  </script>
 </body>
 </html>
