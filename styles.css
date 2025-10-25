@@ -5,6 +5,18 @@ body {
   padding: 0;
 }
 
+/* FADE-IN EFFECT WHEN PAGE LOADS */
+@keyframes fadeInHeader {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 /* STICKY HEADER */
 .sticky-header {
   position: fixed;
@@ -16,12 +28,18 @@ body {
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
   padding: 15px 20px;
   transition: all 0.3s ease;
+  animation: fadeInHeader 0.8s ease-out;
 }
 
-/* SHRUNK HEADER STATE */
+/* SHRUNK HEADER STATE (with translucent gold fade) */
 .sticky-header.shrink {
   padding: 6px 20px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.25);
+  background: linear-gradient(
+    to bottom,
+    rgba(230, 184, 0, 0.08) 0%,
+    rgba(249, 245, 236, 1) 100%
+  );
 }
 
 .sticky-header.shrink .logo {
@@ -30,26 +48,46 @@ body {
 
 .sticky-header.shrink .premier-badge img {
   width: 60px;
+  transform: translateY(-2px);
 }
 
-/* HEADER CONTENT */
-.header-left {
+/* HEADER CONTAINER */
+.header-container {
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  gap: 15px;
 }
 
+/* PREMIER BADGE EFFECTS */
 .premier-badge img {
   width: 90px;
   height: auto;
   cursor: pointer;
-  transition: transform 0.2s ease, width 0.3s ease;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+  animation: glowPulse 3s infinite ease-in-out;
+  box-shadow: 0 0 12px rgba(230, 184, 0, 0.6);
 }
 
+/* Glow animation using Agripaw gold (#e6b800) */
+@keyframes glowPulse {
+  0%, 100% {
+    box-shadow: 0 0 10px rgba(230, 184, 0, 0.5);
+    transform: translateY(0);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(230, 184, 0, 0.9);
+    transform: translateY(-2px);
+  }
+}
+
+/* Hover lift and stronger glow */
 .premier-badge img:hover {
-  transform: scale(1.05);
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: 0 0 25px rgba(230, 184, 0, 1);
 }
 
+/* LOGO */
 .logo {
   width: 100%;
   max-width: 800px;
@@ -71,16 +109,40 @@ body {
   padding-bottom: 8px;
 }
 
+/* NAV BUTTON BASE STYLES */
 .nav-btn, .group-btn {
   flex: 0 0 auto;
   background-color: #000;
-  color: #ffcc00;
+  color: #e6b800;
   text-decoration: none;
   padding: 8px 14px;
   border-radius: 8px;
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
   font-size: clamp(12px, 2vw, 16px);
+  opacity: 0;
+  animation: fadeInNav 0.6s ease forwards;
+}
+
+/* Button stagger animation timing */
+.button-bar a:nth-child(1) { animation-delay: 0.8s; }
+.button-bar a:nth-child(2) { animation-delay: 1.0s; }
+.button-bar a:nth-child(3) { animation-delay: 1.2s; }
+.button-bar a:nth-child(4) { animation-delay: 1.4s; }
+.button-bar a:nth-child(5) { animation-delay: 1.6s; }
+.button-bar a:nth-child(6) { animation-delay: 1.8s; }
+.button-bar a:nth-child(7) { animation-delay: 2.0s; }
+
+/* Fade-in animation for nav buttons */
+@keyframes fadeInNav {
+  0% {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .nav-btn:hover, .group-btn:hover {
@@ -90,9 +152,16 @@ body {
 
 /* Highlight Home */
 .primary-btn {
-  border: 2px solid #ffcc00;
-  box-shadow: 0 0 8px rgba(255, 204, 0, 0.6);
+  border: 2px solid #e6b800;
+  box-shadow: 0 0 8px rgba(230, 184, 0, 0.6);
   font-weight: bold;
+}
+
+/* Gold glow on hover for Home button */
+.primary-btn:hover {
+  background-color: #1a1a1a;
+  box-shadow: 0 0 25px rgba(230, 184, 0, 1);
+  transform: scale(1.06);
 }
 
 /* FOOTER */
@@ -103,12 +172,27 @@ footer {
   font-size: 0.9em;
   margin-top: 50px;
   text-align: left;
+  opacity: 0;
+  animation: fadeInFooter 1.2s ease forwards;
+  animation-delay: 2.5s; /* 👈 starts after header and nav finish */
+}
+
+/* Footer fade-in animation */
+@keyframes fadeInFooter {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .footer-link {
   display: block;
   margin-top: 8px;
-  color: #ffcc00;
+  color: #e6b800;
   text-decoration: none;
 }
 
@@ -118,13 +202,14 @@ footer {
 
 /* MOBILE */
 @media (max-width: 600px) {
-  .header-left {
+  .header-container {
     flex-direction: column;
     align-items: flex-start;
   }
 
   .premier-badge img {
     width: 70px;
+    align-self: flex-end;
   }
 
   .logo {
