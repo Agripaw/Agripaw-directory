@@ -3,166 +3,146 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Add Your Business | AgriPaw Directory</title>
+  <title>Add Listing | AgriPaw Directory</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-
-<header>
-  <img src="assets/logo.png" alt="AgriPaw Logo" class="logo">
-</header>
-
-<h1>List Your Business on AgriPaw</h1>
-<p style="text-align:center;">Fill out the form below to get listed.</p>
-
-<form id="listing-form" class="form-container">
-
-  <!-- BASIC INFO -->
-  <label>Business Name ✳️</label>
-  <input type="text" id="business-name" required>
-
-  <label>Contact Name ✳️</label>
-  <input type="text" id="contact-name" required>
-
-  <label>Email ✳️</label>
-  <input type="email" id="email" required>
-
-  <!-- PRIVACY OPTIONS -->
-  <div class="privacy-preferences">
-    <label><input type="checkbox" id="hide-contact" value="yes"> Hide contact name on public listing</label><br>
-    <label><input type="checkbox" id="hide-email" value="yes"> Hide email address on public listing</label>
-  </div>
-  <p class="note">Your contact name and email are required for verification but can be hidden from public view if you prefer.</p>
-
-  <label>Phone (optional)</label>
-  <input type="text" id="phone" placeholder="(555) 123-4567">
-
-  <p class="note">Phone number and social links are optional. Provide them only if you want them visible on your public profile.</p>
-
-  <!-- SOCIAL LINKS -->
-  <label>Website (optional)</label>
-  <input type="url" id="website" placeholder="https://example.com">
-
-  <label>YouTube (optional)</label>
-  <input type="url" id="youtube" placeholder="https://youtube.com/...">
-
-  <label>Facebook (optional)</label>
-  <input type="url" id="facebook" placeholder="https://facebook.com/...">
-
-  <label>Instagram (optional)</label>
-  <input type="url" id="instagram" placeholder="https://instagram.com/...">
-
-  <label>TikTok (optional)</label>
-  <input type="url" id="tiktok" placeholder="https://tiktok.com/...">
-
-  <label>City ✳️</label>
-  <input type="text" id="city" required>
-
-  <label>State ✳️</label>
-  <input type="text" id="state" required>
-
-  <!-- BADGES -->
-  <label>Badges (optional)</label>
-  <div class="checkbox-group">
-    <label><input type="checkbox" class="badge-option" value="Registered Purebred"> Registered Purebred</label>
-    <label><input type="checkbox" class="badge-option" value="Designer"> Designer</label>
-  </div>
-
-  <!-- ANIMAL TYPE -->
-  <label>Animal Type ✳️</label>
-  <div class="dropdown">
-    <button type="button" class="dropbtn">Select Animal Types ▼</button>
-    <div class="dropdown-content">
-      <label><input type="checkbox" class="animal-option" value="Dog"> Dog</label>
-      <label><input type="checkbox" class="animal-option" value="Cat"> Cat</label>
-      <label><input type="checkbox" class="animal-option" value="Horse"> Horse</label>
-      <label><input type="checkbox" class="animal-option" value="Bird"> Bird</label>
-      <label><input type="checkbox" class="animal-option" value="Rabbit"> Rabbit</label>
-      <label><input type="checkbox" class="animal-option" value="Reptile"> Reptile</label>
-      <label><input type="checkbox" class="animal-option" value="Livestock"> Livestock</label>
-      <label><input type="checkbox" class="animal-option" value="All Animals"> All Animals</label>
+  <!-- Header -->
+  <header class="sticky-header">
+    <div class="header-container">
+      <img src="assets/logo/color-logo.png" alt="AgriPaw Logo" class="logo">
+      <nav class="nav-buttons">
+        <a href="index.html" class="nav-btn">Home</a>
+        <a href="contact.html" class="nav-btn">Contact</a>
+      </nav>
     </div>
-  </div>
+  </header>
 
-  <!-- BREED -->
-  <label>Breed ✳️</label>
-  <div class="dropdown">
-    <button type="button" class="dropbtn">Select Breeds ▼</button>
-    <div class="dropdown-content">
-      <label><input type="checkbox" class="breed-option" value="Labrador Retriever"> Labrador Retriever</label>
-      <label><input type="checkbox" class="breed-option" value="Golden Retriever"> Golden Retriever</label>
-      <label><input type="checkbox" class="breed-option" value="French Bulldog"> French Bulldog</label>
-      <label><input type="checkbox" class="breed-option" value="Beagle"> Beagle</label>
-      <label><input type="checkbox" class="breed-option" value="All Breeds"> All Breeds</label>
-      <label><input type="checkbox" class="breed-option" value="Other"> Other</label>
-    </div>
-  </div>
-  <input type="text" id="other-breed" placeholder="If Other, type here">
+  <!-- Main Section -->
+  <main class="add-listing-page">
+    <h1>Add Your Business Listing</h1>
+    <p>Join the AgriPaw Directory to connect with breeders, services, and networks across the country.  
+    Listings marked for review will be verified before publishing.</p>
 
-  <!-- LISTING TYPE -->
-  <label>Listing Type ✳️</label>
-  <div class="dropdown">
-    <button type="button" class="dropbtn">Select Listing Type ▼</button>
-    <div class="dropdown-content">
-      <label><input type="checkbox" class="type-option" value="Breeder"> Breeder</label>
-      <label><input type="checkbox" class="type-option" value="Service Provider"> Service Provider</label>
-      <label><input type="checkbox" class="type-option" value="Network/Club"> Network / Club</label>
-    </div>
-  </div>
+    <form id="listing-form">
+      <!-- Basic Information -->
+      <h2>Basic Information</h2>
 
-  <!-- SERVICES -->
-  <div id="service-section" class="hidden">
-    <label>Service Type</label>
-    <div class="checkbox-group">
-      <label><input type="checkbox" class="service-option" value="Reproductive"> Reproductive</label>
-      <label><input type="checkbox" class="service-option" value="Veterinary"> Veterinary</label>
-      <label><input type="checkbox" class="service-option" value="Grooming"> Grooming</label>
-      <label><input type="checkbox" class="service-option" value="Training"> Training</label>
-      <label><input type="checkbox" class="service-option" value="Photography"> Photography</label>
-      <label><input type="checkbox" class="service-option" value="Graphics / Branding"> Graphics / Branding</label>
-      <label><input type="checkbox" class="service-option" value="Holistic Remedies"> Holistic Remedies</label>
-      <label><input type="checkbox" class="service-option" value="Natural Treats & Nutrition"> Natural Treats & Nutrition</label>
-      <label><input type="checkbox" class="service-option" value="Pet Sitting / Boarding"> Pet Sitting / Boarding</label>
-      <label><input type="checkbox" class="service-option" value="Pet Walking / Exercise"> Pet Walking / Exercise</label>
-      <label><input type="checkbox" class="service-option" value="Yard Clean-Up / Waste Removal"> Yard Clean-Up / Waste Removal</label>
-      <label><input type="checkbox" class="service-option" value="Transport"> Transport</label>
-      <label><input type="checkbox" class="service-option" value="Pet Supplies / Equipment"> Pet Supplies / Equipment</label>
-      <label><input type="checkbox" class="service-option" value="Other"> Other</label>
-    </div>
-    <input type="text" id="other-service" placeholder="If Other, type here">
-  </div>
+      <label for="businessName">Business Name <span class="required">*</span></label>
+      <input type="text" id="businessName" name="businessName" required>
 
-  <!-- NETWORK -->
-  <div id="network-section" class="hidden">
-    <label>Network Type</label>
-    <div class="checkbox-group">
-      <label><input type="checkbox" class="network-option" value="Meetup Groups"> Meetup Groups</label>
-      <label><input type="checkbox" class="network-option" value="Clubs / Associations"> Clubs / Associations</label>
-      <label><input type="checkbox" class="network-option" value="Social Media / Online Groups"> Social Media / Online Groups</label>
-      <label><input type="checkbox" class="network-option" value="Rescue / Charity Network"> Rescue / Charity Network</label>
-      <label><input type="checkbox" class="network-option" value="Workshops / Educational Programs"> Workshops / Educational Programs</label>
-      <label><input type="checkbox" class="network-option" value="Other"> Other</label>
-    </div>
-    <input type="text" id="other-network" placeholder="If Other, type here">
-  </div>
+      <label for="contactName">Contact Name <span class="required">*</span></label>
+      <input type="text" id="contactName" name="contactName" required>
 
-  <!-- REVIEW NOTICE -->
-  <p id="review-message" class="hidden review-msg">
-    ⚠️ This listing will be reviewed by the Agripaw team before publishing due to multi-category, “All,” or custom selections.
-  </p>
+      <label><input type="checkbox" id="hideContact"> Hide contact name and email on public listing</label>
 
-  <!-- SUBMIT -->
-  <button type="submit" class="submit-btn">✨ Submit Listing</button>
-</form>
+      <label for="email">Email Address <span class="required">*</span></label>
+      <input type="email" id="email" name="email" required>
 
-<footer class="footer">
-  <p>© 2025 AgriPaw Directory</p>
-</footer>
+      <label for="phone">Phone (optional)</label>
+      <input type="tel" id="phone" name="phone">
 
-<!-- EmailJS SDK -->
-<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-<!-- Logic -->
-<script src="form.js"></script>
+      <!-- Location -->
+      <h2>Location</h2>
+      <label for="city">City <span class="required">*</span></label>
+      <input type="text" id="city" name="city" required>
 
+      <label for="state">State <span class="required">*</span></label>
+      <select id="state" name="state" required>
+        <option value="">Select state</option>
+        <option value="AZ">Arizona</option>
+        <option value="CA">California</option>
+        <option value="TX">Texas</option>
+        <option value="FL">Florida</option>
+        <option value="WA">Washington</option>
+        <!-- add full state list later -->
+      </select>
+
+      <!-- Category -->
+      <h2>Listing Category</h2>
+      <p>Select all that apply (multiple selections allowed).</p>
+      <div class="checkbox-group">
+        <label><input type="checkbox" name="category" value="breeder"> Breeder</label>
+        <label><input type="checkbox" name="category" value="service"> Service</label>
+        <label><input type="checkbox" name="category" value="network"> Network</label>
+      </div>
+
+      <!-- Animal Type -->
+      <h2>Animal Type <span class="required">*</span></h2>
+      <div class="checkbox-group">
+        <label><input type="checkbox" name="animal" value="stable"> Stable (Livestock & Horses)</label>
+        <label><input type="checkbox" name="animal" value="hutch"> Hutch (Rabbits & Small Mammals)</label>
+        <label><input type="checkbox" name="animal" value="kennel"> Kennel (Dogs)</label>
+        <label><input type="checkbox" name="animal" value="cattery"> Cattery (Cats)</label>
+        <label><input type="checkbox" name="animal" value="aviary"> Aviary (Birds)</label>
+        <label><input type="checkbox" name="animal" value="terrarium"> Terrarium (Reptiles, Amphibians, Insects, Arachnids)</label>
+      </div>
+
+      <!-- Breed / Species -->
+      <h2>Breed / Species</h2>
+      <p>Select or type your breed/species. Choose “Other” to type custom entries (requires manual review).</p>
+      <input type="text" id="breed" name="breed" placeholder="e.g. Ball Python, Holland Lop, French Bulldog">
+
+      <label><input type="checkbox" id="allBreeds" name="allBreeds"> All Breeds / Species (manual review required)</label>
+
+      <!-- Services -->
+      <h2>Services (if applicable)</h2>
+      <p>Check all that apply.</p>
+      <div class="checkbox-group">
+        <label><input type="checkbox" name="serviceType" value="reproductive"> Reproductive</label>
+        <label><input type="checkbox" name="serviceType" value="veterinary"> Veterinary</label>
+        <label><input type="checkbox" name="serviceType" value="photography"> Photography</label>
+        <label><input type="checkbox" name="serviceType" value="graphics"> Graphics / Web Design</label>
+        <label><input type="checkbox" name="serviceType" value="training"> Training</label>
+        <label><input type="checkbox" name="serviceType" value="grooming"> Grooming</label>
+        <label><input type="checkbox" name="serviceType" value="remedies"> Remedies & Treats</label>
+        <label><input type="checkbox" name="serviceType" value="transport"> Transport</label>
+        <label><input type="checkbox" name="serviceType" value="boarding"> Pet Sitting / Boarding</label>
+        <label><input type="checkbox" name="serviceType" value="yardclean"> Yard Clean-Up</label>
+        <label><input type="checkbox" name="serviceType" value="other"> Other</label>
+      </div>
+
+      <!-- Network Type -->
+      <h2>Network Type</h2>
+      <p>Choose if you host or manage meetups, groups, or online communities.</p>
+      <div class="checkbox-group">
+        <label><input type="checkbox" name="networkType" value="meetups"> State Meetup Groups</label>
+        <label><input type="checkbox" name="networkType" value="clubs"> Clubs / Social Media Networks</label>
+      </div>
+
+      <!-- Badges -->
+      <h2>Optional Badges</h2>
+      <div class="checkbox-group">
+        <label><input type="checkbox" name="badge" value="purebred"> Registered Purebred</label>
+        <label><input type="checkbox" name="badge" value="designer"> Designer</label>
+        <label><input type="checkbox" name="badge" value="rescue"> Rescue / Adoption Friendly</label>
+        <label><input type="checkbox" name="badge" value="availableNow"> “Available Now” Badge</label>
+      </div>
+
+      <!-- Social & Web Links -->
+      <h2>Links & Socials</h2>
+      <input type="url" name="website" placeholder="Website Link (optional)">
+      <input type="url" name="youtube" placeholder="YouTube Link (optional)">
+      <input type="url" name="facebook" placeholder="Facebook Link (optional)">
+      <input type="url" name="instagram" placeholder="Instagram Link (optional)">
+      <input type="url" name="tiktok" placeholder="TikTok Link (optional)">
+
+      <!-- Submit -->
+      <button type="submit" class="submit-btn">Submit Listing</button>
+    </form>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 AgriPaw | All Rights Reserved</p>
+  </footer>
+
+  <script>
+    document.getElementById('listing-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      alert('Thank you! Your listing has been submitted for review.');
+      // Future: Add EmailJS integration here.
+    });
+  </script>
 </body>
 </html>
