@@ -2,13 +2,10 @@
 // AGRIPAW Listing Form Script
 // ===============================
 
-// Wait for DOM to load
 document.addEventListener("DOMContentLoaded", function () {
   const form = document.getElementById("listingForm");
+  if (!form) return;
 
-  if (!form) return; // Exit if form not found
-
-  // Convert state to uppercase automatically
   const stateInput = document.getElementById("state");
   if (stateInput) {
     stateInput.addEventListener("input", () => {
@@ -16,7 +13,6 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  // Listen for form submission
   form.addEventListener("submit", function (e) {
     e.preventDefault();
 
@@ -29,16 +25,12 @@ document.addEventListener("DOMContentLoaded", function () {
       return;
     }
 
-    // Check for multiple animal types or all breeds (triggers manual review)
+    // Check for manual review triggers
     const animalTypes = Array.from(form.querySelectorAll("input[name='animalType']:checked"));
     const allBreeds = form.querySelector("input[name='allBreeds']:checked");
+    const reviewRequired = animalTypes.length > 1 || allBreeds;
 
-    let reviewRequired = false;
-    if (animalTypes.length > 1 || allBreeds) {
-      reviewRequired = true;
-    }
-
-    // Gather form data
+    // Gather all form data
     const formData = new FormData(form);
     const data = {};
     formData.forEach((value, key) => {
@@ -50,10 +42,17 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
 
-    // Build formatted output
-    let message = `
-📋 NEW AGRIPAW LISTING SUBMISSION
+    // Format email data
+    const subject = reviewRequired
+      ? "New Listing Under Review – AgriPaw Directory"
+      : "New Listing Submission – AgriPaw Directory";
 
+    const to = "info@agripaw.com";
+    const cc = data.email;
+
+    const emailBody = `
+📋 AGRIPAW LISTING SUBMISSION
+----------------------------------
 Business Name: ${data.businessName}
 Contact Name: ${data.contactName}
 Email: ${data.email}
@@ -75,25 +74,46 @@ TikTok: ${data.tiktok || "N/A"}
 
 Hide Name: ${data.hideName ? "Yes" : "No"}
 Hide Email: ${data.hideEmail ? "Yes" : "No"}
-Manual Review: ${reviewRequired ? "✅ YES (Multiple animal types or 'All Breeds')" : "No"}
-    `;
 
-    // Simulate email output for now
-    console.log("Simulated Email Sent:");
-    console.log(message);
+Manual Review Required: ${reviewRequired ? "✅ YES" : "No"}
+----------------------------------
+`;
 
-    // Future integration: EmailJS or Microsoft 365 email API
-    // Example EmailJS template (to connect later):
-    // emailjs.send("service_id", "template_id", data);
+    // Simulate Email Sending (Console Only)
+    console.group("📨 Simulated Email Routing");
+    console.log("TO:", to);
+    console.log("CC:", cc);
+    console.log("SUBJECT:", subject);
+    console.log("MESSAGE BODY:\n", emailBody);
+    console.groupEnd();
 
-    // Confirmation for user
+    // ===== FUTURE INTEGRATION POINT =====
+    // Uncomment once EmailJS or Microsoft 365 is connected:
+    //
+    // emailjs.send("service_id", "template_id", {
+    //   to_email: to,
+    //   cc_email: cc,
+    //   subject: subject,
+    //   message: emailBody
+    // });
+
+    // Microsoft Graph API Integration (future-ready)
+    // graphClient.api('/me/sendMail').post({
+    //   message: {
+    //     subject: subject,
+    //     body: { contentType: 'Text', content: emailBody },
+    //     toRecipients: [{ emailAddress: { address: to } }],
+    //     ccRecipients: [{ emailAddress: { address: cc } }]
+    //   }
+    // });
+
+    // Confirmation Message
     alert(
       reviewRequired
-        ? "✅ Your listing was submitted successfully.\n⚠️ This entry will be flagged for manual review before publishing."
-        : "✅ Your listing was submitted successfully!"
+        ? "✅ Your listing was submitted successfully.\n⚠️ It will be flagged for manual review before publishing.\nA confirmation copy was sent to your email."
+        : "✅ Your listing was submitted successfully!\nA confirmation copy was sent to your email."
     );
 
-    // Reset form after submit
     form.reset();
   });
 });
