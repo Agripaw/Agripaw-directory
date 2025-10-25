@@ -6,10 +6,12 @@
   <title>AgriPaw Directory</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
+
 <body>
+  <!-- HEADER -->
   <header class="sticky-header" id="header">
     <div class="header-container">
-      <img src="color-logo.png" alt="AgriPaw.com Logo" class="logo" />
+      <img src="color-logo.png" alt="AgriPaw Logo" class="logo" />
       <a href="add-listing.html" class="premier-badge">
         <img src="premier-badge.png" alt="Premier Badge" />
       </a>
@@ -26,21 +28,31 @@
     </nav>
   </header>
 
+  <!-- MAIN CONTENT -->
   <main>
-    <section style="padding-top: 240px;">
-      <p><!-- main content placeholder --></p>
+    <section class="content">
+      <h1>Welcome to AgriPaw</h1>
+      <p>
+        Discover breeders, livestock specialists, and pet service providers from
+        around the country. Search by type, location, or service to find your
+        perfect match.
+      </p>
     </section>
   </main>
 
-  <footer>
-    <p>© 2025 AgriPaw Directory. All rights reserved.</p>
-    <a href="add-listing.html" class="footer-link">Add Your Business</a>
-    <a href="contact.html" class="footer-link">Contact Us</a>
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p class="footer-links">
+      <a href="add-listing.html" class="footer-link">Add Your Business</a>
+      <span class="divider">|</span>
+      <a href="contact.html" class="footer-link">Contact Us</a>
+    </p>
+    <p class="copyright">© 2025 AgriPaw Directory. All rights reserved.</p>
   </footer>
 
+  <!-- SHRINK HEADER ON SCROLL -->
   <script>
-    // Shrink header on scroll
-    window.addEventListener("scroll", function() {
+    window.addEventListener("scroll", function () {
       const header = document.getElementById("header");
       if (window.scrollY > 50) {
         header.classList.add("shrink");
