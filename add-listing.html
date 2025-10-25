@@ -18,49 +18,46 @@
     </div>
   </header>
 
-  <!-- Main Section -->
+  <!-- Main -->
   <main class="add-listing-page">
     <h1>Add Your Business Listing</h1>
-    <p>Join the AgriPaw Directory to connect with breeders, services, and networks across the country.  
+    <p>Join the AgriPaw Directory to connect with breeders, services, and networks nationwide.  
     Listings marked for review will be verified before publishing.</p>
 
     <form id="listing-form">
-      <!-- Basic Information -->
+      <!-- Basic Info -->
       <h2>Basic Information</h2>
+      <label>Business Name <span class="required">*</span></label>
+      <input type="text" name="businessName" required>
 
-      <label for="businessName">Business Name <span class="required">*</span></label>
-      <input type="text" id="businessName" name="businessName" required>
+      <label>Contact Name <span class="required">*</span></label>
+      <input type="text" name="contactName" required>
 
-      <label for="contactName">Contact Name <span class="required">*</span></label>
-      <input type="text" id="contactName" name="contactName" required>
+      <label><input type="checkbox" name="hideContact"> Hide contact name and email on public listing</label>
 
-      <label><input type="checkbox" id="hideContact"> Hide contact name and email on public listing</label>
+      <label>Email Address <span class="required">*</span></label>
+      <input type="email" name="email" required>
 
-      <label for="email">Email Address <span class="required">*</span></label>
-      <input type="email" id="email" name="email" required>
-
-      <label for="phone">Phone (optional)</label>
-      <input type="tel" id="phone" name="phone">
+      <label>Phone (optional)</label>
+      <input type="tel" name="phone">
 
       <!-- Location -->
       <h2>Location</h2>
-      <label for="city">City <span class="required">*</span></label>
-      <input type="text" id="city" name="city" required>
+      <label>City <span class="required">*</span></label>
+      <input type="text" name="city" required>
 
-      <label for="state">State <span class="required">*</span></label>
-      <select id="state" name="state" required>
+      <label>State <span class="required">*</span></label>
+      <select name="state" required>
         <option value="">Select state</option>
         <option value="AZ">Arizona</option>
         <option value="CA">California</option>
         <option value="TX">Texas</option>
         <option value="FL">Florida</option>
         <option value="WA">Washington</option>
-        <!-- add full state list later -->
       </select>
 
-      <!-- Category -->
+      <!-- Listing Category -->
       <h2>Listing Category</h2>
-      <p>Select all that apply (multiple selections allowed).</p>
       <div class="checkbox-group">
         <label><input type="checkbox" name="category" value="breeder"> Breeder</label>
         <label><input type="checkbox" name="category" value="service"> Service</label>
@@ -76,18 +73,16 @@
         <label><input type="checkbox" name="animal" value="cattery"> Cattery (Cats)</label>
         <label><input type="checkbox" name="animal" value="aviary"> Aviary (Birds)</label>
         <label><input type="checkbox" name="animal" value="terrarium"> Terrarium (Reptiles, Amphibians, Insects, Arachnids)</label>
+        <label><input type="checkbox" name="animal" value="aquatica"> Aquatica (Fish, Crustaceans, Plants, Amphibious)</label>
       </div>
 
       <!-- Breed / Species -->
       <h2>Breed / Species</h2>
-      <p>Select or type your breed/species. Choose “Other” to type custom entries (requires manual review).</p>
-      <input type="text" id="breed" name="breed" placeholder="e.g. Ball Python, Holland Lop, French Bulldog">
-
-      <label><input type="checkbox" id="allBreeds" name="allBreeds"> All Breeds / Species (manual review required)</label>
+      <input type="text" name="breed" placeholder="e.g. Ball Python, Koi, Labrador Retriever">
+      <label><input type="checkbox" name="allBreeds"> All Breeds / Species (manual review required)</label>
 
       <!-- Services -->
       <h2>Services (if applicable)</h2>
-      <p>Check all that apply.</p>
       <div class="checkbox-group">
         <label><input type="checkbox" name="serviceType" value="reproductive"> Reproductive</label>
         <label><input type="checkbox" name="serviceType" value="veterinary"> Veterinary</label>
@@ -99,18 +94,16 @@
         <label><input type="checkbox" name="serviceType" value="transport"> Transport</label>
         <label><input type="checkbox" name="serviceType" value="boarding"> Pet Sitting / Boarding</label>
         <label><input type="checkbox" name="serviceType" value="yardclean"> Yard Clean-Up</label>
-        <label><input type="checkbox" name="serviceType" value="other"> Other</label>
       </div>
 
       <!-- Network Type -->
       <h2>Network Type</h2>
-      <p>Choose if you host or manage meetups, groups, or online communities.</p>
       <div class="checkbox-group">
         <label><input type="checkbox" name="networkType" value="meetups"> State Meetup Groups</label>
         <label><input type="checkbox" name="networkType" value="clubs"> Clubs / Social Media Networks</label>
       </div>
 
-      <!-- Badges -->
+      <!-- Optional Badges -->
       <h2>Optional Badges</h2>
       <div class="checkbox-group">
         <label><input type="checkbox" name="badge" value="purebred"> Registered Purebred</label>
@@ -119,7 +112,7 @@
         <label><input type="checkbox" name="badge" value="availableNow"> “Available Now” Badge</label>
       </div>
 
-      <!-- Social & Web Links -->
+      <!-- Links -->
       <h2>Links & Socials</h2>
       <input type="url" name="website" placeholder="Website Link (optional)">
       <input type="url" name="youtube" placeholder="YouTube Link (optional)">
@@ -127,7 +120,6 @@
       <input type="url" name="instagram" placeholder="Instagram Link (optional)">
       <input type="url" name="tiktok" placeholder="TikTok Link (optional)">
 
-      <!-- Submit -->
       <button type="submit" class="submit-btn">Submit Listing</button>
     </form>
   </main>
@@ -141,7 +133,7 @@
     document.getElementById('listing-form').addEventListener('submit', function(e) {
       e.preventDefault();
       alert('Thank you! Your listing has been submitted for review.');
-      // Future: Add EmailJS integration here.
+      // EmailJS integration will be added here later.
     });
   </script>
 </body>
