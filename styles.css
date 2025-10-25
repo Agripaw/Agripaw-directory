@@ -366,3 +366,47 @@ footer {
     flex-direction: column;
   }
 }
+/* =====================
+   DIRECTORY BANNERS
+===================== */
+
+.directory-banner {
+  text-align: center;
+  padding: 2em 1em;
+  border-radius: 10px;
+  color: #fff8dc; /* soft gold */
+  font-size: 1.5em;
+  font-weight: 700;
+  text-shadow: 0 0 6px rgba(0,0,0,0.4);
+  margin-bottom: 1.5em;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+/* Individual gradients */
+.stable-banner {
+  background: linear-gradient(90deg, #a38254, #d7b67a);
+}
+
+.hutch-banner {
+  background: linear-gradient(90deg, #c58978, #deb2a0);
+}
+
+.kennel-banner {
+  background: linear-gradient(90deg, #a8573f, #d99282);
+}
+
+.cattery-banner {
+  background: linear-gradient(90deg, #996699, #caa4ca);
+}
+
+.aviary-banner {
+  background: linear-gradient(90deg, #5aa2c7, #9bd3e9);
+}
+
+.terrarium-banner {
+  background: linear-gradient(90deg, #5fa86d, #9cd3a9);
+}
+
+.aquatica-banner {
+  background: linear-gradient(90deg, #3d87b2, #6ec2e5);
+}
