@@ -458,3 +458,72 @@ footer {
     flex-direction: column;
   }
 }
+.alpha-nav {
+  text-align: center;
+  margin: 20px auto;
+  background: #222;
+  padding: 10px;
+  border-radius: 8px;
+  width: fit-content;
+}
+
+.alpha-nav a {
+  color: #ffcc00;
+  font-weight: bold;
+  margin: 0 8px;
+  text-decoration: none;
+}
+
+.alpha-nav a:hover {
+  text-decoration: underline;
+}
+
+.directory-list {
+  width: 90%;
+  margin: auto;
+  padding: 20px;
+}
+
+.directory-list h2 {
+  border-bottom: 2px solid #ffcc00;
+  padding-bottom: 4px;
+  margin-top: 25px;
+  color: #ffcc00;
+}
+
+.directory-list ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.directory-list li {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px;
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.directory-list .business-name {
+  font-weight: bold;
+  color: #fff;
+  margin-right: 8px;
+  text-decoration: none;
+}
+
+.directory-list .business-name:hover {
+  color: #ffcc00;
+}
+
+.directory-list img {
+  width: 22px;
+  height: 22px;
+  vertical-align: middle;
+  transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+.directory-list img:hover {
+  transform: scale(1.1);
+  filter: drop-shadow(0 0 5px gold);
+}
