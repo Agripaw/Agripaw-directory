@@ -1,1 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aquatica Directory | Fish, Crustacean & Aquatic Plant Breeders | AgriPaw</title>
+  <link rel="stylesheet" href="../../styles.css">
+  <script src="../../scripts/listings.js" defer></script>
+</head>
+<body>
+  <!-- Header -->
+  <header class="sticky-header">
+    <div class="header-container">
+      <img src="../../assets/logo/color-logo.png" alt="AgriPaw Logo" class="logo">
+      <nav class="nav-buttons">
+        <a href="../../index.html" class="nav-btn">Home</a>
+        <a href="../../add-listing.html" class="nav-btn">Add Listing</a>
+        <a href="../../contact.html" class="nav-btn">Contact</a>
+      </nav>
+    </div>
+  </header>
 
+  <!-- Main Content -->
+  <main class="directory-page">
+    <h1>Fish, Crustacean & Aquatic Breeder Directory</h1>
+    <p>Explore breeders, aquascapers, and aquatic specialists dedicated to fish, crustaceans, coral, and water plants across the AgriPaw network.</p>
+
+    <!-- Filter Section -->
+    <section class="filters">
+      <h2>Filter Listings</h2>
+      <form id="filter-form">
+        <div class="filter-group">
+          <label>Species Type:</label>
+          <select name="species">
+            <option value="all">All</option>
+            <option value="freshwater">Freshwater Fish</option>
+            <option value="saltwater">Saltwater Fish</option>
+            <option value="crustacean">Crustaceans (Shrimp, Crabs, etc.)</option>
+            <option value="coral">Coral & Reef Life</option>
+            <option value="plant">Aquatic Plants & Moss</option>
+            <option value="amphibious">Amphibious Pets (Axolotls, Newts)</option>
+            <option value="service">Aquarium / Pond Services</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+
+        <div class="filter-group">
+          <label>Listing Type:</label>
+          <select name="listing-type">
+            <option value="all">All</option>
+            <option value="breeder">Breeder</option>
+            <option value="rescue">Rescue</option>
+            <option value="service">Service</option>
+            <option value="network">Network</option>
+          </select>
+        </div>
+
+        <div class="filter-group">
+          <label>Location:</label>
+          <input type="text" name="location" placeholder="Enter city or state">
+        </div>
+
+        <button type="submit" class="filter-btn">Apply Filters</button>
+      </form>
+    </section>
+
+    <!-- Listings Section -->
+    <section id="listings-container" class="listings">
+      <h2>Current Listings</h2>
+
+      <!-- Example Listing -->
+      <div class="listing-card">
+        <img src="../../assets/photos/sample-aquatica.jpg" alt="Blue Tide Aquatics" class="listing-photo">
+        <div class="listing-info">
+          <h3>Blue Tide Aquatics</h3>
+          <p><strong>Location:</strong> Orlando, FL</p>
+          <p><strong>Species:</strong> Freshwater Fish & Shrimp</p>
+          <p><strong>Type:</strong> Breeder & Service Provider</p>
+          <a href="../../premier/bluetideaquatics/index.html" class="listing-link">View Profile</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 AgriPaw | All Rights Reserved</p>
+  </footer>
+</body>
+</html>
