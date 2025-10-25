@@ -1,1 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kennel Directory | Dog Breeders & Services | AgriPaw</title>
+  <link rel="stylesheet" href="../styles.css">
+  <script src="../scripts/listings.js" defer></script>
+</head>
+<body>
+  <header class="sticky-header">
+    <div class="header-container">
+      <img src="../assets/logo/color-logo.png" alt="AgriPaw Logo" class="logo">
+      <nav class="nav-buttons">
+        <a href="../index.html" class="nav-btn">Home</a>
+        <a href="../add-listing.html" class="nav-btn">Add Listing</a>
+        <a href="../contact.html" class="nav-btn">Contact</a>
+      </nav>
+    </div>
+  </header>
 
+  <main class="directory-page">
+    <h1>Dog Breeders & Kennel Directory</h1>
+    <p>Explore reputable dog breeders, kennels, and canine service providers listed on AgriPaw.</p>
+
+    <!-- Filter Section -->
+    <section class="filters">
+      <h2>Filter Listings</h2>
+      <form id="filter-form">
+        <div class="filter-group">
+          <label>Breed Type:</label>
+          <select name="breed">
+            <option value="all">All</option>
+            <option value="labrador">Labrador Retriever</option>
+            <option value="golden">Golden Retriever</option>
+            <option value="bulldog">Bulldog</option>
+            <option value="germanshepherd">German Shepherd</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+
+        <div class="filter-group">
+          <label>Listing Type:</label>
+          <select name="listing-type">
+            <option value="all">All</option>
+            <option value="breeder">Breeder</option>
+            <option value="service">Service</option>
+            <option value="network">Network</option>
+          </select>
+        </div>
+
+        <div class="filter-group">
+          <label>Location:</label>
+          <input type="text" name="location" placeholder="Enter city or state">
+        </div>
+
+        <button type="submit" class="filter-btn">Apply Filters</button>
+      </form>
+    </section>
+
+    <!-- Listings Section -->
+    <section id="listings-container" class="listings">
+      <h2>Current Listings</h2>
+
+      <!-- Example Listing -->
+      <div class="listing-card">
+        <img src="../assets/photos/fowlerhouseoflabs/1.jpg" alt="Fowler House of Labs" class="listing-photo">
+        <div class="listing-info">
+          <h3>Fowler House of Labs</h3>
+          <p><strong>Location:</strong> San Tan Valley, AZ</p>
+          <p><strong>Breed:</strong> Labrador Retriever</p>
+          <p><strong>Type:</strong> Breeder</p>
+          <a href="../premier/fowlerhouseoflabs/index.html" class="listing-link">View Profile</a>
+        </div>
+      </div>
+
+      <!-- Future listings will be auto-generated here -->
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 AgriPaw | All Rights Reserved</p>
+  </footer>
+</body>
+</html>
