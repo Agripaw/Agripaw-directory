@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Thank You – AgriPaw Directory</title>
   <link rel="stylesheet" href="styles.css" />
+
   <style>
     .thank-you {
       text-align: center;
@@ -22,7 +23,7 @@
     .thank-you p {
       color: #4a3b00;
       font-size: 1.1rem;
-      margin-bottom: 30px;
+      margin-bottom: 25px;
       line-height: 1.6;
     }
 
@@ -62,13 +63,36 @@
       100% { text-shadow: 0 0 10px #fff799, 0 0 15px #ff9900; }
     }
 
+    .redirect-msg {
+      margin-top: 30px;
+      color: #705e00;
+      font-size: 0.95rem;
+      font-style: italic;
+    }
+
     .thank-you small {
       display: block;
-      margin-top: 30px;
+      margin-top: 25px;
       color: #6a5a00;
       font-style: italic;
     }
   </style>
+
+  <script>
+    // Countdown + auto redirect
+    let countdown = 10;
+    function updateTimer() {
+      const timer = document.getElementById('countdown');
+      if (countdown > 0) {
+        timer.textContent = countdown;
+        countdown--;
+        setTimeout(updateTimer, 1000);
+      } else {
+        window.location.href = "index.html";
+      }
+    }
+    window.onload = updateTimer;
+  </script>
 </head>
 
 <body>
@@ -105,18 +129,24 @@
   <main>
     <section class="thank-you">
       <h1>✨ Thank You for Submitting Your Listing! ✨</h1>
+
       <p>
         Your submission has been received successfully and is now under review.<br />
         You’ll receive an email confirmation once your listing has been approved and published.
       </p>
       <p>
-        If your listing requires manual verification (for example, multiple animal types or influencer categories), our team will contact you via your listed email.
+        If your listing requires manual verification (for example, multiple animal types or influencer categories),
+        our team will contact you via your listed email.
       </p>
 
       <div class="cta-group">
         <a href="index.html" class="cta-button">🏡 Return to Home</a>
         <a href="add-listing.html" class="cta-button">➕ Add Another Listing</a>
       </div>
+
+      <p class="redirect-msg">
+        You’ll be redirected to the Home page automatically in <span id="countdown">10</span> seconds...
+      </p>
 
       <small>We appreciate your contribution to the AgriPaw community!</small>
     </section>
