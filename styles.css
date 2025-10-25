@@ -2,23 +2,36 @@ body {
   font-family: Arial, sans-serif;
   background-color: #f9f5ec;
   margin: 0;
-  padding: 0;
-  text-align: center;
+  padding: 0 20px; /* adds even left-right buffer */
 }
 
+/* HEADER */
 header {
-  padding: 10px 0;
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.premier-badge img {
+  width: 90px;
+  height: auto;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.premier-badge img:hover {
+  transform: scale(1.05);
 }
 
 .logo {
   width: 100%;
-  max-width: 1200px;
+  max-width: 800px;
   height: auto;
   display: block;
-  margin: 0 auto;
 }
 
-/* NAV BUTTON BAR */
+/* NAV BAR */
 .button-bar {
   display: flex;
   justify-content: flex-start;
@@ -27,10 +40,9 @@ header {
   overflow-x: auto;
   white-space: nowrap;
   gap: 10px;
-  margin: 15px auto;
-  padding: 0 20px;
-  max-width: 1200px;
+  margin: 15px 0;
   scroll-behavior: smooth;
+  padding-right: 10px;
 }
 
 .nav-btn, .group-btn {
@@ -50,23 +62,21 @@ header {
   background-color: #222;
 }
 
-/* Highlight Home and Add Listing */
+/* Highlight Home */
 .primary-btn {
   border: 2px solid #ffcc00;
   box-shadow: 0 0 8px rgba(255, 204, 0, 0.6);
   font-weight: bold;
 }
 
-.primary-btn:hover {
-  box-shadow: 0 0 12px rgba(255, 204, 0, 0.8);
-}
-
-/* Footer */
+/* FOOTER */
 footer {
   background-color: #2a1e14;
   color: #fff;
   padding: 15px;
   font-size: 0.9em;
+  margin-top: 30px;
+  text-align: left;
 }
 
 .footer-link {
@@ -80,17 +90,23 @@ footer {
   text-decoration: underline;
 }
 
-/* Mobile scaling */
+/* MOBILE */
 @media (max-width: 600px) {
-  .logo {
-    width: 95%;
+  header {
+    flex-direction: column;
+    align-items: flex-start;
   }
 
-  .button-bar {
-    gap: 6px;
+  .premier-badge img {
+    width: 70px;
+  }
+
+  .logo {
+    width: 100%;
   }
 
   .nav-btn, .group-btn {
+    font-size: 0.9rem;
     padding: 6px 10px;
   }
 }
