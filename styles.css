@@ -7,7 +7,7 @@ body {
 }
 
 header {
-  padding: 5px 0;
+  padding: 10px 0;
 }
 
 .logo {
@@ -28,7 +28,7 @@ header {
   white-space: nowrap;
   gap: 10px;
   margin: 10px auto;
-  padding: 0 5px;
+  padding: 0 10px;
   max-width: 1000px;
   scroll-behavior: smooth;
 }
