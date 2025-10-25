@@ -1,113 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AgriPaw | Breeder, Service & Network Directory</title>
-  <link rel="stylesheet" href="styles.css">
-  <style>
-    /* Hover subtitle style */
-    .group-btn {
-      position: relative;
-      overflow: hidden;
-    }
-
-    .group-subtitle {
-      position: absolute;
-      bottom: 10px;
-      left: 0;
-      right: 0;
-      background: rgba(0, 0, 0, 0.7);
-      color: #ffcc00;
-      font-size: 0.8em;
-      padding: 5px 8px;
-      opacity: 0;
-      transition: opacity 0.3s ease;
-      border-bottom-left-radius: 8px;
-      border-bottom-right-radius: 8px;
-    }
-
-    .group-btn:hover .group-subtitle {
-      opacity: 1;
-    }
-  </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Agripaw | Breeder & Service Directory</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 
 <body>
-  <!-- Header -->
-  <header class="sticky-header">
-    <div class="header-container">
-      <img src="assets/logo/color-logo.png" alt="AgriPaw Logo" class="logo">
-      <nav class="nav-buttons">
-        <a href="index.html" class="nav-btn active">Home</a>
-        <a href="add-listing.html" class="nav-btn">Add Listing</a>
-        <a href="contact.html" class="nav-btn">Contact</a>
-      </nav>
-    </div>
+  <!-- HEADER -->
+  <header class="main-header">
+    <img src="assets/logo/color-logo.png" alt="Agripaw Logo" class="main-logo" />
+    <img src="assets/logo/premier-badge.png" alt="Premier Badge" class="premier-header-badge" />
+    <nav class="main-nav">
+      <a href="index.html" class="active">Home</a>
+      <a href="add-listing.html">Add Listing</a>
+      <a href="contact.html">Contact</a>
+    </nav>
   </header>
 
-  <!-- Main Section -->
-  <main class="home-page">
-    <section class="intro">
-      <h1>Welcome to AgriPaw</h1>
-      <p>AgriPaw is a free directory connecting breeders, service providers, and community networks across all animal types — from livestock to exotics, aquatics, and household companions.</p>
-      <a href="add-listing.html" class="cta-btn">Click Here to List Your Business for FREE</a>
-    </section>
+  <!-- INTRO SECTION -->
+  <section class="intro-section">
+    <h1>Welcome to Agripaw</h1>
+    <p>The trusted network connecting breeders, service providers, and animal enthusiasts across every species.</p>
+    <a href="add-listing.html" class="cta-button">Click here to list your business for FREE</a>
+  </section>
 
-    <!-- Directory Buttons -->
-    <section class="listing-groups">
-      <h2>Choose a Listing Group</h2>
-      <div class="group-buttons">
+  <!-- DIRECTORY BUTTONS -->
+  <section class="directory-buttons">
+    <h2>Explore Our Directories</h2>
+    <div class="button-row">
+      <a href="directory/stable/index.html" class="dir-btn">🐴 Stable</a>
+      <a href="directory/hutch/index.html" class="dir-btn">🐇 Hutch</a>
+      <a href="directory/kennel/index.html" class="dir-btn">🐶 Kennel</a>
+      <a href="directory/cattery/index.html" class="dir-btn">🐈 Cattery</a>
+      <a href="directory/aviary/index.html" class="dir-btn">🕊️ Aviary</a>
+      <a href="directory/terrarium/index.html" class="dir-btn">🦎 Terrarium</a>
+      <a href="directory/aquatica/index.html" class="dir-btn">🐠 Aquatica</a>
+    </div>
+  </section>
 
-        <a href="directory/stable/index.html" class="group-btn">
-          <img src="assets/icons/stable-icon.png" alt="Stable Icon">
-          <span>Stable</span>
-          <div class="group-subtitle">Livestock & Equine Breeders, Services & Networks</div>
-        </a>
-
-        <a href="directory/hutch/index.html" class="group-btn">
-          <img src="assets/icons/hutch-icon.png" alt="Hutch Icon">
-          <span>Hutch</span>
-          <div class="group-subtitle">Rabbit, Guinea Pig & Small Mammal Listings</div>
-        </a>
-
-        <a href="directory/kennel/index.html" class="group-btn">
-          <img src="assets/icons/kennel-icon.png" alt="Kennel Icon">
-          <span>Kennel</span>
-          <div class="group-subtitle">Dog Breeders, Trainers, Groomers & Networks</div>
-        </a>
-
-        <a href="directory/cattery/index.html" class="group-btn">
-          <img src="assets/icons/cattery-icon.png" alt="Cattery Icon">
-          <span>Cattery</span>
-          <div class="group-subtitle">Cat Breeders, Groomers & Feline Networks</div>
-        </a>
-
-        <a href="directory/aviary/index.html" class="group-btn">
-          <img src="assets/icons/aviary-icon.png" alt="Aviary Icon">
-          <span>Aviary</span>
-          <div class="group-subtitle">Bird Breeders, Avian Services & Clubs</div>
-        </a>
-
-        <a href="directory/terrarium/index.html" class="group-btn">
-          <img src="assets/icons/terrarium-icon.png" alt="Terrarium Icon">
-          <span>Terrarium</span>
-          <div class="group-subtitle">Reptile, Amphibian, Insect & Arachnid Specialists</div>
-        </a>
-
-        <a href="directory/aquatica/index.html" class="group-btn">
-          <img src="assets/icons/aquatica-icon.png" alt="Aquatica Icon">
-          <span>Aquatica</span>
-          <div class="group-subtitle">Fish, Crustacean & Aquatic Plant Breeders & Services</div>
-        </a>
-
-      </div>
-    </section>
-  </main>
-
-  <!-- Footer -->
+  <!-- FOOTER -->
   <footer>
-    <p>© 2025 AgriPaw | All Rights Reserved</p>
+    <p>© 2025 Agripaw. All rights reserved.</p>
   </footer>
 </body>
 </html>
