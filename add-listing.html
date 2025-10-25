@@ -39,7 +39,7 @@
       Required fields are marked with a <span class="required">*</span>.
     </p>
 
-    <form class="listing-form">
+    <form class="listing-form" action="thank-you.html" method="post">
       <label>Business Name <span class="required">*</span></label>
       <input type="text" name="businessName" required />
 
@@ -58,7 +58,6 @@
       <label>State <span class="required">*</span></label>
       <input type="text" name="state" placeholder="e.g., AZ" required />
 
-      <!-- Privacy options -->
       <div class="privacy-options">
         <label><input type="checkbox" name="hideName" /> Hide my contact name from public listing</label><br />
         <label><input type="checkbox" name="hideEmail" /> Hide my email from public listing</label>
@@ -123,10 +122,18 @@
       </div>
 
       <button type="submit" class="cta-button">✨ Submit My Listing ✨</button>
+
+      <div class="disclaimer-box">
+        <p>
+          <strong>Disclaimer:</strong> All submissions are subject to review prior to publication.
+          AgriPaw reserves the right to correct formatting, adjust searchable categories,
+          or decline listings that contain sales language, duplicate content, or violate our
+          directory guidelines. Approval does not imply endorsement.
+        </p>
+      </div>
     </form>
   </main>
 
-  <!-- Footer -->
   <footer class="footer">
     <p>
       <a href="index.html" class="footer-link">Home</a> |
