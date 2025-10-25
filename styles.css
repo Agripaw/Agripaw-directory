@@ -2,22 +2,48 @@ body {
   font-family: Arial, sans-serif;
   background-color: #f9f5ec;
   margin: 0;
-  padding: 0 20px; /* adds even left-right buffer */
+  padding: 0;
 }
 
-/* HEADER */
-header {
+/* STICKY HEADER */
+.sticky-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #f9f5ec;
+  z-index: 999;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  padding: 15px 20px;
+  transition: all 0.3s ease;
+}
+
+/* SHRUNK HEADER STATE */
+.sticky-header.shrink {
+  padding: 6px 20px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.25);
+}
+
+.sticky-header.shrink .logo {
+  max-width: 500px;
+}
+
+.sticky-header.shrink .premier-badge img {
+  width: 60px;
+}
+
+/* HEADER CONTENT */
+.header-left {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   gap: 15px;
-  margin-top: 10px;
 }
 
 .premier-badge img {
   width: 90px;
   height: auto;
   cursor: pointer;
-  transition: transform 0.2s ease;
+  transition: transform 0.2s ease, width 0.3s ease;
 }
 
 .premier-badge img:hover {
@@ -28,7 +54,7 @@ header {
   width: 100%;
   max-width: 800px;
   height: auto;
-  display: block;
+  transition: max-width 0.3s ease;
 }
 
 /* NAV BAR */
@@ -40,9 +66,9 @@ header {
   overflow-x: auto;
   white-space: nowrap;
   gap: 10px;
-  margin: 15px 0;
+  margin-top: 10px;
   scroll-behavior: smooth;
-  padding-right: 10px;
+  padding-bottom: 8px;
 }
 
 .nav-btn, .group-btn {
@@ -73,9 +99,9 @@ header {
 footer {
   background-color: #2a1e14;
   color: #fff;
-  padding: 15px;
+  padding: 15px 20px;
   font-size: 0.9em;
-  margin-top: 30px;
+  margin-top: 50px;
   text-align: left;
 }
 
@@ -92,7 +118,7 @@ footer {
 
 /* MOBILE */
 @media (max-width: 600px) {
-  header {
+  .header-left {
     flex-direction: column;
     align-items: flex-start;
   }
@@ -102,7 +128,7 @@ footer {
   }
 
   .logo {
-    width: 100%;
+    width: 90%;
   }
 
   .nav-btn, .group-btn {
