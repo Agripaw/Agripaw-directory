@@ -3,46 +3,60 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Thank You - AgriPaw Directory</title>
+  <title>Thank You - AgriPaw Listing Submission</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 
 <body>
-  <header class="header">
+  <!-- HEADER -->
+  <header>
     <div class="header-container">
-      <div class="logo-section">
+      <div class="logo-container">
         <img src="assets/logo/color-logo.png" alt="AgriPaw Logo" class="main-logo" />
       </div>
+
       <div class="badge-section">
-        <img src="assets/logo/premier-badge.png" alt="Premier Badge" class="premier-badge" />
+        <a href="add-listing.html" title="Upgrade to Premier Listing">
+          <img src="assets/logo/premier-badge.png" alt="Premier Badge - Boost Your Visibility" class="premier-badge" />
+        </a>
       </div>
     </div>
+
+    <!-- NAVIGATION -->
+    <nav class="main-nav">
+      <ul>
+        <li><a href="index.html">🏠 Home</a></li>
+        <li><a href="directory/stable/index.html">🐴 Stable</a></li>
+        <li><a href="directory/hutch/index.html">🐇 Hutch</a></li>
+        <li><a href="directory/kennel/index.html">🐶 Kennel</a></li>
+        <li><a href="directory/cattery/index.html">🐱 Cattery</a></li>
+        <li><a href="directory/aviary/index.html">🕊️ Aviary</a></li>
+        <li><a href="directory/terrarium/index.html">🦎 Terrarium</a></li>
+        <li><a href="directory/aquatica/index.html">🐠 Aquatica</a></li>
+      </ul>
+    </nav>
   </header>
 
-  <main class="thank-you-page">
-    <div class="thank-you-card">
-      <h1>🎉 Thank You for Submitting Your Listing!</h1>
+  <!-- MAIN CONTENT -->
+  <main>
+    <section class="thank-you-section">
+      <h1>🎉 Thank You for Your Submission!</h1>
       <p>
-        Your submission has been received and entered into the <strong>AgriPaw Directory</strong>.
-        Please allow 1–2 business days for review. If additional information or edits are needed,
-        you’ll receive an email notification from our review team.
+        Your listing has been received and will appear in the AgriPaw Directory once processed.<br />
+        If your submission requires review, you’ll receive an email update when it’s approved or if corrections are needed.
       </p>
-      <p>
-        Once approved, your listing will become visible in the appropriate directory category.
-        In the meantime, feel free to explore and connect with others using the link below.
-      </p>
-      <a href="index.html" class="cta-button">🏠 Return Home & Explore the Directory</a>
-    </div>
+
+      <a href="index.html" class="cta-button">🏠 Return to Home to Explore the Directory</a>
+    </section>
   </main>
 
-  <footer class="footer">
+  <!-- FOOTER -->
+  <footer>
     <p>
-      <a href="add-listing.html" class="footer-link">Add Listing</a> |
-      <a href="contact.html" class="footer-link">Contact</a>
+      <a href="add-listing.html">Add Listing</a> |
+      <a href="contact.html">Contact</a>
     </p>
-    <p class="copyright">
-      © 2025 AgriPaw Directory. All Rights Reserved.
-    </p>
+    <p>© 2025 AgriPaw Directory. All Rights Reserved.</p>
   </footer>
 </body>
 </html>
