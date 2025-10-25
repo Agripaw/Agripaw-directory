@@ -1,243 +1,226 @@
-/* GLOBAL SETTINGS */
+/* ===== AGRIPAW BRAND THEME ===== */
+:root {
+  --gold: #d4af37;
+  --deep-red: #b30000;
+  --dark-red: #800000;
+  --cream: #fff8e6;
+  --brown: #2c1a00;
+  --shadow: rgba(0,0,0,0.15);
+}
+
+/* ===== BASE ===== */
 body {
-  font-family: Arial, sans-serif;
-  background-color: #f9f5ec;
+  font-family: "Arial", sans-serif;
+  background-color: var(--cream);
+  color: #222;
   margin: 0;
   padding: 0;
-  padding-bottom: 70px;
-  box-sizing: border-box;
-}
-
-/* STICKY HEADER */
-.sticky-header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background-color: #f9f5ec;
-  z-index: 999;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
-  transition: all 0.3s ease;
-}
-
-/* HEADER CONTAINER */
-.header-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  max-width: 100%;
-  padding: 15px 4%;
-  background: linear-gradient(
-    90deg,
-    rgba(230, 184, 0, 0.08) 0%,
-    rgba(230, 184, 0, 0.15) 25%,
-    rgba(249, 245, 236, 1) 60%,
-    rgba(230, 184, 0, 0.12) 100%
-  );
-  border-bottom: 2px solid rgba(230, 184, 0, 0.25);
-  box-sizing: border-box;
-}
-
-/* LOGO */
-.logo {
-  width: 45%;
-  height: auto;
-  min-width: 220px;
-  max-width: 600px;
-  transition: all 0.3s ease;
-}
-
-/* PREMIER BADGE */
-.premier-badge img {
-  width: 12vw;
-  min-width: 70px;
-  max-width: 120px;
-  height: auto;
-  border-radius: 50%;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  animation: glowPulse 3s infinite ease-in-out;
-  box-shadow: 0 0 12px rgba(230, 184, 0, 0.6);
-}
-
-@keyframes glowPulse {
-  0%, 100% {
-    box-shadow: 0 0 10px rgba(230, 184, 0, 0.5);
-    transform: translateY(0);
-  }
-  50% {
-    box-shadow: 0 0 20px rgba(230, 184, 0, 0.9);
-    transform: translateY(-2px);
-  }
-}
-
-/* NAV BAR */
-.button-bar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: nowrap;
-  width: 100%;
-  gap: 10px;
-  margin: 5px 0;
-  padding: 0 2%;
-  background-color: #f9f5ec;
-  box-sizing: border-box;
-}
-
-/* NAV BUTTONS */
-.nav-btn, .group-btn {
-  flex: 1;
-  text-align: center;
-  background-color: #000;
-  color: #e6b800;
-  text-decoration: none;
-  padding: 10px 0;
-  border-radius: 8px;
-  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
-  transition: all 0.2s ease;
-  font-size: clamp(12px, 1.4vw, 16px);
-  min-width: 90px;
-}
-
-.nav-btn:hover, .group-btn:hover {
-  transform: scale(1.05);
-  background-color: #222;
-}
-
-/* Highlight Home */
-.primary-btn {
-  border: 2px solid #e6b800;
-  box-shadow: 0 0 8px rgba(230, 184, 0, 0.6);
-  font-weight: bold;
-}
-
-/* MAIN CONTENT SPACING */
-.content {
-  text-align: center;
-  margin: 260px auto 100px; /* Prevents overlap with sticky header */
-  max-width: 800px;
-  padding: 0 20px;
-}
-
-.content h1 {
-  color: #000;
-  font-size: clamp(24px, 4vw, 40px);
-  margin-bottom: 12px;
-}
-
-.content p {
-  color: #333;
-  font-size: clamp(14px, 1.6vw, 18px);
   line-height: 1.5;
 }
 
-/* STICKY FOOTER */
-.footer {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  background-color: #2b1e0f;
+header {
   text-align: center;
-  padding: 14px 0 12px;
-  font-family: 'Poppins', sans-serif;
-  border-top: 2px solid rgba(230, 184, 0, 0.25);
-  z-index: 998;
-  box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.2);
+  background: #fff;
+  border-bottom: 2px solid var(--gold);
+  padding: 15px 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
-/* FOOTER LINKS */
-.footer-links {
-  margin: 0;
-  font-size: clamp(14px, 1.4vw, 16px);
-  color: #e6b800;
-  font-weight: 500;
+header .logo {
+  max-height: 90px;
 }
 
-.footer-link {
-  color: #e6b800;
-  text-decoration: none;
-  margin: 0 8px;
-  transition: color 0.3s ease, transform 0.2s ease;
-}
-
-.footer-link:hover {
-  color: #fff7cc;
-  transform: scale(1.05);
-}
-
-.divider {
-  color: rgba(230, 184, 0, 0.4);
-  margin: 0 6px;
-}
-
-.copyright {
-  margin: 6px 0 0;
-  font-size: clamp(12px, 1.2vw, 14px);
-  color: rgba(230, 184, 0, 0.6);
-  letter-spacing: 0.3px;
-}
-
-/* MOBILE STYLES */
-@media (max-width: 600px) {
-  .header-container {
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 5%;
-  }
-
-  .logo {
-    width: 60%;
-    min-width: 180px;
-  }
-
-  .premier-badge img {
-    width: 18vw;
-    min-width: 60px;
-  }
-
-  .button-bar {
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 8px;
-  }
-
-  .nav-btn, .group-btn {
-    flex: 1 1 45%;
-    font-size: 0.9rem;
-  }
-
-  .content {
-    margin: 240px 15px 100px;
-  }
-
-  .footer {
-    padding: 10px 0;
-  }
-}
-.cta-container {
+h1 {
   text-align: center;
-  margin-top: 30px;
+  color: var(--brown);
+  margin: 20px 0 10px;
 }
 
-.cta-button {
-  display: inline-block;
-  background-color: #b30000; /* deep red base */
-  color: #fff;
+p {
+  text-align: center;
+  margin: 5px 0;
+}
+
+/* ===== FORM CONTAINER ===== */
+.form-container {
+  max-width: 750px;
+  margin: 25px auto 50px;
+  background: #fff;
+  padding: 30px 35px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px var(--shadow);
+}
+
+label {
+  display: block;
   font-weight: bold;
-  padding: 14px 28px;
-  border-radius: 8px;
-  text-decoration: none;
-  box-shadow: 0 0 15px 3px gold;
-  transition: all 0.3s ease;
-  font-size: 1.1em;
+  color: var(--brown);
+  margin-top: 15px;
 }
 
-.cta-button:hover {
-  background-color: #800000; /* darkens red on hover */
-  box-shadow: 0 0 25px 5px #d4af37; /* bright gold glow */
-  transform: scale(1.03);
+input[type="text"],
+input[type="email"],
+input[type="url"],
+select {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1em;
+  box-sizing: border-box;
+}
+
+input:focus {
+  border-color: var(--gold);
+  outline: none;
+  box-shadow: 0 0 4px var(--gold);
+}
+
+/* ===== DROPDOWN CHECKBOX STYLES ===== */
+.dropdown {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
+
+.dropbtn {
+  width: 100%;
+  background-color: #fff;
+  color: #333;
+  padding: 10px;
+  font-size: 1em;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  cursor: pointer;
+  text-align: left;
+  transition: 0.3s;
+}
+
+.dropbtn:hover {
+  border-color: var(--gold);
+  box-shadow: 0 0 6px var(--gold);
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #fff;
+  width: 100%;
+  max-height: 250px;
+  overflow-y: auto;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  margin-top: 3px;
+  box-shadow: 0 2px 10px var(--shadow);
+  z-index: 10;
+  padding: 10px 0;
+}
+
+.dropdown-content label {
+  display: block;
+  padding: 6px 12px;
+  color: #333;
+  cursor: pointer;
+}
+
+.dropdown-content label:hover {
+  background-color: #f7f4ea;
+}
+
+.dropdown.open .dropdown-content {
+  display: block;
+}
+
+/* ===== CHECKBOX GROUP ===== */
+.checkbox-group label {
+  display: block;
+  margin: 6px 0;
+  font-weight: normal;
+}
+
+/* ===== PRIVACY + NOTES ===== */
+.privacy-preferences {
+  background: var(--cream);
+  border: 1px solid var(--gold);
+  border-radius: 6px;
+  padding: 10px 14px;
+  margin-top: 8px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.05);
+}
+
+.note {
+  font-size: 0.9em;
+  color: #5a4b2c;
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+
+/* ===== BUTTONS ===== */
+.submit-btn {
+  display: block;
+  width: 100%;
+  background-color: var(--deep-red);
+  color: #fff;
+  text-align: center;
+  padding: 14px 25px;
+  margin: 25px 0 10px;
+  border-radius: 8px;
+  font-size: 1.1em;
+  font-weight: bold;
+  border: none;
+  box-shadow: 0 0 15px 3px var(--gold);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.submit-btn:hover {
+  background-color: var(--dark-red);
+  box-shadow: 0 0 25px 5px var(--gold);
+  transform: scale(1.02);
+}
+
+/* ===== REVIEW MESSAGE ===== */
+.review-msg {
+  background: #fff8e6;
+  color: var(--deep-red);
+  border: 1px solid var(--gold);
+  border-radius: 6px;
+  padding: 10px;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 20px;
+  box-shadow: 0 0 8px rgba(212,175,55,0.2);
+}
+
+.hidden {
+  display: none;
+}
+
+/* ===== FOOTER ===== */
+.footer {
+  background: var(--brown);
+  color: var(--gold);
+  text-align: center;
+  padding: 15px;
+  font-size: 0.95em;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 600px) {
+  .form-container {
+    padding: 20px;
+  }
+
+  .dropbtn {
+    font-size: 0.95em;
+  }
+
+  input[type="text"],
+  input[type="email"],
+  input[type="url"] {
+    font-size: 0.95em;
+  }
 }
