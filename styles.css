@@ -27,9 +27,9 @@ header {
   overflow-x: auto;
   white-space: nowrap;
   gap: 10px;
-  margin: 10px auto;
+  margin: 15px auto;
   padding: 0 10px;
-  max-width: 1000px;
+  max-width: 1200px;
   scroll-behavior: smooth;
 }
 
