@@ -1,56 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Agripaw | Breeder & Service Directory</title>
-  <link rel="stylesheet" href="styles.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AgriPaw Directory</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
-  <!-- HEADER -->
+  <!-- =====================
+       HEADER
+  ====================== -->
   <header class="main-header">
-    <img src="assets/logo/color-logo.png" alt="Agripaw Logo" class="main-logo" />
-    <img src="assets/logo/premier-badge.png" alt="Premier Badge" class="premier-header-badge" />
+    <img src="assets/logo/color-logo.png" alt="AgriPaw Logo" class="main-logo">
+    <a href="#" title="View Premier Listings">
+      <img src="assets/icons/icon-premier.png" alt="Premier Badge" class="premier-header-badge">
+    </a>
   </header>
 
-  <!-- DIRECTORY BUTTONS (includes HOME) -->
-  <section class="directory-buttons">
+  <!-- =====================
+       NAVIGATION ROW
+  ====================== -->
+  <nav class="directory-buttons">
     <div class="button-row">
-      <a href="index.html" class="dir-btn active">🏠 Home</a>
-      <a href="directory/stable/index.html" class="dir-btn">🐴 Stable</a>
+      <a href="index.html" class="dir-btn">🏠 Home</a>
+      <a href="directory/stable/index.html" class="dir-btn">🐎 Stable</a>
       <a href="directory/hutch/index.html" class="dir-btn">🐇 Hutch</a>
       <a href="directory/kennel/index.html" class="dir-btn">🐶 Kennel</a>
-      <a href="directory/cattery/index.html" class="dir-btn">🐈 Cattery</a>
+      <a href="directory/cattery/index.html" class="dir-btn">🐱 Cattery</a>
       <a href="directory/aviary/index.html" class="dir-btn">🕊️ Aviary</a>
       <a href="directory/terrarium/index.html" class="dir-btn">🦎 Terrarium</a>
       <a href="directory/aquatica/index.html" class="dir-btn">🐠 Aquatica</a>
     </div>
-  </section>
+  </nav>
 
-  <!-- INTRO SECTION -->
-  <section class="intro-section">
-    <h1>Welcome to Agripaw</h1>
-    <p>The trusted network connecting breeders, service providers, and animal enthusiasts across every species.</p>
+  <!-- =====================
+       MAIN CONTENT
+  ====================== -->
+  <main>
+    <h1>Welcome to AgriPaw</h1>
+    <p>
+      AgriPaw is a free directory connecting breeders, service providers, and community networks
+      across all animal types — from livestock to exotics, aquatics, and household companions.
+    </p>
 
-    <a href="add-listing.html" class="cta-button">Click here to list your business for FREE</a>
-  </section>
+    <a href="add-listing.html" class="cta-btn">
+      Click Here to List Your Business for FREE!
+    </a>
 
-  <!-- FEATURED PREMIER PLACEHOLDER -->
-  <section class="featured-premier">
-    <h2>Featured Premier Listings</h2>
-    <div class="premier-banner-grid">
-      <p class="placeholder">Your Premier Banner Could Be Here!</p>
-    </div>
-  </section>
+    <section class="directory-grid">
+      <div class="dir-box">
+        <a href="directory/stable/index.html">
+          <p>🐎 Stable</p>
+        </a>
+      </div>
+      <div class="dir-box">
+        <a href="directory/hutch/index.html">
+          <p>🐇 Hutch</p>
+        </a>
+      </div>
+      <div class="dir-box">
+        <a href="directory/kennel/index.html">
+          <p>🐶 Kennel</p>
+        </a>
+      </div>
+      <div class="dir-box">
+        <a href="directory/cattery/index.html">
+          <p>🐱 Cattery</p>
+        </a>
+      </div>
+      <div class="dir-box">
+        <a href="directory/aviary/index.html">
+          <p>🕊️ Aviary</p>
+        </a>
+      </div>
+      <div class="dir-box">
+        <a href="directory/terrarium/index.html">
+          <p>🦎 Terrarium</p>
+        </a>
+      </div>
+      <div class="dir-box">
+        <a href="directory/aquatica/index.html">
+          <p>🐠 Aquatica</p>
+        </a>
+      </div>
+    </section>
+  </main>
 
-  <!-- FOOTER -->
+  <!-- =====================
+       FOOTER
+  ====================== -->
   <footer>
     <div class="footer-links">
-      <a href="add-listing.html" class="footer-link">📝 Add Listing</a> |
-      <a href="contact.html" class="footer-link">📬 Contact</a>
+      <a href="add-listing.html" class="footer-link">Add Your Business</a> |
+      <a href="contact.html" class="footer-link">Contact Us</a>
     </div>
-    <p class="copyright">© 2025 Agripaw. All rights reserved.</p>
+    <div class="copyright">
+      © 2025 AgriPaw | All Rights Reserved
+    </div>
   </footer>
 </body>
 </html>
