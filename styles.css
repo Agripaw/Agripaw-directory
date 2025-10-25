@@ -1,200 +1,247 @@
-/* ==============================
-   GLOBAL STYLES
-============================== */
+/* =====================================
+   AGRIPAW DIRECTORY STYLES
+   Classic Warm Theme with Gold Glow
+   ===================================== */
+
+/* General Reset */
 body {
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #fff9f3;
-  color: #2b2b2b;
   margin: 0;
-  padding: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #fdf8ef;
+  color: #2b2b2b;
   text-align: center;
 }
 
-/* ==============================
-   HEADER
-============================== */
-.main-header {
-  position: sticky;
-  top: 0;
-  background-color: #000;
+/* ===============================
+   HEADER SECTION
+   =============================== */
+.header {
+  background-color: #fdf8ef;
+  padding-top: 15px;
+  border-bottom: 2px solid #c8a44d;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.header-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 20px;
-  z-index: 1000;
-  flex-wrap: nowrap;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 15px;
 }
 
+/* Logo */
 .main-logo {
-  height: 70px;
-  width: auto;
+  width: 90%;
+  max-width: 420px;
+  height: auto;
 }
 
-.premier-header-badge {
-  height: 70px;
-  width: auto;
-}
-
-/* ==============================
-   NAVIGATION BUTTONS
-============================== */
-.directory-buttons {
-  background-color: #111;
-  padding: 8px 0;
-}
-
-.button-row {
-  display: flex;
-  flex-wrap: nowrap;
-  justify-content: center;
-  align-items: center;
-  overflow-x: auto;
-  scrollbar-width: none;
-  gap: 10px;
-  padding: 5px 10px;
-}
-
-.button-row::-webkit-scrollbar {
-  display: none;
-}
-
-.dir-btn {
-  background-color: #a00000;
-  color: white;
-  border: none;
-  padding: 10px 15px;
-  border-radius: 6px;
-  text-decoration: none;
-  font-weight: 600;
-  transition: all 0.3s ease;
-  flex-shrink: 1;
-}
-
-.dir-btn:hover {
-  background-color: gold;
-  color: black;
-  box-shadow: 0px 0px 10px gold;
-}
-
-/* ==============================
-   MAIN CONTENT
-============================== */
-h1, h2, h3 {
-  font-weight: 700;
-  color: #1c1c1c;
-}
-
-p {
-  color: #3a3a3a;
-  margin: 10px auto;
-  max-width: 700px;
-  line-height: 1.6;
-}
-
-button, .cta-btn {
-  background-color: #a00000;
-  color: white;
-  border: none;
-  padding: 12px 25px;
-  border-radius: 6px;
-  font-weight: 700;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-button:hover, .cta-btn:hover {
-  background-color: gold;
-  color: #111;
-  box-shadow: 0px 0px 10px gold;
-}
-
-/* ==============================
-   DIRECTORY BUTTON GRID
-============================== */
-.directory-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-  gap: 15px;
-  justify-items: center;
-  padding: 30px 20px;
-}
-
-.dir-box {
-  background-color: #fff;
-  border-radius: 10px;
-  box-shadow: 0px 3px 6px rgba(0,0,0,0.1);
+/* Premier Badge */
+.premier-badge {
   width: 140px;
-  height: 130px;
-  text-align: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  padding: 15px;
+  height: auto;
+  margin-right: 20px;
 }
 
-.dir-box:hover {
-  transform: translateY(-5px);
-  box-shadow: 0px 5px 12px rgba(0,0,0,0.2);
-}
-
-.dir-box img {
-  height: 50px;
-  width: auto;
-}
-
-.dir-box p {
-  margin-top: 8px;
-  font-weight: 600;
-}
-
-/* ==============================
-   FOOTER
-============================== */
-footer {
+/* ===============================
+   NAVIGATION
+   =============================== */
+.main-nav {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
   background-color: #000;
-  color: white;
-  padding: 25px 10px;
-  font-size: 14px;
+  padding: 10px 0;
+  border-top: 1px solid #c8a44d;
+  border-bottom: 1px solid #c8a44d;
 }
 
-.footer-links {
-  margin-bottom: 10px;
-}
-
-.footer-link {
-  color: gold;
-  text-decoration: none;
+.nav-btn {
+  background-color: #000;
+  color: #fff;
+  border: 2px solid #c8a44d;
+  border-radius: 8px;
+  margin: 5px;
+  padding: 8px 16px;
   font-weight: 600;
+  font-size: 16px;
+  text-decoration: none;
+  box-shadow: 0 0 10px rgba(255, 215, 0, 0.2);
+  transition: all 0.3s ease;
 }
 
-.footer-link:hover {
+.nav-btn:hover {
+  background-color: #111;
+  box-shadow: 0 0 15px #ffd700, 0 0 30px #ffcc00;
+  color: #ffd700;
+}
+
+.nav-btn.active {
+  color: #ffd700;
+  box-shadow: 0 0 10px #ffd700;
+}
+
+/* ===============================
+   INTRO SECTION
+   =============================== */
+.intro {
+  padding: 40px 20px 30px;
+  max-width: 850px;
+  margin: 0 auto;
+}
+
+.intro h1 {
+  font-size: 2.4em;
+  color: #3c2f15;
+  margin-bottom: 15px;
+}
+
+.intro p {
+  font-size: 1.1em;
+  color: #4a3d28;
+  line-height: 1.6;
+  margin-bottom: 25px;
+}
+
+/* ===============================
+   CTA BUTTON (Red with Glow)
+   =============================== */
+.cta-button {
+  display: inline-block;
+  background: linear-gradient(180deg, #e60000 0%, #b00000 100%);
+  color: #fff;
+  font-weight: bold;
+  font-size: 1.2em;
+  text-decoration: none;
+  border-radius: 8px;
+  padding: 12px 28px;
+  border: 2px solid #ffcc00;
+  box-shadow: 0 0 20px #ffcc00;
+  transition: all 0.3s ease-in-out;
+  animation: glowPulse 2s infinite alternate;
+}
+
+.cta-button:hover {
+  background: linear-gradient(180deg, #b00000 0%, #7a0000 100%);
+  color: #ffd700;
+  box-shadow: 0 0 25px #ffd700, 0 0 50px #ff9900;
+  transform: scale(1.03);
+}
+
+@keyframes glowPulse {
+  0% {
+    box-shadow: 0 0 10px #ffcc00, 0 0 20px #ffcc00;
+  }
+  100% {
+    box-shadow: 0 0 25px #ffd700, 0 0 50px #ff9900;
+  }
+}
+
+/* ===============================
+   LISTING GROUPS
+   =============================== */
+.listing-groups {
+  background-color: #fffaf1;
+  padding: 30px 20px 50px;
+  border-top: 2px solid #c8a44d;
+  border-bottom: 2px solid #c8a44d;
+}
+
+.listing-groups h2 {
+  font-size: 1.8em;
+  color: #3c2f15;
+  margin-bottom: 20px;
+}
+
+.group-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+}
+
+.group-btn {
+  background-color: #000;
+  color: #fff;
+  border: 2px solid #c8a44d;
+  border-radius: 10px;
+  padding: 10px 20px;
+  font-weight: 600;
+  font-size: 16px;
+  text-decoration: none;
+  box-shadow: 0 0 10px rgba(255, 215, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+.group-btn:hover {
+  background-color: #111;
+  color: #ffd700;
+  box-shadow: 0 0 15px #ffd700, 0 0 25px #ffcc00;
+}
+
+/* ===============================
+   FOOTER
+   =============================== */
+.footer {
+  background-color: #000;
+  color: #fff;
+  padding: 20px 10px;
+  font-size: 0.95em;
+  border-top: 1px solid #c8a44d;
+}
+
+.footer a {
+  color: #ffd700;
+  text-decoration: none;
+  font-weight: bold;
+  margin: 0 8px;
+}
+
+.footer a:hover {
   text-decoration: underline;
-  color: #ffcc00;
 }
 
 .copyright {
-  color: #bbb;
-  font-size: 13px;
+  color: #ccc;
+  font-size: 0.9em;
   margin-top: 8px;
 }
 
-/* ==============================
-   RESPONSIVE
-============================== */
+/* ===============================
+   RESPONSIVE DESIGN
+   =============================== */
 @media (max-width: 768px) {
-  .main-logo, .premier-header-badge {
-    height: 55px;
+  .main-logo {
+    max-width: 300px;
   }
 
-  .dir-btn {
-    padding: 8px 10px;
+  .premier-badge {
+    width: 100px;
+    margin-right: 10px;
+  }
+
+  .nav-btn {
     font-size: 14px;
+    padding: 7px 10px;
   }
 
-  .dir-box {
-    width: 120px;
-    height: 115px;
+  .cta-button {
+    font-size: 1em;
+    padding: 10px 22px;
+  }
+}
+
+@media (max-width: 480px) {
+  .nav-btn {
+    font-size: 13px;
+    padding: 6px 8px;
+    margin: 3px;
   }
 
-  .directory-grid {
-    padding: 20px;
+  .group-btn {
+    font-size: 14px;
+    padding: 8px 15px;
   }
 }
