@@ -1,78 +1,80 @@
 body {
-  margin: 0;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: #fcf9f3;
-  color: #222;
+  font-family: Arial, sans-serif;
   text-align: center;
+  background-color: #f9f5ec;
+  margin: 0;
+  padding: 0;
 }
 
 header {
-  padding: 1.5rem 1rem;
-  background: #fff;
+  padding: 10px 0;
 }
 
-/* 🔹 BANNER-STYLE LOGO */
-.logo.banner-logo {
-  max-width: 100%;
+.logo {
+  width: 80%;
+  max-width: 600px;
   height: auto;
-  width: 100%;
-  max-height: 240px;
-  object-fit: contain;
-  margin: 0 auto 1rem;
-  display: block;
+  margin: 0 auto;
 }
 
-h1 {
-  margin: 0;
-  font-size: 1.8rem;
+.listing-groups {
+  margin: 20px 0;
 }
 
-.subtitle {
-  margin-top: 0.5rem;
-  font-size: 1rem;
-  color: #555;
-}
-
-.below-nav {
-  margin-top: 1rem;
-}
-
-.nav-buttons {
-  margin-top: 1rem;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 1rem;
-}
-
-.nav-btn {
-  background: #111;
-  color: gold;
-  padding: 0.5rem 1rem;
-  border-radius: 10px;
-  text-decoration: none;
-  font-weight: bold;
-  font-size: 1rem;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.2);
-  transition: background 0.3s ease;
+.nav-btn, .group-btn {
   display: inline-block;
+  background-color: #000;
+  color: #ffcc00;
+  text-decoration: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+  margin: 6px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.nav-btn:hover {
-  background: #333;
+.nav-btn:hover, .group-btn:hover {
+  transform: scale(1.05);
+  background-color: #222;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4);
 }
 
-.button-grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 1rem;
-  padding: 2rem 1rem;
+/* Distinct styling for Home and Add Listing buttons */
+.primary-btn {
+  border: 2px solid #ffcc00;
+  box-shadow: 0 0 8px rgba(255, 204, 0, 0.6);
+}
+
+.primary-btn:hover {
+  background-color: #1a1a1a;
+  box-shadow: 0 0 12px rgba(255, 204, 0, 0.8);
 }
 
 footer {
-  background: #2b2118;
+  background-color: #2a1e14;
   color: #fff;
-  padding: 1rem;
-  font-size: 0.9rem;
+  padding: 15px;
+  font-size: 0.9em;
+}
+
+.footer-link {
+  display: block;
+  margin-top: 8px;
+  color: #ffcc00;
+  text-decoration: none;
+}
+
+.footer-link:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 600px) {
+  .logo {
+    width: 90%;
+  }
+
+  .nav-btn, .group-btn {
+    padding: 10px 14px;
+    font-size: 0.9em;
+  }
 }
