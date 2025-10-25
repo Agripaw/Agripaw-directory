@@ -171,3 +171,77 @@ footer p {
     font-size: 1em;
   }
 }
+/* ===== Add-Listing layout fixes ===== */
+
+/* Only center the intro headline/paragraph; left-align the form itself */
+.form-section { text-align: left; }
+.form-section > h1,
+.form-section > h2,
+.form-section > p.intro,
+.disclaimer { text-align: center; }
+
+/* Make label/input pairs stack vertically and fill width */
+.listing-form label {
+  display: block;
+  font-weight: 700;
+  color: #3c2f00;
+  margin: 16px 0 6px;
+}
+.listing-form input[type="text"],
+.listing-form input[type="email"],
+.listing-form input[type="tel"],
+.listing-form input[list] {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  padding: 10px 12px;
+  border: 1px solid #cbb675;
+  border-radius: 6px;
+  background: #fff;
+}
+
+/* Keep the form a comfortable readable width and centered on the page */
+.listing-form { max-width: 820px; margin: 0 auto; }
+
+/* Spacing between sections */
+.form-section hr { margin: 18px 0 14px; border: 0; border-top: 1px solid #d9c999; }
+
+/* Info/note boxes remain full width and separated */
+.info-box, .note-box {
+  background: #fff3d9;
+  border-left: 4px solid #d4a017;
+  padding: 12px 14px;
+  margin: 18px 0;
+  border-radius: 6px;
+}
+
+/* Checkbox groups: left align, wrap nicely, add breathing room */
+.checkbox-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 22px;         /* row gap, column gap */
+  justify-content: flex-start;
+  align-items: flex-start;
+  text-align: left;
+  margin: 8px 0 14px;
+}
+.checkbox-group label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+  color: #3c2f00;
+}
+
+/* Submit button centered, unchanged */
+.submit-btn, .cta-button {
+  display: inline-block;
+  margin: 22px auto 0;
+}
+
+/* Mobile tightening so it never feels cramped */
+@media (max-width: 520px) {
+  .checkbox-group { gap: 8px 14px; }
+  .listing-form label { margin-top: 14px; }
+}
