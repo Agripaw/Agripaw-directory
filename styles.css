@@ -7,12 +7,12 @@ body {
 }
 
 header {
-  padding: 10px 0;
+  padding: 5px 0;
 }
 
 .logo {
   width: 100%;
-  max-width: 1200px;
+  max-width: 1000px;
   height: auto;
   display: block;
   margin: 0 auto;
@@ -27,9 +27,9 @@ header {
   overflow-x: auto;
   white-space: nowrap;
   gap: 10px;
-  margin: 15px auto;
-  padding: 0 10px;
-  max-width: 1200px;
+  margin: 10px auto;
+  padding: 0 5px;
+  max-width: 1000px;
   scroll-behavior: smooth;
 }
 
