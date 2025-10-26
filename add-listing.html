@@ -1,83 +1,137 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Add Your Listing</title>
-  <link rel="stylesheet" href="styles.css"/>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Add Listing – AgriPaw Directory</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
+
 <body>
-  <header class="site-header">
-    <img src="assets/logo/agripaw-logo.png" alt="AgriPaw Logo" class="site-logo" />
-    <a href="add-listing.html">
-      <img src="assets/logo/premier-badge.png" alt="Premier Badge" class="premier-badge glow-link"/>
+  <!-- HEADER -->
+  <header>
+    <img src="assets/logo/color-logo.png" alt="AgriPaw Logo" class="logo" />
+
+    <!-- Clickable Premier Badge -->
+    <a href="add-listing.html" class="premier-link" title="List Your Business on AgriPaw">
+      <img src="assets/logo/premier-badge.png" alt="Premier Badge" class="premier-badge" />
     </a>
+
+    <!-- NAVIGATION -->
+    <nav>
+      <a href="index.html"><span class="emoji">🏠</span> Home</a>
+      <a href="directory/stable/index.html"><span class="emoji">🐴</span> Stable</a>
+      <a href="directory/hutch/index.html"><span class="emoji">🐇</span> Hutch</a>
+      <a href="directory/kennel/index.html"><span class="emoji">🐶</span> Kennel</a>
+      <a href="directory/cattery/index.html"><span class="emoji">🐱</span> Cattery</a>
+      <a href="directory/aviary/index.html"><span class="emoji">🦜</span> Aviary</a>
+      <a href="directory/terrarium/index.html"><span class="emoji">🦎</span> Terrarium</a>
+      <a href="directory/aquatica/index.html"><span class="emoji">🐠</span> Aquatica</a>
+    </nav>
   </header>
 
-  <nav class="nav-bar">
-    <a href="index.html" class="nav-btn">🏠 Home</a>
-    <a href="#" class="nav-btn">🐎 Stable</a>
-    <a href="#" class="nav-btn">🐇 Hutch</a>
-    <a href="#" class="nav-btn">🐶 Kennel</a>
-    <a href="#" class="nav-btn">🐱 Cattery</a>
-    <a href="#" class="nav-btn">🕊️ Aviary</a>
-    <a href="#" class="nav-btn">🦎 Terrarium</a>
-    <a href="#" class="nav-btn">🐠 Aquatica</a>
-  </nav>
+  <!-- FORM SECTION -->
+  <main>
+    <section class="form-section">
+      <h2>Add Your Listing on AgriPaw</h2>
+      <p>Submit your breeder, service, or network listing to be included in the AgriPaw directory. Required fields are marked with a <strong>*</strong>.</p>
 
-  <main class="form-content">
-    <form>
-      <fieldset>
-        <legend>Animal Type *</legend>
-        <label><input type="checkbox"/> Livestock / Equine</label>
-        <label><input type="checkbox"/> Rabbits / Small Mammals</label>
-        <label><input type="checkbox"/> Dogs</label>
-        <label><input type="checkbox"/> Cats</label>
-        <label><input type="checkbox"/> Birds</label>
-        <label><input type="checkbox"/> Reptiles / Amphibians / Insects / Arachnids</label>
-        <label><input type="checkbox"/> Aquatic (Fish / Crustaceans / Plants)</label>
-        <label><input type="checkbox"/> Other</label>
-      </fieldset>
+      <form action="thank-you.html" method="POST" class="listing-form">
+        <!-- Basic Info -->
+        <label>Business Name *</label>
+        <input type="text" name="business" required />
 
-      <label for="breed">Breed Type *</label>
-      <input type="text" id="breed" name="breed" value="Labrador Retriever" />
+        <label>Contact Name *</label>
+        <input type="text" name="contact" required />
 
-      <label><input type="checkbox"/> Applies to all breeds</label>
+        <label>Email *</label>
+        <input type="email" name="email" required />
 
-      <fieldset>
-        <legend>Listing Type *</legend>
-        <label><input type="checkbox"/> Breeder</label>
-        <label><input type="checkbox"/> Service Provider</label>
-        <label><input type="checkbox"/> Network / Club / Influencer</label>
-      </fieldset>
+        <label>Phone (optional)</label>
+        <input type="tel" name="phone" />
 
-      <fieldset>
-        <legend>Service Type (if applicable):</legend>
-        <label><input type="checkbox"/> Veterinary</label>
-        <label><input type="checkbox"/> Photography</label>
-        <label><input type="checkbox"/> Grooming</label>
-        <label><input type="checkbox"/> Pet Sitting / Boarding</label>
-        <!-- Add more as needed -->
-      </fieldset>
+        <label>City *</label>
+        <input type="text" name="city" placeholder="e.g., San Tan Valley" required />
 
-      <fieldset>
-        <legend>Network Type (if applicable):</legend>
-        <label><input type="checkbox"/> Club / Association</label>
-        <label><input type="checkbox"/> Breeder Group</label>
-        <label><input type="checkbox"/> Rescue / Charity</label>
-      </fieldset>
+        <label>State *</label>
+        <input type="text" name="state" placeholder="e.g., AZ" required />
 
-      <button type="submit" class="cta-button">✨ Submit My Listing ✨</button>
+        <!-- Hide options -->
+        <div class="info-box">
+          <label><input type="checkbox" name="hideName" /> Hide my contact name from public listing</label><br />
+          <label><input type="checkbox" name="hideEmail" /> Hide my email from public listing</label>
+        </div>
 
-      <p class="disclaimer">
-        <strong>Disclaimer:</strong> All submissions are subject to review prior to publication...
-      </p>
-    </form>
+        <!-- Animal Type -->
+        <h3>Animal Type *</h3>
+        <div class="checkbox-group">
+          <label><input type="checkbox" name="animal" /> Livestock / Equine</label>
+          <label><input type="checkbox" name="animal" /> Rabbits / Small Mammals</label>
+          <label><input type="checkbox" name="animal" /> Dogs</label>
+          <label><input type="checkbox" name="animal" /> Cats</label>
+          <label><input type="checkbox" name="animal" /> Birds</label>
+          <label><input type="checkbox" name="animal" /> Reptiles / Amphibians / Insects / Arachnids</label>
+          <label><input type="checkbox" name="animal" /> Aquatic (Fish / Crustaceans / Plants)</label>
+          <label><input type="checkbox" name="animal" /> Other</label>
+        </div>
+
+        <!-- Breed Type -->
+        <h3>Breed Type *</h3>
+        <input type="text" name="breed" placeholder="e.g., Labrador Retriever" />
+        <label><input type="checkbox" name="allbreeds" /> Applies to All Breeds</label>
+
+        <!-- Listing Type -->
+        <h3>Listing Type *</h3>
+        <div class="checkbox-group">
+          <label><input type="checkbox" name="type" /> Breeder</label>
+          <label><input type="checkbox" name="type" /> Service Provider</label>
+          <label><input type="checkbox" name="type" /> Network / Club / Influencer</label>
+        </div>
+
+        <!-- Service Type -->
+        <h3>Service Type (if applicable)</h3>
+        <div class="checkbox-group">
+          <label><input type="checkbox" /> Reproductive / Stud</label>
+          <label><input type="checkbox" /> Veterinary</label>
+          <label><input type="checkbox" /> Photography</label>
+          <label><input type="checkbox" /> Graphics / Branding</label>
+          <label><input type="checkbox" /> Training</label>
+          <label><input type="checkbox" /> Grooming</label>
+          <label><input type="checkbox" /> Remedies / Treats</label>
+          <label><input type="checkbox" /> Transport</label>
+          <label><input type="checkbox" /> Pet Sitting / Boarding</label>
+          <label><input type="checkbox" /> Pet Walking</label>
+          <label><input type="checkbox" /> Yard Clean-Up</label>
+          <label><input type="checkbox" /> Other</label>
+        </div>
+
+        <!-- Network Type -->
+        <h3>Network Type (if applicable)</h3>
+        <div class="checkbox-group">
+          <label><input type="checkbox" /> Club / Association</label>
+          <label><input type="checkbox" /> Social Media / Influencer</label>
+          <label><input type="checkbox" /> Breeder Group</label>
+          <label><input type="checkbox" /> Event / Meetup</label>
+          <label><input type="checkbox" /> Charity / Rescue</label>
+        </div>
+
+        <!-- Note -->
+        <div class="note-box">
+          <p><strong>⚠️ Note:</strong> Listings selecting multiple animal types, “All Breeds,” “Network / Influencer,” or “Other” may be flagged for manual review before approval. You’ll receive an email update once verified.</p>
+        </div>
+
+        <button type="submit" class="submit-btn">✨ Submit My Listing ✨</button>
+      </form>
+
+      <div class="disclaimer">
+        <p><strong>Disclaimer:</strong> All submissions are subject to review prior to publication. AgriPaw reserves the right to correct formatting, adjust searchable categories, or decline listings that contain sales language, duplicate content, or violate our directory guidelines. Approval does not imply endorsement.</p>
+      </div>
+    </section>
   </main>
 
+  <!-- FOOTER -->
   <footer>
-    <a href="index.html">Home</a> |
-    <a href="#">Contact</a>
+    <p><a href="index.html">Home</a> | <a href="contact.html">Contact</a></p>
     <p>© 2025 AgriPaw Directory. All Rights Reserved.</p>
   </footer>
 </body>
