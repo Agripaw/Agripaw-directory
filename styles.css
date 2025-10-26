@@ -1,318 +1,122 @@
-/* ===============================
-   AGRIPAW DIRECTORY STYLESHEET
-   =============================== */
-
-/* ===== GLOBAL RESETS ===== */
-* {
-  box-sizing: border-box;
+body {
+  font-family: Arial, sans-serif;
+  background-color: #fdfaf3;
   margin: 0;
   padding: 0;
-  font-family: "Trebuchet MS", Helvetica, sans-serif;
-}
-
-body {
-  background-color: #fffaf0;
-  color: #3c2f00;
-  line-height: 1.6;
-}
-
-/* ===== HEADER ===== */
-header {
-  background-color: #000;
-  color: #fff;
   text-align: center;
-  padding: 0.5rem 0 0.25rem 0;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  border-bottom: 3px solid #cda434;
 }
 
-header img.logo {
-  max-width: 300px;
-  height: auto;
-  margin: 0.3rem auto;
-  display: block;
+header.main-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fff;
+  padding: 10px 20px;
+  border-bottom: 4px solid #000;
+  flex-wrap: wrap;
 }
 
-/* Premier badge glow and clickability */
-.premier-link {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  display: inline-block;
-  z-index: 2000;
-  transition: transform 0.3s ease;
-}
-.premier-link:hover { transform: scale(1.05); }
-
-header img.premier-badge {
-  width: 80px;
-  height: auto;
-  animation: glowPulse 2.2s infinite alternate;
+.logo-banner {
+  height: 80px;
+  max-width: 100%;
 }
 
-@keyframes glowPulse {
-  0% {
-    filter: drop-shadow(0 0 3px gold) drop-shadow(0 0 6px #ffbf00);
-  }
-  100% {
-    filter: drop-shadow(0 0 12px #ffd700) drop-shadow(0 0 24px #ffcc33);
-  }
+.premier-badge {
+  height: 70px;
+  max-width: 100%;
 }
 
-/* ===== NAVIGATION ===== */
-nav {
+.glow {
+  filter: drop-shadow(0 0 8px gold);
+}
+
+.nav-buttons {
+  background-color: #000;
+  padding: 10px 10px 5px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 10px;
-  background-color: #000;
-  padding: 8px 0 12px;
+  border-bottom: 3px solid gold;
 }
 
-nav a {
-  background-color: #111;
-  border: 2px solid #cda434;
-  color: #fff;
-  text-decoration: none;
-  padding: 8px 14px;
+.nav-button {
+  background-color: #1a1a1a;
+  color: gold;
+  border: 2px solid #333;
   border-radius: 8px;
-  font-weight: 600;
-  transition: all 0.3s ease;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 6px;
-  font-size: 1.05rem;
-  line-height: 1.4;
-  vertical-align: middle;
+  padding: 8px 14px;
+  font-weight: bold;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+  cursor: pointer;
+  transition: all 0.2s ease;
 }
 
-nav a:hover,
-nav a.active {
-  background-color: #cda434;
+.nav-button:hover {
+  background-color: gold;
   color: #000;
-  box-shadow: 0 0 15px #ffdf6f;
 }
 
-/* Emoji consistency & shimmer hover */
-nav a .emoji {
-  font-size: 1.2rem;
-  line-height: 1;
-  transition: filter 0.3s ease, transform 0.3s ease;
+.welcome {
+  margin: 40px 20px 60px;
 }
 
-nav a:hover .emoji {
-  filter: drop-shadow(0 0 6px #ffd700);
-  transform: scale(1.1);
+.welcome h1 {
+  color: #333;
+  font-size: 26px;
 }
 
-@media (max-width: 480px) {
-  nav a { font-size: 0.95rem; gap: 4px; }
-  nav a .emoji { font-size: 1.1rem; }
+.welcome p {
+  color: #444;
+  max-width: 700px;
+  margin: 10px auto 20px;
 }
 
-/* ===== MAIN PAGE ===== */
-main { padding: 1.5rem; text-align: center; }
-
-h1 { color: #3c2f00; margin-bottom: 1rem; }
-
-p { color: #5b4b20; margin-bottom: 1rem; font-size: 1rem; }
-
-/* ===== CTA BUTTON ===== */
 .cta-button {
   display: inline-block;
-  margin: 20px auto;
-  background: linear-gradient(90deg, #ff3300, #ff9900);
+  background: red;
   color: #fff;
-  font-size: 1.2rem;
-  font-weight: 700;
-  border: none;
-  border-radius: 8px;
-  padding: 12px 36px;
-  cursor: pointer;
-  text-align: center;
-  box-shadow: 0 0 15px rgba(255, 165, 0, 0.7);
-  position: relative;
-  overflow: hidden;
-  transition: all 0.3s ease;
+  font-weight: bold;
+  padding: 12px 20px;
+  border-radius: 6px;
+  box-shadow: 0 0 15px orange;
+  text-decoration: none;
+  transition: background 0.3s ease;
 }
 
 .cta-button:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 25px rgba(255, 200, 0, 1);
+  background: darkred;
 }
 
-.cta-button::after {
-  content: "✨";
-  position: absolute;
-  top: 4px;
-  right: 8px;
-  animation: sparkle 2s infinite ease-in-out;
-}
-
-@keyframes sparkle {
-  0%, 100% { opacity: 0; transform: translateY(0) rotate(0deg); }
-  50% { opacity: 1; transform: translateY(-3px) rotate(15deg); }
-}
-
-/* ===== DIRECTORY BUTTONS ===== */
-.directory-buttons {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 12px;
-  margin-top: 15px;
-}
-
-.directory-buttons button {
-  background-color: #111;
-  border: 2px solid #cda434;
-  color: #fff;
-  padding: 8px 16px;
-  border-radius: 10px;
-  font-size: 1rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.directory-buttons button:hover {
-  background-color: #cda434;
-  color: #000;
-  box-shadow: 0 0 15px #ffdf6f;
-}
-
-/* ===== ADD LISTING FORM ===== */
-.listing-form {
-  width: 90%;
-  max-width: 1100px;
-  margin: 0 auto;
-  text-align: left;
-}
-
-.listing-form label {
-  display: block;
-  font-weight: 600;
-  color: #3c2f00;
-  margin: 16px 0 6px;
-}
-
-.listing-form input[type="text"],
-.listing-form input[type="email"],
-.listing-form input[type="tel"],
-.listing-form input[list] {
-  display: block;
-  width: 100%;
-  max-width: 100%;
-  box-sizing: border-box;
-  padding: 10px 12px;
-  border: 1px solid #cbb675;
-  border-radius: 5px;
-  background-color: #fff;
-}
-
-/* Smaller, subtler text */
-input[name="hideName"] + label,
-input[name="hideEmail"] + label,
-input[name="allbreeds"] + label {
-  font-size: 0.9rem;
-  color: #3c2f00;
-  font-weight: 500;
-}
-
-/* Info and note boxes */
-.info-box, .note-box {
-  background-color: #fff3d9;
-  border-left: 4px solid #d4a017;
-  padding: 10px 15px;
-  margin: 20px 0;
-  border-radius: 6px;
-}
-
-/* Checkbox groups neatly wrap */
-.checkbox-group {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px 22px;
-  justify-content: flex-start;
-  text-align: left;
-  margin: 8px 0 14px;
-}
-
-/* Orange confetti submit button */
-.submit-btn {
-  display: block;
-  margin: 30px auto;
-  background: linear-gradient(90deg, #ff3300, #ff9900);
-  color: #fff;
-  font-size: 1.2rem;
-  font-weight: 700;
-  border: none;
-  border-radius: 8px;
-  padding: 12px 36px;
-  cursor: pointer;
-  text-align: center;
-  box-shadow: 0 0 15px rgba(255, 165, 0, 0.7);
-  position: relative;
-  overflow: hidden;
-  transition: all 0.3s ease;
-}
-
-.submit-btn:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 25px rgba(255, 200, 0, 1);
-}
-
-.submit-btn::after {
-  content: "✨🎉✨";
-  position: absolute;
-  top: -10px;
-  left: 50%;
-  transform: translateX(-50%);
-  animation: confetti 1.5s ease-out forwards;
-  opacity: 0;
-}
-
-.submit-btn:hover::after {
-  opacity: 1;
-  animation: confetti 1.5s ease-out forwards;
-}
-
-@keyframes confetti {
-  0% { opacity: 1; transform: translateY(0) rotate(0deg); }
-  100% { opacity: 0; transform: translateY(-80px) rotate(360deg); }
-}
-
-/* ===== FOOTER ===== */
 footer {
   background-color: #000;
   color: #fff;
-  text-align: center;
-  padding: 1.2rem 0;
-  margin-top: 1rem;
-  font-size: 0.95rem;
+  padding: 20px 10px;
+  font-size: 14px;
+  margin-top: 40px;
 }
 
-footer a {
-  color: #ffdf6f;
-  font-weight: bold;
+.footer-links a {
+  color: gold;
   text-decoration: none;
-  margin: 0 6px;
+  margin: 0 5px;
 }
 
-footer a:hover {
-  color: #fff;
-  text-shadow: 0 0 6px gold;
+.footer-links a:hover {
+  text-decoration: underline;
 }
 
-/* ===== RESPONSIVE ADJUSTMENTS ===== */
-@media (max-width: 900px) {
-  header img.logo { max-width: 240px; }
-  .directory-buttons button {
-    font-size: 0.9rem;
-    padding: 6px 12px;
+@media (max-width: 600px) {
+  .logo-banner {
+    height: 60px;
   }
-  .listing-form { width: 95%; }
+
+  .premier-badge {
+    height: 60px;
+  }
+
+  .nav-button {
+    padding: 6px 10px;
+    font-size: 14px;
+  }
 }
