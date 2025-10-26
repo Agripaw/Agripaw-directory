@@ -1,138 +1,133 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Add Listing – AgriPaw Directory</title>
-  <link rel="stylesheet" href="styles.css" />
-</head>
+/* General */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #fff8f0;
+}
 
-<body>
-  <!-- HEADER -->
-  <header>
-    <img src="assets/logo/color-logo.png" alt="AgriPaw Logo" class="logo" />
+/* Header */
+.main-header {
+  background-color: #000;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
 
-    <!-- Clickable Premier Badge -->
-    <a href="add-listing.html" class="premier-link" title="List Your Business on AgriPaw">
-      <img src="assets/logo/premier-badge.png" alt="Premier Badge" class="premier-badge" />
-    </a>
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 20px;
+}
 
-    <!-- NAVIGATION -->
-    <nav>
-      <a href="index.html"><span class="emoji">🏠</span> Home</a>
-      <a href="directory/stable/index.html"><span class="emoji">🐴</span> Stable</a>
-      <a href="directory/hutch/index.html"><span class="emoji">🐇</span> Hutch</a>
-      <a href="directory/kennel/index.html"><span class="emoji">🐶</span> Kennel</a>
-      <a href="directory/cattery/index.html"><span class="emoji">🐱</span> Cattery</a>
-      <a href="directory/aviary/index.html"><span class="emoji">🦜</span> Aviary</a>
-      <a href="directory/terrarium/index.html"><span class="emoji">🦎</span> Terrarium</a>
-      <a href="directory/aquatica/index.html"><span class="emoji">🐠</span> Aquatica</a>
-    </nav>
-  </header>
+.logo {
+  max-height: 80px;
+  height: auto;
+}
 
-  <!-- FORM SECTION -->
-  <main>
-    <section class="form-section">
-      <h2>Add Your Listing on AgriPaw</h2>
-      <p>Submit your breeder, service, or network listing to be included in the AgriPaw directory. Required fields are marked with a <strong>*</strong>.</p>
+.premier-badge {
+  max-height: 70px;
+  height: auto;
+  transition: transform 0.3s;
+}
 
-      <form action="thank-you.html" method="POST" class="listing-form">
-        <!-- Basic Info -->
-        <label>Business Name *</label>
-        <input type="text" name="business" required />
+.premier-badge.glow {
+  box-shadow: 0 0 20px 4px gold;
+  border-radius: 50%;
+}
 
-        <label>Contact Name *</label>
-        <input type="text" name="contact" required />
+.premier-badge:hover {
+  transform: scale(1.05);
+}
 
-        <label>Email *</label>
-        <input type="email" name="email" required />
+/* Navigation */
+.main-nav {
+  background-color: #000;
+  padding: 8px 0 6px;
+  text-align: center;
+}
 
-        <label>Phone (optional)</label>
-        <input type="tel" name="phone" />
+.nav-group {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 4px 0;
+}
 
-        <label>City *</label>
-        <input type="text" name="city" placeholder="e.g., San Tan Valley" required />
+.nav-button {
+  background-color: #111;
+  border: 2px solid gold;
+  color: white;
+  padding: 8px 14px;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 0 6px #ffcc00;
+  transition: all 0.3s ease;
+}
 
-        <label>State *</label>
-        <input type="text" name="state" placeholder="e.g., AZ" required />
+.nav-button:hover {
+  background-color: gold;
+  color: black;
+}
 
-        <!-- Hide options -->
-        <div class="info-box">
-          <label><input type="checkbox" name="hideName" /> Hide my contact name from public listing</label><br />
-          <label><input type="checkbox" name="hideEmail" /> Hide my email from public listing</label>
-        </div>
+/* CTA Button */
+.cta-button {
+  display: inline-block;
+  background: red;
+  color: white;
+  padding: 14px 24px;
+  margin: 24px auto;
+  font-weight: bold;
+  border-radius: 8px;
+  text-decoration: none;
+  box-shadow: 0 0 18px orange;
+  transition: transform 0.2s ease;
+}
 
-        <!-- Animal Type -->
-        <h3>Animal Type *</h3>
-        <div class="checkbox-group">
-          <label><input type="checkbox" name="animal" /> Livestock / Equine</label>
-          <label><input type="checkbox" name="animal" /> Rabbits / Small Mammals</label>
-          <label><input type="checkbox" name="animal" /> Dogs</label>
-          <label><input type="checkbox" name="animal" /> Cats</label>
-          <label><input type="checkbox" name="animal" /> Birds</label>
-          <label><input type="checkbox" name="animal" /> Reptiles / Amphibians / Insects / Arachnids</label>
-          <label><input type="checkbox" name="animal" /> Aquatic (Fish / Crustaceans / Plants)</label>
-          <label><input type="checkbox" name="animal" /> Other</label>
-        </div>
+.cta-button:hover {
+  transform: scale(1.05);
+}
 
-        <!-- Breed Type -->
-        <h3>Breed Type *</h3>
-        <input type="text" name="breed" placeholder="e.g., Labrador Retriever" />
-        <label><input type="checkbox" name="allbreeds" /> Applies to All Breeds</label>
+/* Main */
+main {
+  text-align: center;
+  padding: 40px 20px;
+}
 
-        <!-- Listing Type -->
-        <h3>Listing Type *</h3>
-        <div class="checkbox-group">
-          <label><input type="checkbox" name="type" /> Breeder</label>
-          <label><input type="checkbox" name="type" /> Service Provider</label>
-          <label><input type="checkbox" name="type" /> Network / Club / Influencer</label>
-        </div>
+/* Footer */
+footer {
+  background-color: #000;
+  color: white;
+  text-align: center;
+  padding: 16px;
+  font-size: 0.9rem;
+}
 
-        <!-- Service Type -->
-        <h3>Service Type (if applicable)</h3>
-        <div class="checkbox-group">
-          <label><input type="checkbox" /> Reproductive / Stud</label>
-          <label><input type="checkbox" /> Veterinary</label>
-          <label><input type="checkbox" /> Photography</label>
-          <label><input type="checkbox" /> Graphics / Branding</label>
-          <label><input type="checkbox" /> Training</label>
-          <label><input type="checkbox" /> Grooming</label>
-          <label><input type="checkbox" /> Remedies / Treats</label>
-          <label><input type="checkbox" /> Transport</label>
-          <label><input type="checkbox" /> Pet Sitting / Boarding</label>
-          <label><input type="checkbox" /> Pet Walking</label>
-          <label><input type="checkbox" /> Yard Clean-Up</label>
-          <label><input type="checkbox" /> Other</label>
-        </div>
+footer a {
+  color: gold;
+  text-decoration: none;
+  margin: 0 10px;
+}
 
-        <!-- Network Type -->
-        <h3>Network Type (if applicable)</h3>
-        <div class="checkbox-group">
-          <label><input type="checkbox" /> Club / Association</label>
-          <label><input type="checkbox" /> Social Media / Influencer</label>
-          <label><input type="checkbox" /> Breeder Group</label>
-          <label><input type="checkbox" /> Event / Meetup</label>
-          <label><input type="checkbox" /> Charity / Rescue</label>
-        </div>
-
-        <!-- Note -->
-        <div class="note-box">
-          <p><strong>⚠️ Note:</strong> Listings selecting multiple animal types, “All Breeds,” “Network / Influencer,” or “Other” may be flagged for manual review before approval. You’ll receive an email update once verified.</p>
-        </div>
-
-        <button type="submit" class="submit-btn">✨ Submit My Listing ✨</button>
-      </form>
-
-      <div class="disclaimer">
-        <p><strong>Disclaimer:</strong> All submissions are subject to review prior to publication. AgriPaw reserves the right to correct formatting, adjust searchable categories, or decline listings that contain sales language, duplicate content, or violate our directory guidelines. Approval does not imply endorsement.</p>
-      </div>
-    </section>
-  </main>
-
-  <!-- FOOTER -->
-  <footer>
-    <p><a href="index.html">Home</a> | <a href="contact.html">Contact</a></p>
-    <p>© 2025 AgriPaw Directory. All Rights Reserved.</p>
-  </footer>
-</body>
-</html>
+/* Mobile support */
+@media (max-width: 768px) {
+  .header-container {
+    flex-direction: column;
+  }
+  .header-left, .header-right {
+    margin-bottom: 10px;
+  }
+  .nav-button {
+    font-size: 0.9rem;
+    padding: 6px 10px;
+  }
+  .logo {
+    max-height: 70px;
+  }
+  .premier-badge {
+    max-height: 60px;
+  }
+}
