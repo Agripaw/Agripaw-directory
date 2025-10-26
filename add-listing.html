@@ -3,25 +3,24 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Add Listing – AgriPaw Directory</title>
+  <title>Add Your Listing | AgriPaw</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
-
-<body>
+<body id="addListingPage">
   <!-- HEADER -->
   <header class="header">
     <div class="header-top">
       <a href="index.html" class="logo-link">
         <img src="assets/logo/color-logo.png" alt="AgriPaw Logo" class="logo" />
       </a>
-      <a href="add-listing.html" class="premier-link" title="List Your Business on AgriPaw">
+      <a href="add-listing.html" class="premier-link">
         <img src="assets/logo/premier-badge.png" alt="Premier Badge" class="premier-badge" />
       </a>
     </div>
 
     <nav class="nav-bar">
       <a href="index.html" class="nav-btn">🏠 Home</a>
-      <a href="directory/stable/index.html" class="nav-btn">🐴 Stable</a>
+      <a href="directory/stable/index.html" class="nav-btn">🐎 Stable</a>
       <a href="directory/hutch/index.html" class="nav-btn">🐇 Hutch</a>
       <a href="directory/kennel/index.html" class="nav-btn">🐶 Kennel</a>
       <a href="directory/cattery/index.html" class="nav-btn">🐱 Cattery</a>
@@ -32,125 +31,87 @@
     <hr class="divider" />
   </header>
 
-  <!-- MAIN FORM SECTION -->
-  <main>
-    <section class="form-section">
-      <h2>Add Your Listing on AgriPaw</h2>
-      <p>Submit your breeder, service, or network listing to be included in the AgriPaw directory. Required fields are marked with a <strong>*</strong>.</p>
+  <!-- FORM SECTION -->
+  <main class="form-section">
+    <h2>Add Your Listing on AgriPaw</h2>
+    <p>Submit your breeder, service, or network listing to be included in the AgriPaw directory. Required fields are marked with a *.</p>
 
-      <form action="thank-you.html" method="POST" class="listing-form">
-        <!-- Basic Info -->
-        <label>Business Name *</label>
-        <input type="text" name="business" required />
+    <form class="listing-form">
+      <label>Business Name *</label>
+      <input type="text" required />
 
-        <label>Contact Name *</label>
-        <input type="text" name="contact" required />
+      <label>Contact Name *</label>
+      <input type="text" required />
 
-        <label>Email *</label>
-        <input type="email" name="email" required />
+      <label>Email *</label>
+      <input type="email" required />
 
-        <label>Phone (optional)</label>
-        <input type="tel" name="phone" />
+      <label>Phone (optional)</label>
+      <input type="tel" />
 
-        <label>City *</label>
-        <input type="text" name="city" placeholder="e.g., San Tan Valley" required />
+      <label>City *</label>
+      <input type="text" placeholder="e.g., San Tan Valley" required />
 
-        <label>State *</label>
-        <input type="text" name="state" placeholder="e.g., AZ" required />
+      <label>State *</label>
+      <input type="text" placeholder="e.g., AZ" required />
 
-        <!-- Hide options -->
-        <div class="info-box tiny">
-          <label><input type="checkbox" name="hideName" /> Hide my contact name from public listing</label><br />
-          <label><input type="checkbox" name="hideEmail" /> Hide my email from public listing</label>
-        </div>
+      <div class="info-box">
+        <label><input type="checkbox" /> Hide my contact name from public listing</label><br />
+        <label><input type="checkbox" /> Hide my email from public listing</label>
+      </div>
 
-        <!-- Animal Type -->
-        <h3>Animal Type *</h3>
-        <div class="checkbox-group">
-          <label><input type="checkbox" name="animal" /> Livestock / Equine</label>
-          <label><input type="checkbox" name="animal" /> Rabbits / Small Mammals</label>
-          <label><input type="checkbox" name="animal" /> Dogs</label>
-          <label><input type="checkbox" name="animal" /> Cats</label>
-          <label><input type="checkbox" name="animal" /> Birds</label>
-          <label><input type="checkbox" name="animal" /> Reptiles / Amphibians / Insects / Arachnids</label>
-          <label><input type="checkbox" name="animal" /> Aquatic (Fish / Crustaceans / Plants)</label>
-          <label><input type="checkbox" name="animal" /> Other</label>
-        </div>
+      <label>Animal Type *</label>
+      <div class="checkbox-group">
+        <label><input type="checkbox" /> Livestock / Equine</label>
+        <label><input type="checkbox" /> Rabbits / Small Mammals</label>
+        <label><input type="checkbox" /> Dogs</label>
+        <label><input type="checkbox" /> Cats</label>
+        <label><input type="checkbox" /> Birds</label>
+        <label><input type="checkbox" /> Reptiles / Amphibians / Insects / Arachnids</label>
+        <label><input type="checkbox" /> Aquatic (Fish / Crustaceans / Plants)</label>
+        <label><input type="checkbox" /> Other</label>
+      </div>
 
-        <!-- Breed Type -->
-        <h3>Breed Type *</h3>
-        <input type="text" name="breed" placeholder="e.g., Labrador Retriever" />
-        <label class="tiny"><input type="checkbox" name="allbreeds" /> Applies to All Breeds</label>
+      <label>Breed Type *</label>
+      <input type="text" placeholder="e.g., Labrador Retriever" />
+      <label><input type="checkbox" /> Applies to All Breeds</label>
 
-        <!-- Listing Type -->
-        <h3>Listing Type *</h3>
-        <div class="checkbox-group">
-          <label><input type="checkbox" name="type" /> Breeder</label>
-          <label><input type="checkbox" name="type" /> Service Provider</label>
-          <label><input type="checkbox" name="type" /> Network / Club / Influencer</label>
-        </div>
+      <label>Listing Type *</label>
+      <div class="checkbox-group">
+        <label><input type="checkbox" /> Breeder</label>
+        <label><input type="checkbox" /> Service Provider</label>
+        <label><input type="checkbox" /> Network / Club / Influencer</label>
+      </div>
 
-        <!-- Service Type -->
-        <h3>Service Type (if applicable)</h3>
-        <div class="checkbox-group">
-          <label><input type="checkbox" /> Reproductive / Stud</label>
-          <label><input type="checkbox" /> Veterinary</label>
-          <label><input type="checkbox" /> Photography</label>
-          <label><input type="checkbox" /> Graphics / Branding</label>
-          <label><input type="checkbox" /> Training</label>
-          <label><input type="checkbox" /> Grooming</label>
-          <label><input type="checkbox" /> Remedies / Treats</label>
-          <label><input type="checkbox" /> Transport</label>
-          <label><input type="checkbox" /> Pet Sitting / Boarding</label>
-          <label><input type="checkbox" /> Pet Walking</label>
-          <label><input type="checkbox" /> Yard Clean-Up</label>
-          <label><input type="checkbox" /> Other</label>
-        </div>
+      <label>Service Type (if applicable)</label>
+      <div class="checkbox-group">
+        <label><input type="checkbox" /> Reproductive / Stud</label>
+        <label><input type="checkbox" /> Veterinary</label>
+        <label><input type="checkbox" /> Photography</label>
+        <label><input type="checkbox" /> Training</label>
+        <label><input type="checkbox" /> Grooming</label>
+        <label><input type="checkbox" /> Transport</label>
+        <label><input type="checkbox" /> Treats / Remedies</label>
+        <label><input type="checkbox" /> Pet Sitting / Boarding</label>
+        <label><input type="checkbox" /> Pet Walking</label>
+      </div>
 
-        <!-- Network Type -->
-        <h3>Network Type (if applicable)</h3>
-        <div class="checkbox-group">
-          <label><input type="checkbox" /> Club / Association</label>
-          <label><input type="checkbox" /> Social Media / Influencer</label>
-          <label><input type="checkbox" /> Breeder Group</label>
-          <label><input type="checkbox" /> Event / Meetup</label>
-          <label><input type="checkbox" /> Charity / Rescue</label>
-        </div>
+      <div class="note-box">
+        ⚠️ <b>Note:</b> Listings selecting multiple animal types, “All Breeds,” “Network / Influencer,” or “Other” may be flagged for manual review before approval.
+      </div>
 
-        <!-- Note -->
-        <div class="note-box">
-          <p><strong>⚠️ Note:</strong> Listings selecting multiple animal types, “All Breeds,” “Network / Influencer,” or “Other” may be flagged for manual review before approval. You’ll receive an email update once verified.</p>
-        </div>
-
-        <button type="submit" class="submit-btn">✨ Submit My Listing ✨</button>
-      </form>
+      <button type="submit" class="submit-btn">✨ Submit My Listing ✨</button>
 
       <div class="disclaimer">
-        <p><strong>Disclaimer:</strong> All submissions are subject to review prior to publication. AgriPaw reserves the right to correct formatting, adjust searchable categories, or decline listings that contain sales language, duplicate content, or violate our directory guidelines. Approval does not imply endorsement.</p>
+        <strong>Disclaimer:</strong> All submissions are subject to review prior to publication. AgriPaw reserves the right to correct formatting, grammar, or category placement.
       </div>
-    </section>
+    </form>
   </main>
 
   <!-- FOOTER -->
   <footer class="footer">
-    <p><a href="index.html">Home</a> | <a href="contact.html">Contact</a></p>
+    <p><a href="add-listing.html">Add Listing</a> | <a href="contact.html">Contact</a></p>
     <p>© 2025 AgriPaw Directory. All Rights Reserved.</p>
   </footer>
-
-  <!-- Confetti Burst -->
-  <script>
-    document.querySelector('.submit-btn').addEventListener('click', function (e) {
-      e.preventDefault();
-      for (let i = 0; i < 15; i++) {
-        const sparkle = document.createElement('div');
-        sparkle.classList.add('sparkle');
-        sparkle.style.left = `${Math.random() * 100}%`;
-        sparkle.style.top = `${Math.random() * 100}%`;
-        document.body.appendChild(sparkle);
-        setTimeout(() => sparkle.remove(), 1000);
-      }
-      alert('🎉 Your listing has been submitted!');
-    });
-  </script>
 </body>
 </html>
