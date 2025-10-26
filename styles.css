@@ -1,9 +1,17 @@
-/* === GLOBAL === */
+/* =========================================================
+   AGRIPAW MASTER STYLES — STABLE, NAMESPACE-ISOLATED BUILD
+   ========================================================= */
+
+/* === GLOBAL BASE === */
 body {
   margin: 0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background-color: #fffaf0;
   color: #3b2d13;
+}
+
+a {
+  text-decoration: none;
 }
 
 /* === HEADER === */
@@ -77,65 +85,50 @@ body {
   margin: 0;
 }
 
-/* === DIRECTORY FILTERS (Scoped Separately) === */
-.filters-wrap {
-  background-color: #fff4d6;
-  border-bottom: 2px solid gold;
-  padding: 1rem 0.5rem;
+/* === FOOTER === */
+.footer {
+  background-color: #000;
+  color: gold;
+  padding: 1rem;
+  font-size: 0.9rem;
+  text-align: center;
 }
 
-.filters-block {
-  display: flex;
-  flex-direction: column;
-  gap: 0.6rem;
-  align-items: center;
+.footer a {
+  color: gold;
+  font-weight: bold;
 }
 
-.filters-block .row {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 0.6rem;
+.footer a:hover {
+  text-decoration: underline;
 }
 
-.filters-block .field {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-}
-
-.filters-block input[type="text"] {
-  padding: 0.4rem;
-  border-radius: 6px;
-  border: 1px solid #ccc;
-  font-size: 0.95rem;
-  width: 160px;
-}
-
-/* === ADD LISTING FORM === */
-.form-section {
+/* =========================================================
+   ADD LISTING PAGE STYLES — SCOPED WITH #addListingPage
+   ========================================================= */
+#addListingPage .form-section {
   text-align: left;
   margin: 0 auto;
   max-width: 600px;
   padding: 2rem 1rem;
 }
 
-.form-section h2 {
+#addListingPage h2 {
   text-align: center;
   color: #3b2d13;
-  margin-bottom: 0.8rem;
+  margin-bottom: 1rem;
 }
 
-.listing-form label {
+#addListingPage .listing-form label {
   font-weight: bold;
   display: block;
   margin-top: 1rem;
   color: #3b2d13;
 }
 
-.listing-form input[type="text"],
-.listing-form input[type="email"],
-.listing-form input[type="tel"] {
+#addListingPage .listing-form input[type="text"],
+#addListingPage .listing-form input[type="email"],
+#addListingPage .listing-form input[type="tel"] {
   width: 100%;
   padding: 0.5rem;
   border-radius: 6px;
@@ -144,14 +137,14 @@ body {
   margin-top: 0.3rem;
 }
 
-.checkbox-group {
+#addListingPage .checkbox-group {
   display: flex;
   flex-wrap: wrap;
   gap: 0.6rem 1.2rem;
   margin-top: 0.5rem;
 }
 
-.info-box {
+#addListingPage .info-box {
   background-color: #fff2d5;
   border-left: 4px solid gold;
   padding: 0.5rem 1rem;
@@ -159,12 +152,12 @@ body {
   font-size: 0.9rem;
 }
 
-.tiny {
+#addListingPage .tiny {
   font-size: 0.85rem;
   color: #5c4c1a;
 }
 
-.note-box {
+#addListingPage .note-box {
   background-color: #fff3c4;
   border-left: 4px solid gold;
   padding: 0.8rem;
@@ -172,7 +165,7 @@ body {
   font-size: 0.95rem;
 }
 
-.disclaimer {
+#addListingPage .disclaimer {
   background-color: #fff8e1;
   border-top: 2px solid gold;
   padding: 1rem;
@@ -180,8 +173,7 @@ body {
   font-size: 0.9rem;
 }
 
-/* === BUTTONS === */
-.submit-btn {
+#addListingPage .submit-btn {
   display: block;
   width: 100%;
   margin-top: 1.5rem;
@@ -195,14 +187,14 @@ body {
   transition: all 0.3s ease;
 }
 
-.submit-btn:hover {
+#addListingPage .submit-btn:hover {
   box-shadow: 0 0 40px gold, 0 0 10px red;
   transform: scale(1.05);
   cursor: pointer;
 }
 
-/* Sparkle burst */
-.sparkle {
+/* Sparkle Animation */
+#addListingPage .sparkle {
   position: fixed;
   width: 6px;
   height: 6px;
@@ -218,34 +210,20 @@ body {
   100% { opacity: 0; transform: translateY(-40px) scale(0.2); }
 }
 
-/* === FOOTER === */
-.footer {
-  background-color: #000;
-  color: gold;
-  padding: 1rem;
-  font-size: 0.9rem;
+/* =========================================================
+   DIRECTORY PAGE STYLES — SCOPED WITH .directory-page
+   ========================================================= */
+.directory-page .filters-wrap {
+  background-color: #fff4d6;
+  border-bottom: 2px solid gold;
+  padding: 1rem 0.5rem;
 }
 
-.footer a {
-  color: gold;
-  font-weight: bold;
+.directory-page .filters-block {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  align-items: center;
 }
 
-.footer a:hover {
-  text-decoration: underline;
-}
-
-/* === RESPONSIVE === */
-@media (max-width: 768px) {
-  .header-top {
-    flex-direction: column;
-    gap: 0.3rem;
-  }
-
-  .logo { height: 80px; }
-  .premier-badge { height: 70px; }
-
-  .nav-bar { gap: 0.4rem; }
-
-  .form-section { padding: 1rem; }
-}
+.directory-page .filters-block .row {
