@@ -3,49 +3,67 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Kennel Directory | Agripaw</title>
+  <title>Kennel Directory – AgriPaw</title>
   <link rel="stylesheet" href="../../styles.css" />
-</head>
+  <style>
+    main {
+      background-color: #fffaf0;
+      color: #3b2d13;
+      padding: 2rem;
+      text-align: center;
+    }
 
+    h1 {
+      color: #3b2d13;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      max-width: 700px;
+      margin: 0 auto 1rem;
+      line-height: 1.5;
+    }
+  </style>
+</head>
 <body>
+
   <!-- HEADER -->
-  <header class="main-header">
-    <img src="../../assets/logo/color-logo.png" alt="Agripaw Logo" class="main-logo" />
-    <img src="../../assets/logo/premier-badge.png" alt="Premier Badge" class="premier-header-badge" />
+  <header class="header">
+    <div class="header-top">
+      <a href="../../index.html" class="logo-link">
+        <img src="../../assets/logo/agripaw-logo.png" alt="AgriPaw Logo" class="logo" />
+      </a>
+      <a href="../../add-listing.html" class="premier-link">
+        <img src="../../assets/logo/premier-badge.png" alt="Premier Badge" class="premier-badge" />
+      </a>
+    </div>
+
+    <nav class="nav-bar">
+      <a href="../../index.html" class="nav-btn">🏠 Home</a>
+      <a href="../stable/index.html" class="nav-btn">🐴 Stable</a>
+      <a href="../hutch/index.html" class="nav-btn">🐇 Hutch</a>
+      <a href="../kennel/index.html" class="nav-btn">🐶 Kennel</a>
+      <a href="../cattery/index.html" class="nav-btn">🐱 Cattery</a>
+      <a href="../aviary/index.html" class="nav-btn">🦜 Aviary</a>
+      <a href="../terrarium/index.html" class="nav-btn">🦎 Terrarium</a>
+      <a href="../aquatica/index.html" class="nav-btn">🐠 Aquatica</a>
+    </nav>
+    <hr class="divider" />
   </header>
 
-  <!-- DIRECTORY NAV BAR -->
-  <section class="directory-buttons">
-    <div class="button-row">
-      <a href="../../index.html" class="dir-btn">🏠 Home</a>
-      <a href="../stable/index.html" class="dir-btn">🐴 Stable</a>
-      <a href="../hutch/index.html" class="dir-btn">🐇 Hutch</a>
-      <a href="../kennel/index.html" class="dir-btn active">🐶 Kennel</a>
-      <a href="../cattery/index.html" class="dir-btn">🐈 Cattery</a>
-      <a href="../aviary/index.html" class="dir-btn">🕊️ Aviary</a>
-      <a href="../terrarium/index.html" class="dir-btn">🦎 Terrarium</a>
-      <a href="../aquatica/index.html" class="dir-btn">🐠 Aquatica</a>
-    </div>
-  </section>
-
-  <!-- PAGE HEADER -->
-  <section class="subpage-header">
+  <!-- BODY -->
+  <main>
     <h1>🐶 Kennel Directory</h1>
-    <p>Browse professional dog breeders, trainers, and canine services across the Agripaw network.</p>
-  </section>
-
-  <!-- DIRECTORY LISTINGS PLACEHOLDER -->
-  <section class="directory-listings">
-    <p class="placeholder">Listings for this category will appear here soon.</p>
-  </section>
+    <p>Browse verified kennel listings from reputable breeders across the AgriPaw network. Click any business name to view contact details and links.</p>
+    <!-- future listing table/cards will go here -->
+  </main>
 
   <!-- FOOTER -->
-  <footer>
+  <footer class="footer">
     <div class="footer-links">
-      <a href="../../add-listing.html" class="footer-link">📝 Add Listing</a> |
-      <a href="../../contact.html" class="footer-link">📬 Contact</a>
+      <a href="../../add-listing.html">Add Listing</a> | <a href="../../contact.html">Contact</a>
     </div>
-    <p class="copyright">© 2025 Agripaw. All rights reserved.</p>
+    <p>© 2025 AgriPaw Directory. All Rights Reserved.</p>
   </footer>
 </body>
 </html>
