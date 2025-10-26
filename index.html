@@ -2,49 +2,57 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>AgriPaw Directory</title>
-  <link rel="stylesheet" href="styles.css"/>
+  <link rel="stylesheet" href="styles.css" />
 </head>
-<body>
 
-  <header class="main-header">
+<body>
+  <!-- HEADER -->
+  <header>
     <div class="header-container">
-      <div class="header-left">
-        <img src="assets/logo/agripaw-logo.png" alt="AgriPaw Logo" class="logo" />
+      <div class="logo-container">
+        <img src="assets/logo/color-logo.png" alt="AgriPaw Logo" class="main-logo" />
       </div>
-      <div class="header-right">
-        <a href="add-listing.html" title="List Your Business">
-          <img src="assets/logo/premier-badge.png" alt="Premier Badge" class="premier-badge glow" />
+
+      <div class="badge-section">
+        <a href="add-listing.html" title="Upgrade to Premier Listing">
+          <img src="assets/logo/premier-badge.png" alt="Premier Badge - Boost Your Visibility" class="premier-badge" />
         </a>
       </div>
     </div>
 
+    <!-- NAVIGATION -->
     <nav class="main-nav">
-      <div class="nav-group">
-        <button class="nav-button">🏠 Home</button>
-        <button class="nav-button">🐎 Stable</button>
-        <button class="nav-button">🐇 Hutch</button>
-        <button class="nav-button">🐶 Kennel</button>
-        <button class="nav-button">🐱 Cattery</button>
-        <button class="nav-button">🦜 Aviary</button>
-      </div>
-      <div class="nav-group">
-        <button class="nav-button">🦎 Terrarium</button>
-        <button class="nav-button">🌊 Aquatica</button>
-      </div>
+      <ul>
+        <li><a href="index.html" class="active">🏠 Home</a></li>
+        <li><a href="directory/stable/index.html">🐴 Stable</a></li>
+        <li><a href="directory/hutch/index.html">🐇 Hutch</a></li>
+        <li><a href="directory/kennel/index.html">🐶 Kennel</a></li>
+        <li><a href="directory/cattery/index.html">🐱 Cattery</a></li>
+        <li><a href="directory/aviary/index.html">🕊️ Aviary</a></li>
+        <li><a href="directory/terrarium/index.html">🦎 Terrarium</a></li>
+        <li><a href="directory/aquatica/index.html">🐠 Aquatica</a></li>
+      </ul>
     </nav>
   </header>
 
+  <!-- MAIN CONTENT -->
   <main>
-    <h1>Welcome to AgriPaw</h1>
-    <p>
-      AgriPaw is a free directory connecting breeders, service providers, and community networks across all animal types — from livestock to exotics, aquatics, and household companions.
-    </p>
+    <section class="welcome-section">
+      <h1>Welcome to AgriPaw</h1>
+      <p>
+        AgriPaw is a free directory connecting breeders, service providers, and community networks
+        across all animal types — from livestock to exotics, aquatics, and household companions.
+      </p>
 
-    <a href="add-listing.html" class="cta-button">✨ Click Here to List Your Business for FREE! ✨</a>
+      <div class="cta-container">
+        <a href="add-listing.html" class="cta-button">✨ Click Here to List Your Business for FREE! ✨</a>
+      </div>
+    </section>
   </main>
 
+  <!-- FOOTER -->
   <footer>
     <p>
       <a href="add-listing.html">Add Listing</a> |
@@ -52,6 +60,5 @@
     </p>
     <p>© 2025 AgriPaw Directory. All Rights Reserved.</p>
   </footer>
-
 </body>
 </html>
