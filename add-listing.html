@@ -5,28 +5,159 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Add Listing – AgriPaw Directory</title>
   <link rel="stylesheet" href="styles.css" />
+  <style>
+    /* === FORM LAYOUT === */
+    main {
+      display: flex;
+      justify-content: center;
+      padding: 2rem;
+      background-color: #fffaf0;
+    }
+
+    .form-section {
+      width: 90%;
+      max-width: 900px;
+      text-align: left;
+      color: #3b2d13;
+    }
+
+    .form-section h2 {
+      text-align: center;
+      color: #3b2d13;
+      margin-bottom: 0.5rem;
+    }
+
+    .form-section p {
+      text-align: center;
+      font-size: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    label {
+      display: block;
+      margin-top: 0.8rem;
+      font-weight: bold;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"] {
+      width: 100%;
+      padding: 0.5rem;
+      margin-top: 0.3rem;
+      border: 1px solid #d1b56a;
+      border-radius: 5px;
+    }
+
+    .info-box {
+      background-color: #fff3d4;
+      padding: 0.8rem;
+      border-left: 4px solid gold;
+      border-radius: 5px;
+      margin: 1rem 0;
+      font-size: 0.85rem;
+    }
+
+    .checkbox-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem 2rem;
+      margin-top: 0.5rem;
+      margin-bottom: 1rem;
+    }
+
+    h3 {
+      border-bottom: 2px solid gold;
+      padding-bottom: 0.3rem;
+      margin-top: 1.5rem;
+      color: #3b2d13;
+    }
+
+    .note-box {
+      background-color: #fff3d4;
+      border-left: 5px solid gold;
+      padding: 0.8rem;
+      border-radius: 5px;
+      font-size: 0.9rem;
+      margin-top: 1.5rem;
+    }
+
+    .submit-btn {
+      display: block;
+      width: fit-content;
+      margin: 2rem auto;
+      background: linear-gradient(to bottom, #ff0000, #b30000);
+      color: white;
+      font-weight: bold;
+      padding: 0.8rem 1.5rem;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      box-shadow: 0 0 20px gold;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .submit-btn:hover {
+      box-shadow: 0 0 40px gold, 0 0 10px red;
+      transform: scale(1.05);
+    }
+
+    .disclaimer {
+      margin-top: 2rem;
+      font-size: 0.9rem;
+      line-height: 1.4;
+      text-align: center;
+    }
+
+    /* Confetti sparkle animation */
+    .sparkle {
+      position: absolute;
+      width: 6px;
+      height: 6px;
+      background-color: gold;
+      border-radius: 50%;
+      opacity: 0;
+      animation: sparkle-animation 1s ease-out forwards;
+    }
+
+    @keyframes sparkle-animation {
+      0% { opacity: 1; transform: translateY(0); }
+      100% { opacity: 0; transform: translateY(-60px) scale(0.2); }
+    }
+
+    @media (max-width: 768px) {
+      .form-section {
+        width: 100%;
+        padding: 1rem;
+      }
+    }
+  </style>
 </head>
 
 <body>
   <!-- HEADER -->
-  <header>
-    <img src="assets/logo/color-logo.png" alt="AgriPaw Logo" class="logo" />
+  <header class="header">
+    <div class="header-top">
+      <img src="assets/logo/color-logo.png" alt="AgriPaw Logo" class="logo" />
 
-    <!-- Clickable Premier Badge -->
-    <a href="add-listing.html" class="premier-link" title="List Your Business on AgriPaw">
-      <img src="assets/logo/premier-badge.png" alt="Premier Badge" class="premier-badge" />
-    </a>
+      <!-- Premier Badge -->
+      <a href="add-listing.html" class="premier-link" title="List Your Business on AgriPaw">
+        <img src="assets/logo/premier-badge.png" alt="Premier Badge" class="premier-badge" />
+      </a>
+    </div>
 
     <!-- NAVIGATION -->
-    <nav>
-      <a href="index.html"><span class="emoji">🏠</span> Home</a>
-      <a href="directory/stable/index.html"><span class="emoji">🐴</span> Stable</a>
-      <a href="directory/hutch/index.html"><span class="emoji">🐇</span> Hutch</a>
-      <a href="directory/kennel/index.html"><span class="emoji">🐶</span> Kennel</a>
-      <a href="directory/cattery/index.html"><span class="emoji">🐱</span> Cattery</a>
-      <a href="directory/aviary/index.html"><span class="emoji">🦜</span> Aviary</a>
-      <a href="directory/terrarium/index.html"><span class="emoji">🦎</span> Terrarium</a>
-      <a href="directory/aquatica/index.html"><span class="emoji">🐠</span> Aquatica</a>
+    <nav class="nav-bar">
+      <a href="index.html" class="nav-btn">🏠 Home</a>
+      <a href="directory/stable/index.html" class="nav-btn">🐴 Stable</a>
+      <a href="directory/hutch/index.html" class="nav-btn">🐇 Hutch</a>
+      <a href="directory/kennel/index.html" class="nav-btn">🐶 Kennel</a>
+      <a href="directory/cattery/index.html" class="nav-btn">🐱 Cattery</a>
+      <a href="directory/aviary/index.html" class="nav-btn">🦜 Aviary</a>
+      <a href="directory/terrarium/index.html" class="nav-btn">🦎 Terrarium</a>
+      <a href="directory/aquatica/index.html" class="nav-btn">🐠 Aquatica</a>
     </nav>
   </header>
 
@@ -36,7 +167,7 @@
       <h2>Add Your Listing on AgriPaw</h2>
       <p>Submit your breeder, service, or network listing to be included in the AgriPaw directory. Required fields are marked with a <strong>*</strong>.</p>
 
-      <form action="thank-you.html" method="POST" class="listing-form">
+      <form action="thank-you.html" method="POST" class="listing-form" id="listingForm">
         <!-- Basic Info -->
         <label>Business Name *</label>
         <input type="text" name="business" required />
@@ -78,7 +209,7 @@
         <!-- Breed Type -->
         <h3>Breed Type *</h3>
         <input type="text" name="breed" placeholder="e.g., Labrador Retriever" />
-        <label><input type="checkbox" name="allbreeds" /> Applies to All Breeds</label>
+        <label style="font-size: 0.85rem;"><input type="checkbox" name="allbreeds" /> Applies to All Breeds</label>
 
         <!-- Listing Type -->
         <h3>Listing Type *</h3>
@@ -120,7 +251,7 @@
           <p><strong>⚠️ Note:</strong> Listings selecting multiple animal types, “All Breeds,” “Network / Influencer,” or “Other” may be flagged for manual review before approval. You’ll receive an email update once verified.</p>
         </div>
 
-        <button type="submit" class="submit-btn">✨ Submit My Listing ✨</button>
+        <button type="button" class="submit-btn" id="submitBtn">✨ Submit My Listing ✨</button>
       </form>
 
       <div class="disclaimer">
@@ -130,9 +261,31 @@
   </main>
 
   <!-- FOOTER -->
-  <footer>
-    <p><a href="index.html">Home</a> | <a href="contact.html">Contact</a></p>
+  <footer class="footer">
+    <div class="footer-links">
+      <a href="index.html">Home</a> | <a href="contact.html">Contact</a>
+    </div>
     <p>© 2025 AgriPaw Directory. All Rights Reserved.</p>
   </footer>
+
+  <!-- Sparkle JS -->
+  <script>
+    const submitBtn = document.getElementById('submitBtn');
+    submitBtn.addEventListener('click', () => {
+      for (let i = 0; i < 10; i++) {
+        const sparkle = document.createElement('div');
+        sparkle.className = 'sparkle';
+        sparkle.style.left = `${Math.random() * 80 + 10}%`;
+        sparkle.style.backgroundColor = Math.random() > 0.5 ? 'gold' : 'orange';
+        sparkle.style.top = '0';
+        submitBtn.appendChild(sparkle);
+        setTimeout(() => sparkle.remove(), 1000);
+      }
+
+      setTimeout(() => {
+        window.location.href = 'thank-you.html';
+      }, 1200);
+    });
+  </script>
 </body>
 </html>
