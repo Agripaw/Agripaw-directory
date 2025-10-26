@@ -4,11 +4,6 @@ body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background-color: #fffaf0;
   color: #3b2d13;
-  text-align: center;
-}
-
-a {
-  text-decoration: none;
 }
 
 /* === HEADER === */
@@ -76,14 +71,13 @@ a {
   transform: translateY(-3px);
 }
 
-/* Divider under nav */
 .divider {
   border: none;
   border-top: 2px solid gold;
   margin: 0;
 }
 
-/* === FILTER SECTION (Directories) === */
+/* === DIRECTORY FILTERS (Scoped Separately) === */
 .filters-wrap {
   background-color: #fff4d6;
   border-bottom: 2px solid gold;
@@ -97,26 +91,20 @@ a {
   align-items: center;
 }
 
-.row {
+.filters-block .row {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
   gap: 0.6rem;
 }
 
-.field {
+.filters-block .field {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
 }
 
-.field label {
-  font-weight: bold;
-  color: #3b2d13;
-  margin-bottom: 0.2rem;
-}
-
-.field input[type="text"] {
+.filters-block input[type="text"] {
   padding: 0.4rem;
   border-radius: 6px;
   border: 1px solid #ccc;
@@ -124,50 +112,7 @@ a {
   width: 160px;
 }
 
-/* Filter Chips / Checkboxes */
-.type-chip, .filter-chip {
-  background: #fff8e1;
-  border: 1px solid gold;
-  border-radius: 10px;
-  padding: 0.3rem 0.8rem;
-  font-weight: bold;
-  color: #3b2d13;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.type-chip input,
-.filter-chip input {
-  margin-right: 0.3rem;
-}
-
-.type-chip:hover,
-.filter-chip:hover {
-  background: gold;
-  color: #000;
-}
-
-/* Alphabetical Filters */
-.alpha-row {
-  text-align: center;
-  background: #fffaf0;
-  padding: 0.5rem;
-  border-top: 2px solid gold;
-}
-
-.alpha-row a {
-  margin: 0 6px;
-  font-weight: bold;
-  color: #3b2d13;
-  text-decoration: underline;
-  transition: color 0.3s ease;
-}
-
-.alpha-row a:hover {
-  color: gold;
-}
-
-/* === FORM STYLES (Add Listing) === */
+/* === ADD LISTING FORM === */
 .form-section {
   text-align: left;
   margin: 0 auto;
@@ -178,6 +123,7 @@ a {
 .form-section h2 {
   text-align: center;
   color: #3b2d13;
+  margin-bottom: 0.8rem;
 }
 
 .listing-form label {
@@ -210,6 +156,7 @@ a {
   border-left: 4px solid gold;
   padding: 0.5rem 1rem;
   margin-top: 1rem;
+  font-size: 0.9rem;
 }
 
 .tiny {
@@ -217,7 +164,6 @@ a {
   color: #5c4c1a;
 }
 
-/* Note and Disclaimer */
 .note-box {
   background-color: #fff3c4;
   border-left: 4px solid gold;
@@ -296,19 +242,10 @@ a {
     gap: 0.3rem;
   }
 
-  .logo {
-    height: 80px;
-  }
+  .logo { height: 80px; }
+  .premier-badge { height: 70px; }
 
-  .premier-badge {
-    height: 70px;
-  }
+  .nav-bar { gap: 0.4rem; }
 
-  .nav-bar {
-    gap: 0.4rem;
-  }
-
-  .form-section {
-    padding: 1rem;
-  }
+  .form-section { padding: 1rem; }
 }
