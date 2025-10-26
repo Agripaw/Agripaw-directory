@@ -1,318 +1,144 @@
-/* ===============================
-   AGRIPAW DIRECTORY STYLESHEET
-   =============================== */
-
-/* ===== GLOBAL RESETS ===== */
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  font-family: "Trebuchet MS", Helvetica, sans-serif;
-}
-
+/* === GLOBAL === */
 body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background-color: #fffaf0;
-  color: #3c2f00;
-  line-height: 1.6;
+  color: #3b2d13;
+  text-align: center;
 }
 
-/* ===== HEADER ===== */
-header {
-  background-color: #000;
-  color: #fff;
-  text-align: center;
-  padding: 0.5rem 0 0.25rem 0;
+/* === HEADER === */
+.header {
   position: sticky;
   top: 0;
-  z-index: 1000;
-  border-bottom: 3px solid #cda434;
-}
-
-header img.logo {
-  max-width: 300px;
-  height: auto;
-  margin: 0.3rem auto;
-  display: block;
-}
-
-/* Premier badge glow and clickability */
-.premier-link {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  display: inline-block;
-  z-index: 2000;
-  transition: transform 0.3s ease;
-}
-.premier-link:hover { transform: scale(1.05); }
-
-header img.premier-badge {
-  width: 80px;
-  height: auto;
-  animation: glowPulse 2.2s infinite alternate;
-}
-
-@keyframes glowPulse {
-  0% {
-    filter: drop-shadow(0 0 3px gold) drop-shadow(0 0 6px #ffbf00);
-  }
-  100% {
-    filter: drop-shadow(0 0 12px #ffd700) drop-shadow(0 0 24px #ffcc33);
-  }
-}
-
-/* ===== NAVIGATION ===== */
-nav {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 10px;
-  background-color: #000;
-  padding: 8px 0 12px;
-}
-
-nav a {
-  background-color: #111;
-  border: 2px solid #cda434;
-  color: #fff;
-  text-decoration: none;
-  padding: 8px 14px;
-  border-radius: 8px;
-  font-weight: 600;
-  transition: all 0.3s ease;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 6px;
-  font-size: 1.05rem;
-  line-height: 1.4;
-  vertical-align: middle;
-}
-
-nav a:hover,
-nav a.active {
-  background-color: #cda434;
-  color: #000;
-  box-shadow: 0 0 15px #ffdf6f;
-}
-
-/* Emoji consistency & shimmer hover */
-nav a .emoji {
-  font-size: 1.2rem;
-  line-height: 1;
-  transition: filter 0.3s ease, transform 0.3s ease;
-}
-
-nav a:hover .emoji {
-  filter: drop-shadow(0 0 6px #ffd700);
-  transform: scale(1.1);
-}
-
-@media (max-width: 480px) {
-  nav a { font-size: 0.95rem; gap: 4px; }
-  nav a .emoji { font-size: 1.1rem; }
-}
-
-/* ===== MAIN PAGE ===== */
-main { padding: 1.5rem; text-align: center; }
-
-h1 { color: #3c2f00; margin-bottom: 1rem; }
-
-p { color: #5b4b20; margin-bottom: 1rem; font-size: 1rem; }
-
-/* ===== CTA BUTTON ===== */
-.cta-button {
-  display: inline-block;
-  margin: 20px auto;
-  background: linear-gradient(90deg, #ff3300, #ff9900);
-  color: #fff;
-  font-size: 1.2rem;
-  font-weight: 700;
-  border: none;
-  border-radius: 8px;
-  padding: 12px 36px;
-  cursor: pointer;
-  text-align: center;
-  box-shadow: 0 0 15px rgba(255, 165, 0, 0.7);
-  position: relative;
-  overflow: hidden;
-  transition: all 0.3s ease;
-}
-
-.cta-button:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 25px rgba(255, 200, 0, 1);
-}
-
-.cta-button::after {
-  content: "✨";
-  position: absolute;
-  top: 4px;
-  right: 8px;
-  animation: sparkle 2s infinite ease-in-out;
-}
-
-@keyframes sparkle {
-  0%, 100% { opacity: 0; transform: translateY(0) rotate(0deg); }
-  50% { opacity: 1; transform: translateY(-3px) rotate(15deg); }
-}
-
-/* ===== DIRECTORY BUTTONS ===== */
-.directory-buttons {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 12px;
-  margin-top: 15px;
-}
-
-.directory-buttons button {
-  background-color: #111;
-  border: 2px solid #cda434;
-  color: #fff;
-  padding: 8px 16px;
-  border-radius: 10px;
-  font-size: 1rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.directory-buttons button:hover {
-  background-color: #cda434;
-  color: #000;
-  box-shadow: 0 0 15px #ffdf6f;
-}
-
-/* ===== ADD LISTING FORM ===== */
-.listing-form {
-  width: 90%;
-  max-width: 1100px;
-  margin: 0 auto;
-  text-align: left;
-}
-
-.listing-form label {
-  display: block;
-  font-weight: 600;
-  color: #3c2f00;
-  margin: 16px 0 6px;
-}
-
-.listing-form input[type="text"],
-.listing-form input[type="email"],
-.listing-form input[type="tel"],
-.listing-form input[list] {
-  display: block;
   width: 100%;
-  max-width: 100%;
-  box-sizing: border-box;
-  padding: 10px 12px;
-  border: 1px solid #cbb675;
-  border-radius: 5px;
-  background-color: #fff;
+  background-color: #000;
+  z-index: 1000;
 }
 
-/* Smaller, subtler text */
-input[name="hideName"] + label,
-input[name="hideEmail"] + label,
-input[name="allbreeds"] + label {
-  font-size: 0.9rem;
-  color: #3c2f00;
-  font-weight: 500;
-}
-
-/* Info and note boxes */
-.info-box, .note-box {
-  background-color: #fff3d9;
-  border-left: 4px solid #d4a017;
-  padding: 10px 15px;
-  margin: 20px 0;
-  border-radius: 6px;
-}
-
-/* Checkbox groups neatly wrap */
-.checkbox-group {
+.header-top {
   display: flex;
-  flex-wrap: wrap;
-  gap: 10px 22px;
-  justify-content: flex-start;
-  text-align: left;
-  margin: 8px 0 14px;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 2rem;
 }
 
-/* Orange confetti submit button */
-.submit-btn {
-  display: block;
-  margin: 30px auto;
-  background: linear-gradient(90deg, #ff3300, #ff9900);
+.logo {
+  height: 70px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.logo:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px 5px gold;
+}
+
+.premier-badge {
+  height: 75px;
+  transition: transform 0.6s ease, box-shadow 0.6s ease;
+  box-shadow: 0 0 25px 8px rgba(255, 215, 0, 0.5);
+  border-radius: 50%;
+}
+
+.premier-badge:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 40px 15px gold;
+}
+
+/* === NAVIGATION === */
+.nav-bar {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  padding: 0.5rem;
+  background-color: #000;
+}
+
+.nav-btn {
+  background-color: #111;
+  border: 2px solid gold;
+  border-radius: 10px;
   color: #fff;
-  font-size: 1.2rem;
-  font-weight: 700;
-  border: none;
-  border-radius: 8px;
-  padding: 12px 36px;
-  cursor: pointer;
-  text-align: center;
-  box-shadow: 0 0 15px rgba(255, 165, 0, 0.7);
-  position: relative;
-  overflow: hidden;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  font-weight: bold;
+  box-shadow: 0 0 10px rgba(255, 215, 0, 0.4);
   transition: all 0.3s ease;
 }
 
-.submit-btn:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 25px rgba(255, 200, 0, 1);
+.nav-btn:hover {
+  background-color: gold;
+  color: #000;
+  box-shadow: 0 0 25px gold;
+  transform: translateY(-3px);
 }
 
-.submit-btn::after {
-  content: "✨🎉✨";
-  position: absolute;
-  top: -10px;
-  left: 50%;
-  transform: translateX(-50%);
-  animation: confetti 1.5s ease-out forwards;
-  opacity: 0;
+/* Divider under nav */
+.divider {
+  border: none;
+  border-top: 2px solid gold;
+  margin: 0;
 }
 
-.submit-btn:hover::after {
-  opacity: 1;
-  animation: confetti 1.5s ease-out forwards;
+/* === MAIN CONTENT === */
+.welcome {
+  padding: 2rem;
 }
 
-@keyframes confetti {
-  0% { opacity: 1; transform: translateY(0) rotate(0deg); }
-  100% { opacity: 0; transform: translateY(-80px) rotate(360deg); }
+h1 {
+  color: #3b2d13;
+  font-size: 2rem;
 }
 
-/* ===== FOOTER ===== */
-footer {
-  background-color: #000;
-  color: #fff;
-  text-align: center;
-  padding: 1.2rem 0;
-  margin-top: 1rem;
-  font-size: 0.95rem;
-}
-
-footer a {
-  color: #ffdf6f;
+.cta-btn {
+  display: inline-block;
+  background: linear-gradient(to bottom, #ff0000, #b30000);
+  color: white;
   font-weight: bold;
+  padding: 0.8rem 1.5rem;
+  border-radius: 10px;
   text-decoration: none;
-  margin: 0 6px;
+  margin-top: 1rem;
+  box-shadow: 0 0 20px gold;
+  transition: all 0.3s ease;
 }
 
-footer a:hover {
-  color: #fff;
-  text-shadow: 0 0 6px gold;
+.cta-btn:hover {
+  box-shadow: 0 0 40px gold, 0 0 10px red;
+  transform: scale(1.05);
 }
 
-/* ===== RESPONSIVE ADJUSTMENTS ===== */
-@media (max-width: 900px) {
-  header img.logo { max-width: 240px; }
-  .directory-buttons button {
-    font-size: 0.9rem;
-    padding: 6px 12px;
+/* === FOOTER === */
+.footer {
+  background-color: #000;
+  color: gold;
+  padding: 1rem;
+  font-size: 0.9rem;
+}
+
+.footer-links a {
+  color: gold;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 768px) {
+  .header-top {
+    flex-direction: column;
   }
-  .listing-form { width: 95%; }
+
+  .logo, .premier-badge {
+    height: 60px;
+    margin-bottom: 0.3rem;
+  }
+
+  .nav-bar {
+    gap: 0.4rem;
+  }
 }
