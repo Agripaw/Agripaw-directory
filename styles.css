@@ -35,11 +35,18 @@ header img.logo {
   display: block;
 }
 
-/* Premier badge glow */
-header img.premier-badge {
+/* Premier badge glow and clickability */
+.premier-link {
   position: absolute;
-  top: 15px;
-  right: 15px;
+  top: 10px;
+  right: 10px;
+  display: inline-block;
+  z-index: 2000;
+  transition: transform 0.3s ease;
+}
+.premier-link:hover { transform: scale(1.05); }
+
+header img.premier-badge {
   width: 80px;
   height: auto;
   animation: glowPulse 2.2s infinite alternate;
@@ -73,9 +80,13 @@ nav a {
   border-radius: 8px;
   font-weight: 600;
   transition: all 0.3s ease;
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  gap: 5px;
+  justify-content: center;
+  gap: 6px;
+  font-size: 1.05rem;
+  line-height: 1.4;
+  vertical-align: middle;
 }
 
 nav a:hover,
@@ -85,23 +96,31 @@ nav a.active {
   box-shadow: 0 0 15px #ffdf6f;
 }
 
+/* Emoji consistency & shimmer hover */
+nav a .emoji {
+  font-size: 1.2rem;
+  line-height: 1;
+  transition: filter 0.3s ease, transform 0.3s ease;
+}
+
+nav a:hover .emoji {
+  filter: drop-shadow(0 0 6px #ffd700);
+  transform: scale(1.1);
+}
+
+@media (max-width: 480px) {
+  nav a { font-size: 0.95rem; gap: 4px; }
+  nav a .emoji { font-size: 1.1rem; }
+}
+
 /* ===== MAIN PAGE ===== */
-main {
-  padding: 1.5rem;
-  text-align: center;
-}
+main { padding: 1.5rem; text-align: center; }
 
-h1 {
-  color: #3c2f00;
-  margin-bottom: 1rem;
-}
+h1 { color: #3c2f00; margin-bottom: 1rem; }
 
-p {
-  color: #5b4b20;
-  margin-bottom: 1rem;
-  font-size: 1rem;
-}
+p { color: #5b4b20; margin-bottom: 1rem; font-size: 1rem; }
 
+/* ===== CTA BUTTON ===== */
 .cta-button {
   display: inline-block;
   margin: 20px auto;
@@ -165,28 +184,6 @@ p {
   box-shadow: 0 0 15px #ffdf6f;
 }
 
-/* ===== FOOTER ===== */
-footer {
-  background-color: #000;
-  color: #fff;
-  text-align: center;
-  padding: 1.2rem 0;
-  margin-top: 1rem;
-  font-size: 0.95rem;
-}
-
-footer a {
-  color: #ffdf6f;
-  font-weight: bold;
-  text-decoration: none;
-  margin: 0 6px;
-}
-
-footer a:hover {
-  color: #fff;
-  text-shadow: 0 0 6px gold;
-}
-
 /* ===== ADD LISTING FORM ===== */
 .listing-form {
   width: 90%;
@@ -223,6 +220,15 @@ input[name="allbreeds"] + label {
   font-size: 0.9rem;
   color: #3c2f00;
   font-weight: 500;
+}
+
+/* Info and note boxes */
+.info-box, .note-box {
+  background-color: #fff3d9;
+  border-left: 4px solid #d4a017;
+  padding: 10px 15px;
+  margin: 20px 0;
+  border-radius: 6px;
 }
 
 /* Checkbox groups neatly wrap */
@@ -279,18 +285,34 @@ input[name="allbreeds"] + label {
   100% { opacity: 0; transform: translateY(-80px) rotate(360deg); }
 }
 
+/* ===== FOOTER ===== */
+footer {
+  background-color: #000;
+  color: #fff;
+  text-align: center;
+  padding: 1.2rem 0;
+  margin-top: 1rem;
+  font-size: 0.95rem;
+}
+
+footer a {
+  color: #ffdf6f;
+  font-weight: bold;
+  text-decoration: none;
+  margin: 0 6px;
+}
+
+footer a:hover {
+  color: #fff;
+  text-shadow: 0 0 6px gold;
+}
+
 /* ===== RESPONSIVE ADJUSTMENTS ===== */
 @media (max-width: 900px) {
-  header img.logo {
-    max-width: 240px;
-  }
-
+  header img.logo { max-width: 240px; }
   .directory-buttons button {
     font-size: 0.9rem;
     padding: 6px 12px;
   }
-
-  .listing-form {
-    width: 95%;
-  }
+  .listing-form { width: 95%; }
 }
