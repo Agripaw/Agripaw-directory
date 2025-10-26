@@ -2,722 +2,124 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Kennel Directory – AgriPaw</title>
-
-  <!-- Global styles -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kennel Directory | AgriPaw</title>
   <link rel="stylesheet" href="../../styles.css" />
-
-  <!-- Page-specific styles for the subheader filters/listing table -->
-  <style>
-    /* ===== Filters Subheader (light, separated from black header) ===== */
-    .filters-wrap {
-      background: #fff8dc;
-      border-top: 2px solid gold;
-      border-bottom: 2px solid gold;
-    }
-
-    .filters-block {
-      max-width: 1180px;
-      margin: 0 auto;
-      padding: 12px 12px;
-    }
-
-    .row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      justify-content: center;
-      align-items: center;
-      margin: 6px 0;
-    }
-
-    .field {
-      position: relative;
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: #fffaf0;
-      border: 1px solid #d4b348;
-      border-radius: 10px;
-      padding: 8px 10px;
-      box-shadow: 0 2px 6px rgba(212,179,72,0.15);
-      min-height: 40px;
-    }
-
-    .field label {
-      font-weight: 700;
-      color: #3b2d13;
-      font-size: 0.95rem;
-    }
-
-    .field input[type="text"] {
-      border: none;
-      outline: none;
-      background: transparent;
-      padding: 6px 4px;
-      min-width: 170px;
-    }
-
-    .field.small input[type="text"] { min-width: 120px; }
-
-    /* Listing Type toggles */
-    .type-toggles {
-      display: inline-flex;
-      gap: 10px;
-      flex-wrap: wrap;
-      align-items: center;
-    }
-    .type-chip {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      padding: 6px 10px;
-      border: 1px solid #d4b348;
-      border-radius: 999px;
-      background: #fffef8;
-      cursor: pointer;
-      user-select: none;
-      box-shadow: 0 2px 6px rgba(212,179,72,0.15);
-    }
-    .type-chip input { transform: translateY(1px); }
-
-    /* Floating dropdowns (Service / Network) */
-    .btn-dropdown {
-      border: 1px solid #d4b348;
-      background: #fffef8;
-      border-radius: 10px;
-      padding: 6px 10px;
-      cursor: pointer;
-      font-weight: 700;
-      box-shadow: 0 2px 6px rgba(212,179,72,0.15);
-      transition: box-shadow .2s ease, transform .2s ease, opacity .2s ease;
-    }
-    .btn-dropdown:hover {
-      box-shadow: 0 4px 10px rgba(212,179,72,0.28);
-      transform: translateY(-1px);
-    }
-    .btn-dropdown.disabled {
-      opacity: 0.5;
-      pointer-events: none;
-    }
-
-    .dropdown-panel {
-      position: absolute;
-      top: calc(100% + 8px);
-      left: 0;
-      z-index: 50;
-      background: #fffef8;
-      border: 1px solid #d4b348;
-      border-radius: 10px;
-      box-shadow: 0 6px 18px rgba(0,0,0,0.12), 0 0 12px rgba(212,179,72,0.25);
-      padding: 10px 12px;
-      min-width: 260px;
-      display: none;
-    }
-    .dropdown-panel.open { display: block; }
-    .dropdown-panel .opt {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      padding: 6px 4px;
-      border-radius: 6px;
-      cursor: pointer;
-    }
-    .dropdown-panel .opt:hover { background: #fff6d8; }
-    .dropdown-actions {
-      margin-top: 8px;
-      display: flex;
-      gap: 8px;
-      justify-content: flex-end;
-    }
-    .dropdown-actions button {
-      padding: 4px 8px;
-      border-radius: 6px;
-      border: 1px solid #d4b348;
-      background: #fffaf0;
-      cursor: pointer;
-    }
-
-    /* Badges row */
-    .badges-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 14px 22px;
-      align-items: center;
-      justify-content: center;
-    }
-    .badges-row label {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: #fffaf0;
-      border: 1px solid #d4b348;
-      padding: 6px 10px;
-      border-radius: 10px;
-      box-shadow: 0 2px 6px rgba(212,179,72,0.15);
-      font-size: 0.95rem;
-    }
-
-    /* Alpha bar */
-    .alpha-row {
-      display: flex;
-      gap: 18px;
-      align-items: center;
-      justify-content: center;
-      flex-wrap: wrap;
-      padding-bottom: 6px;
-    }
-    .alpha-link {
-      text-decoration: underline;
-      text-underline-offset: 3px;
-      color: #3b2d13;
-      font-weight: 800;
-      cursor: pointer;
-      transition: text-decoration-color .2s ease, text-shadow .2s ease;
-    }
-    .alpha-link:hover {
-      text-decoration-color: gold;
-      text-shadow: 0 0 8px rgba(255,215,0,0.6);
-    }
-    .alpha-link.active {
-      color: #8a6a10;
-      text-decoration-color: #cda434;
-    }
-
-    /* Listings table */
-    main { background: #fffaf0; padding: 20px; }
-    .intro {
-      max-width: 900px;
-      margin: 16px auto 24px;
-      color: #3b2d13;
-      font-size: 1rem;
-      text-align: center;
-    }
-    .listings {
-      max-width: 1180px;
-      margin: 0 auto 40px;
-      background: #fff;
-      border-radius: 12px;
-      box-shadow: 0 6px 18px rgba(0,0,0,0.08);
-      overflow: hidden;
-      border: 1px solid #ead9a2;
-    }
-    .list-head, .list-row {
-      display: grid;
-      grid-template-columns: 2fr 1fr 1.2fr 1.6fr;
-      gap: 12px;
-      padding: 12px 14px;
-      align-items: center;
-    }
-    .list-head {
-      background: #fff7d1;
-      font-weight: 800;
-      border-bottom: 1px solid #ead9a2;
-    }
-    .list-row:nth-child(odd) { background: #fffdfa; }
-    .list-row:nth-child(even) { background: #fff; }
-
-    .name-cell a {
-      color: #2a2305;
-      font-weight: 800;
-      text-decoration: none;
-    }
-    .name-cell a:hover { text-decoration: underline; }
-
-    .icons { display: inline-flex; gap: 10px; align-items: center; }
-    .icons a {
-      text-decoration: none;
-      font-size: 1.05rem;
-      filter: drop-shadow(0 0 2px rgba(212,179,72,0.2));
-      transition: transform .15s ease, filter .15s ease;
-    }
-    .icons a:hover {
-      transform: translateY(-1px) scale(1.05);
-      filter: drop-shadow(0 0 6px rgba(255,215,0,0.6));
-    }
-
-    .tiny { font-size: 0.85rem; color: #5c4c1a; }
-
-    @media (max-width: 920px) {
-      .field input[type="text"] { min-width: 140px; }
-    }
-    @media (max-width: 760px) {
-      .list-head, .list-row { grid-template-columns: 1.8fr 1fr 1fr; }
-      .services-cell { display: none; }
-    }
-  </style>
 </head>
-<body>
-<header class="header">
-  <div class="header-top">
-    <a href="../../index.html" class="logo-link">
-      <img src="../../assets/logo/color-logo.png" alt="AgriPaw Logo" class="logo" />
-    </a>
-    <a href="../../add-listing.html" class="premier-link">
-      <img src="../../assets/logo/premier-badge.png" alt="Premier Badge" class="premier-badge" />
-    </a>
-  </div>
+<body class="directory-page">
+  <!-- HEADER -->
+  <header class="header">
+    <div class="header-top">
+      <a href="../../index.html" class="logo-link">
+        <img src="../../assets/logo/color-logo.png" alt="AgriPaw Logo" class="logo" />
+      </a>
+      <a href="../../add-listing.html" class="premier-link">
+        <img src="../../assets/logo/premier-badge.png" alt="Premier Badge" class="premier-badge" />
+      </a>
+    </div>
 
-  <nav class="nav-bar">
-    <a href="../../index.html" class="nav-btn">🏠 Home</a>
-    <a href="../stable/index.html" class="nav-btn">🐴 Stable</a>
-    <a href="../hutch/index.html" class="nav-btn">🐇 Hutch</a>
-    <a href="../kennel/index.html" class="nav-btn">🐶 Kennel</a>
-    <a href="../cattery/index.html" class="nav-btn">🐱 Cattery</a>
-    <a href="../aviary/index.html" class="nav-btn">🦜 Aviary</a>
-    <a href="../terrarium/index.html" class="nav-btn">🦎 Terrarium</a>
-    <a href="../aquatica/index.html" class="nav-btn">🐠 Aquatica</a>
-  </nav>
-  <hr class="divider" />
-</header>
+    <nav class="nav-bar">
+      <a href="../../index.html" class="nav-btn">🏠 Home</a>
+      <a href="../stable/index.html" class="nav-btn">🐎 Stable</a>
+      <a href="../hutch/index.html" class="nav-btn">🐇 Hutch</a>
+      <a href="../kennel/index.html" class="nav-btn">🐶 Kennel</a>
+      <a href="../cattery/index.html" class="nav-btn">🐱 Cattery</a>
+      <a href="../aviary/index.html" class="nav-btn">🦜 Aviary</a>
+      <a href="../terrarium/index.html" class="nav-btn">🦎 Terrarium</a>
+      <a href="../aquatica/index.html" class="nav-btn">🐠 Aquatica</a>
+    </nav>
+    <hr class="divider" />
+  </header>
 
-  <!-- SUBHEADER FILTERS -->
+  <!-- DIRECTORY FILTERS -->
   <section class="filters-wrap">
     <div class="filters-block">
-
-      <!-- Row 1: Business | City | State | Listing Type -->
+      <!-- Row 1 -->
       <div class="row">
         <div class="field">
           <label for="businessSearch">Business:</label>
-          <input type="text" id="businessSearch" placeholder="Search business…" list="businessList" autocomplete="off" />
+          <input type="text" id="businessSearch" placeholder="Search business..." list="businessList">
           <datalist id="businessList"></datalist>
         </div>
-
         <div class="field">
           <label for="citySearch">City:</label>
-          <input type="text" id="citySearch" placeholder="Search city…" list="cityList" autocomplete="off" />
+          <input type="text" id="citySearch" placeholder="Search city..." list="cityList">
           <datalist id="cityList"></datalist>
         </div>
-
-        <div class="field small">
+        <div class="field">
           <label for="stateSearch">State:</label>
-          <input type="text" id="stateSearch" placeholder="e.g., AZ" list="stateList" autocomplete="off" />
+          <input type="text" id="stateSearch" placeholder="e.g., AZ" list="stateList">
           <datalist id="stateList"></datalist>
         </div>
-
-        <div class="field">
-          <label>Listing Type:</label>
-          <div class="type-toggles" id="typeToggles">
-            <label class="type-chip"><input type="checkbox" value="breeder" checked> Breeder</label>
-            <label class="type-chip"><input type="checkbox" value="service" checked> Service Provider</label>
-            <label class="type-chip"><input type="checkbox" value="network" checked> Network / Club / Influencer</label>
-          </div>
-        </div>
       </div>
 
-      <!-- Row 2: Breed | Service Type | Network Type -->
+      <!-- Row 2 -->
       <div class="row">
-        <div class="field" id="breedField">
-          <label for="breedSearch">Breed:</label>
-          <input type="text" id="breedSearch" placeholder="Search breed…" list="breedList" autocomplete="off" />
-          <datalist id="breedList"></datalist>
-        </div>
-
-        <div class="field" id="serviceField">
-          <button type="button" class="btn-dropdown" data-panel="#servicePanel">Service Type ▾</button>
-          <div class="dropdown-panel" id="servicePanel">
-            <label class="opt"><input type="checkbox" value="training"> Training</label>
-            <label class="opt"><input type="checkbox" value="grooming"> Grooming</label>
-            <label class="opt"><input type="checkbox" value="reproductive"> Reproductive / Stud</label>
-            <label class="opt"><input type="checkbox" value="transport"> Transport</label>
-            <label class="opt"><input type="checkbox" value="boarding"> Pet Sitting / Boarding</label>
-            <label class="opt"><input type="checkbox" value="walking"> Pet Walking</label>
-            <label class="opt"><input type="checkbox" value="photography"> Photography</label>
-            <label class="opt"><input type="checkbox" value="graphics"> Graphics / Branding</label>
-            <label class="opt"><input type="checkbox" value="remedies"> Remedies / Treats</label>
-            <label class="opt"><input type="checkbox" value="veterinary"> Veterinary</label>
-            <div class="dropdown-actions">
-              <button type="button" data-action="clear" data-target="servicePanel">Clear</button>
-              <button type="button" data-action="close" data-target="servicePanel">Close</button>
-            </div>
-          </div>
-        </div>
-
-        <div class="field" id="networkField">
-          <button type="button" class="btn-dropdown" data-panel="#networkPanel">Network Type ▾</button>
-          <div class="dropdown-panel" id="networkPanel">
-            <label class="opt"><input type="checkbox" value="club"> Club / Association</label>
-            <label class="opt"><input type="checkbox" value="influencer"> Social Media / Influencer</label>
-            <label class="opt"><input type="checkbox" value="breeder-group"> Breeder Group</label>
-            <label class="opt"><input type="checkbox" value="meetup"> Meetup</label>
-            <label class="opt"><input type="checkbox" value="charity"> Charity / Rescue</label>
-            <div class="dropdown-actions">
-              <button type="button" data-action="clear" data-target="networkPanel">Clear</button>
-              <button type="button" data-action="close" data-target="networkPanel">Close</button>
-            </div>
-          </div>
-        </div>
+        <label>Listing Type:</label>
+        <label class="type-chip"><input type="checkbox" value="breeder"> Breeder</label>
+        <label class="type-chip"><input type="checkbox" value="service"> Service Provider</label>
+        <label class="type-chip"><input type="checkbox" value="network"> Network / Club / Influencer</label>
       </div>
 
-      <!-- Row 3: Badges -->
-      <div class="row badges-row">
-        <label><input type="checkbox" class="badge-filter" value="registered"> Registered Purebred</label>
-        <label><input type="checkbox" class="badge-filter" value="designer"> Designer</label>
-        <label><input type="checkbox" class="badge-filter" value="rescue"> Rescue</label>
-        <label><input type="checkbox" class="badge-filter" value="available"> Available Now</label>
-        <label><input type="checkbox" class="badge-filter" value="premier"> Premier Profiles</label>
+      <!-- Row 3 -->
+      <div class="row">
+        <label>Breed:</label>
+        <input type="text" placeholder="e.g., American Bully">
+        <label>Service Type:</label>
+        <input type="text" placeholder="Service Type">
+        <label>Network Type:</label>
+        <input type="text" placeholder="Network Type">
       </div>
 
-      <!-- Row 4: Alpha groups -->
-      <div class="row alpha-row">
-        <span class="alpha-link" data-range="01">0–1</span>
-        <span class="alpha-link" data-range="ad">A–D</span>
-        <span class="alpha-link" data-range="eh">E–H</span>
-        <span class="alpha-link" data-range="il">I–L</span>
-        <span class="alpha-link" data-range="mp">M–P</span>
-        <span class="alpha-link" data-range="qt">Q–T</span>
-        <span class="alpha-link" data-range="uz">U–Z</span>
-        <span class="alpha-link active" data-range="all">All</span>
+      <!-- Badges -->
+      <div class="row">
+        <label class="filter-chip"><input type="checkbox"> Registered Purebred</label>
+        <label class="filter-chip"><input type="checkbox"> Designer</label>
+        <label class="filter-chip"><input type="checkbox"> Rescue</label>
+        <label class="filter-chip"><input type="checkbox"> Available Now</label>
+        <label class="filter-chip"><input type="checkbox"> Premier Profiles</label>
+      </div>
+
+      <!-- Alphabet filters -->
+      <div class="alpha-row">
+        <a href="#">0–1</a>
+        <a href="#">A–D</a>
+        <a href="#">E–H</a>
+        <a href="#">I–L</a>
+        <a href="#">M–P</a>
+        <a href="#">Q–T</a>
+        <a href="#">U–Z</a>
+        <a href="#">All</a>
       </div>
     </div>
   </section>
 
-  <!-- INTRO & LISTINGS -->
-  <main>
-    <p class="intro">
-      Explore listings submitted by breeders, service providers, and networks within the Kennel category.
-      Use the filters above to narrow results by business, location, listing type, breed, services, networks, badges, and alphabetical range.
-    </p>
-
-    <div class="listings" id="listingTable" data-animal="kennel">
-      <div class="list-head">
-        <div>Business</div>
-        <div>Location</div>
-        <div class="services-cell">Services</div>
-        <div>Links</div>
-      </div>
-
-      <!-- Sample Listings -->
-      <div class="list-row"
-           data-animal="kennel"
-           data-type="breeder"
-           data-name="Fowler House of Labs"
-           data-city="San Tan Valley"
-           data-state="AZ"
-           data-breeds="labrador retriever, labrador, lab"
-           data-services="training,reproductive"
-           data-networks="club"
-           data-badges="registered,premier,available">
-        <div class="name-cell"><a href="#">Fowler House of Labs</a> <span class="tiny">— Labrador Retriever</span></div>
-        <div>San Tan Valley, AZ</div>
-        <div class="services-cell">Training, Reproductive/Stud</div>
-        <div class="icons">
-          <a href="#" title="Premier">🏅</a>
-          <a href="tel:+1-480-555-0100" title="Phone">📞</a>
-          <a href="mailto:info@fowlerlabs.com" title="Email">✉️</a>
-          <a href="https://fowlerlabs.example" target="_blank" title="Website">🌐</a>
-        </div>
-      </div>
-
-      <div class="list-row"
-           data-animal="kennel"
-           data-type="breeder"
-           data-name="Nunns Better Bullies"
-           data-city="Mesa"
-           data-state="AZ"
-           data-breeds="american bully, bully"
-           data-services="reproductive,transport"
-           data-networks="breeder-group"
-           data-badges="designer,available">
-        <div class="name-cell"><a href="#">Nunns Better Bullies</a> <span class="tiny">— American Bully</span></div>
-        <div>Mesa, AZ</div>
-        <div class="services-cell">Reproductive/Stud, Transport</div>
-        <div class="icons">
-          <a href="tel:+1-480-555-0142" title="Phone">📞</a>
-          <a href="mailto:contact@nunnsbetterbullies.com" title="Email">✉️</a>
-          <a href="#" target="_blank" title="Instagram">📸</a>
-        </div>
-      </div>
-
-      <div class="list-row"
-           data-animal="kennel"
-           data-type="breeder,service,network"
-           data-name="Desert Sky Retrievers"
-           data-city="Palm Springs"
-           data-state="CA"
-           data-breeds="golden retriever, golden"
-           data-services="training,grooming"
-           data-networks="club,meetup"
-           data-badges="registered">
-        <div class="name-cell"><a href="#">Desert Sky Retrievers</a> <span class="tiny">— Golden Retriever</span></div>
-        <div>Palm Springs, CA</div>
-        <div class="services-cell">Training, Grooming</div>
-        <div class="icons">
-          <a href="#" title="Club">🏛️</a>
-          <a href="#" title="Website">🌐</a>
-        </div>
-      </div>
-
-      <div class="list-row"
-           data-animal="kennel"
-           data-type="breeder,service"
-           data-name="Sun Valley Kennels"
-           data-city="Fresno"
-           data-state="CA"
-           data-breeds="german shepherd, shepherd"
-           data-services="training,boarding,walking"
-           data-networks="club"
-           data-badges="">
-        <div class="name-cell"><a href="#">Sun Valley Kennels</a> <span class="tiny">— German Shepherd</span></div>
-        <div>Fresno, CA</div>
-        <div class="services-cell">Training, Boarding, Walking</div>
-        <div class="icons">
-          <a href="#" title="Website">🌐</a>
-        </div>
-      </div>
-
-      <div class="list-row"
-           data-animal="kennel"
-           data-type="network"
-           data-name="Red Rock Dog Club"
-           data-city="Tempe"
-           data-state="AZ"
-           data-breeds="multi-breed, all breeds"
-           data-services="training"
-           data-networks="club,meetup"
-           data-badges="rescue">
-        <div class="name-cell"><a href="#">Red Rock Dog Club</a> <span class="tiny">— Multi-breed</span></div>
-        <div>Tempe, AZ</div>
-        <div class="services-cell">Training</div>
-        <div class="icons">
-          <a href="#" title="Club">🏛️</a>
-          <a href="#" title="Facebook">📘</a>
-        </div>
-      </div>
-    </div>
+  <!-- SAMPLE LISTING -->
+  <main class="directory-list">
+    <table class="list-table">
+      <thead>
+        <tr class="list-head">
+          <th>Business</th>
+          <th>Location</th>
+          <th>Services</th>
+          <th>Links</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="list-row">
+          <td>Nunns Better Bullies — <em>American Bully</em></td>
+          <td>Mesa, AZ</td>
+          <td>Reproductive/Stud, Transport</td>
+          <td>📞 ✉️ 🌐</td>
+        </tr>
+      </tbody>
+    </table>
   </main>
 
   <!-- FOOTER -->
   <footer class="footer">
-    <div class="footer-links">
-      <a href="/add-listing.html">Add Listing</a> | <a href="/contact.html">Contact</a>
-    </div>
+    <p><a href="../../add-listing.html">Add Listing</a> | <a href="../../contact.html">Contact</a></p>
     <p>© 2025 AgriPaw Directory. All Rights Reserved.</p>
   </footer>
-
-  <!-- Filters & Logic -->
-  <script>
-    // ===== Data for auto-suggest =====
-    const BREEDS = [
-      "Labrador Retriever","Golden Retriever","German Shepherd",
-      "French Bulldog","Poodle","American Bully","Bulldog","Beagle",
-      "Rottweiler","Dachshund","Corgi","Doberman"
-    ];
-    const BUSINESSES = [
-      "Fowler House of Labs","Nunns Better Bullies","Desert Sky Retrievers",
-      "Sun Valley Kennels","Red Rock Dog Club"
-    ];
-    const CITIES = ["San Tan Valley","Mesa","Palm Springs","Fresno","Tempe"];
-    const STATES = ["AL","AK","AZ","AR","CA","CO","CT","DE","FL","GA","HI","IA","ID","IL","IN","KS","KY","LA","MA","MD","ME","MI","MN","MO","MS","MT","NC","ND","NE","NH","NJ","NM","NV","NY","OH","OK","OR","PA","RI","SC","SD","TN","TX","UT","VA","VT","WA","WI","WV","WY"];
-
-    function populateDatalist(id, arr) {
-      const dl = document.getElementById(id);
-      dl.innerHTML = "";
-      arr.forEach(v => { const o = document.createElement('option'); o.value = v; dl.appendChild(o); });
-    }
-    populateDatalist('breedList', BREEDS);
-    populateDatalist('businessList', BUSINESSES);
-    populateDatalist('cityList', CITIES);
-    populateDatalist('stateList', STATES);
-
-    // ===== Floating dropdown behavior =====
-    document.querySelectorAll('.btn-dropdown').forEach(btn => {
-      btn.addEventListener('click', (e) => {
-        const panelSel = e.currentTarget.getAttribute('data-panel');
-        const panel = document.querySelector(panelSel);
-        const isOpen = panel.classList.contains('open');
-        document.querySelectorAll('.dropdown-panel').forEach(p => p.classList.remove('open'));
-        if (!isOpen) panel.classList.add('open');
-        e.stopPropagation();
-      });
-    });
-    document.addEventListener('click', (e) => {
-      if (!e.target.closest('.field')) {
-        document.querySelectorAll('.dropdown-panel').forEach(p => p.classList.remove('open'));
-      }
-    });
-    document.querySelectorAll('.dropdown-actions button').forEach(btn => {
-      btn.addEventListener('click', () => {
-        const action = btn.dataset.action;
-        const targetId = btn.dataset.target;
-        const panel = document.getElementById(targetId);
-        if (action === 'clear') {
-          panel.querySelectorAll('input[type="checkbox"]').forEach(cb => cb.checked = false);
-          applyFilters();
-        } else if (action === 'close') {
-          panel.classList.remove('open');
-        }
-      });
-    });
-
-    // ===== State =====
-    const state = {
-      animal: 'kennel', // hard-locked to this directory
-      // Row 1
-      businessQuery: '',
-      cityQuery: '',
-      stateQuery: '',
-      types: new Set(['breeder','service','network']), // default all selected
-      // Row 2
-      breederEnabled: true,
-      serviceEnabled: true,
-      networkEnabled: true,
-      breedQuery: '',
-      services: new Set(),
-      networks: new Set(),
-      // Row 3
-      badges: new Set(),
-      // Row 4
-      alpha: 'all'
-    };
-
-    // ===== Inputs (Row 1) =====
-    const businessSearch = document.getElementById('businessSearch');
-    const citySearch = document.getElementById('citySearch');
-    const stateSearch = document.getElementById('stateSearch');
-
-    businessSearch.addEventListener('input', () => { state.businessQuery = businessSearch.value.trim().toLowerCase(); applyFilters(); });
-    citySearch.addEventListener('input', () => { state.cityQuery = citySearch.value.trim().toLowerCase(); applyFilters(); });
-    stateSearch.addEventListener('input', () => { state.stateQuery = stateSearch.value.trim().toUpperCase(); applyFilters(); });
-
-    // Listing Type toggles + enable/disable dependent filters (Row 2)
-    document.querySelectorAll('#typeToggles input[type="checkbox"]').forEach(cb => {
-      cb.addEventListener('change', () => {
-        if (cb.checked) state.types.add(cb.value); else state.types.delete(cb.value);
-        // Enable/disable dependent groups
-        state.breederEnabled = state.types.has('breeder');
-        state.serviceEnabled = state.types.has('service');
-        state.networkEnabled = state.types.has('network');
-
-        // Toggle UI disabled state
-        document.getElementById('breedField').style.opacity = state.breederEnabled ? '1' : '0.5';
-        document.getElementById('serviceField').querySelector('.btn-dropdown')
-          .classList.toggle('disabled', !state.serviceEnabled);
-        document.getElementById('networkField').querySelector('.btn-dropdown')
-          .classList.toggle('disabled', !state.networkEnabled);
-
-        applyFilters();
-      });
-    });
-
-    // ===== Inputs (Row 2) =====
-    const breedSearch = document.getElementById('breedSearch');
-    breedSearch.addEventListener('input', () => { state.breedQuery = breedSearch.value.trim().toLowerCase(); applyFilters(); });
-
-    document.querySelectorAll('#servicePanel input[type="checkbox"]').forEach(cb => {
-      cb.addEventListener('change', () => {
-        if (cb.checked) state.services.add(cb.value); else state.services.delete(cb.value);
-        applyFilters();
-      });
-    });
-    document.querySelectorAll('#networkPanel input[type="checkbox"]').forEach(cb => {
-      cb.addEventListener('change', () => {
-        if (cb.checked) state.networks.add(cb.value); else state.networks.delete(cb.value);
-        applyFilters();
-      });
-    });
-
-    // ===== Badges (Row 3) =====
-    document.querySelectorAll('.badge-filter').forEach(cb => {
-      cb.addEventListener('change', () => {
-        if (cb.checked) state.badges.add(cb.value); else state.badges.delete(cb.value);
-        applyFilters();
-      });
-    });
-
-    // ===== Alpha (Row 4) =====
-    document.querySelectorAll('.alpha-link').forEach(link => {
-      link.addEventListener('click', () => {
-        document.querySelectorAll('.alpha-link').forEach(l => l.classList.remove('active'));
-        link.classList.add('active');
-        state.alpha = link.dataset.range;
-        applyFilters();
-      });
-    });
-
-    function inAlpha(name, range) {
-      if (range === 'all') return true;
-      const first = (name || '').trim().charAt(0).toLowerCase();
-      if (!first) return true;
-      if (range === '01') return /[0-1]/.test(first);
-      const map = {
-        'ad': ['a','b','c','d'],
-        'eh': ['e','f','g','h'],
-        'il': ['i','j','k','l'],
-        'mp': ['m','n','o','p'],
-        'qt': ['q','r','s','t'],
-        'uz': ['u','v','w','x','y','z']
-      };
-      return (map[range] || []).includes(first);
-    }
-
-    // ===== Mixed filter logic (OR within groups, AND across groups) =====
-    function applyFilters() {
-      const rows = document.querySelectorAll('.list-row');
-      rows.forEach(row => {
-        // 0) Hard-lock animal
-        if ((row.dataset.animal || '') !== state.animal) { row.style.display = 'none'; return; }
-
-        // 1) Listing type (AND group): must match at least one selected type
-        const types = (row.dataset.type || '').split(',').map(s => s.trim().toLowerCase());
-        if (state.types.size > 0) {
-          const matchesType = [...state.types].some(t => types.includes(t));
-          if (!matchesType) { row.style.display = 'none'; return; }
-        }
-
-        // 2) Business, City, State substring matches
-        const name = (row.dataset.name || '').toLowerCase();
-        const city = (row.dataset.city || '').toLowerCase();
-        const st = (row.dataset.state || '').toUpperCase();
-
-        if (state.businessQuery && !name.includes(state.businessQuery)) { row.style.display = 'none'; return; }
-        if (state.cityQuery && !city.includes(state.cityQuery)) { row.style.display = 'none'; return; }
-        if (state.stateQuery && !st.includes(state.stateQuery)) { row.style.display = 'none'; return; }
-
-        // 3) Alpha filter
-        if (!inAlpha(row.dataset.name || '', state.alpha)) { row.style.display = 'none'; return; }
-
-        // 4) Dependent groups (only if the Listing Type is selected)
-        //    - Breed only if 'breeder' is active
-        if (state.breederEnabled && state.breedQuery) {
-          const breeds = (row.dataset.breeds || '').toLowerCase();
-          if (!breeds.includes(state.breedQuery)) { row.style.display = 'none'; return; }
-        }
-
-        //    - Services only if 'service' is active
-        if (state.serviceEnabled && state.services.size > 0) {
-          const svc = (row.dataset.services || '').split(',').map(s => s.trim().toLowerCase());
-          const hasAny = [...state.services].some(s => svc.includes(s));
-          if (!hasAny) { row.style.display = 'none'; return; }
-        }
-
-        //    - Networks only if 'network' is active
-        if (state.networkEnabled && state.networks.size > 0) {
-          const nets = (row.dataset.networks || '').split(',').map(s => s.trim().toLowerCase());
-          const hasAny = [...state.networks].some(n => nets.includes(n));
-          if (!hasAny) { row.style.display = 'none'; return; }
-        }
-
-        // 5) Badges (always apply when selected)
-        if (state.badges.size > 0) {
-          const b = (row.dataset.badges || '').split(',').map(s => s.trim().toLowerCase());
-          const hasAny = [...state.badges].some(tag => b.includes(tag));
-          if (!hasAny) { row.style.display = 'none'; return; }
-        }
-
-        // ✅ Passed all active groups
-        row.style.display = '';
-      });
-    }
-
-    // Initial enable/disable UI sync (everything selected by default)
-    document.getElementById('breedField').style.opacity = '1';
-    document.querySelector('#serviceField .btn-dropdown').classList.toggle('disabled', false);
-    document.querySelector('#networkField .btn-dropdown').classList.toggle('disabled', false);
-
-    // Initial paint
-    applyFilters();
-  </script>
 </body>
 </html>
